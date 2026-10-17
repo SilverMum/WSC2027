@@ -1564,6 +1564,48 @@ main {
     margin-top: 130px;
 }
 
+/* FACEBOOK BAR — KEEP THE FULL-WIDTH NOTICE STYLE */
+
+#kitchen-page .kitchen-facebook-notice {
+    width: calc(100% - 80px);
+    max-width: 1300px;
+    min-height: 108px;
+    margin: -1px auto 20px;
+    padding: 18px 28px;
+}
+
+/* Facebook icon */
+#kitchen-page .kitchen-facebook-notice .kitchen-facebook-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    background: var(--kitchen-green);
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+    #kitchen-page .kitchen-facebook-notice {
+        width: calc(100% - 28px);
+        margin: 14px auto 20px;
+        padding: 20px;
+    }
+
+    #kitchen-page .kitchen-facebook-notice .kitchen-hours-button {
+        width: 100%;
+    }
+}
 /* ==========================================
    SMALL MOBILE SCREENS
 ========================================== */
