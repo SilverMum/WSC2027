@@ -1560,6 +1560,9 @@ main {
     }
 }
 
+#kitchen-page {
+    margin-top: 60px;
+}
 
 /* ==========================================
    SMALL MOBILE SCREENS
@@ -1590,3 +1593,4 @@ main {
         font-size: 1.1rem;
     }
 }
+
