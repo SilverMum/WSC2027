@@ -503,42 +503,38 @@
     
 <div id="footer-placeholder"></div>
 
-    
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll(".private-events-header-carousel .carousel-slide");
-    let index = 0;
 
-    function showNextSlide() {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
+    function startSlideshow(selector) {
+
+        const slides = document.querySelectorAll(selector);
+
+        if (slides.length < 2) return;
+
+        let index = 0;
+
+        setInterval(function () {
+
+            slides[index].classList.remove("active");
+
+            index = (index + 1) % slides.length;
+
+            slides[index].classList.add("active");
+
+        }, 7000);
+
     }
 
-    setInterval(showNextSlide, 4000);
-});
-</script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const slides = document.querySelectorAll(
+    // CARD 1: INDOOR ROOMS
+    startSlideshow(
         "#private-events-page .indoor-room-slide"
     );
 
-    if (slides.length < 2) return;
-
-    let index = 0;
-
-    setInterval(function () {
-
-        slides[index].classList.remove("active");
-
-        index = (index + 1) % slides.length;
-
-        slides[index].classList.add("active");
-
-    }, 7000);
+    // CARD 2: LARGE EVENT HALL
+    startSlideshow(
+        "#private-events-page .large-event-hall-slide"
+    );
 
 });
 </script>
