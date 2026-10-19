@@ -544,6 +544,10 @@
     padding-bottom: 0;
 }
 
+#whats-happening {
+    scroll-margin-top: 120px;
+}
+
 /* =========================================================
    WINDSOR SPORTSMEN'S CLUB — FOOTER
 ========================================================= */
