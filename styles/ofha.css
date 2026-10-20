@@ -1060,6 +1060,213 @@
 
 }
 
+/* ------------------------------
+  OLD OFHA CSS
+--------------------------------*/
+/* ------------------------------
+   OFHA PAGE BACKGROUND
+--------------------------------*/
+.ofha-bg {
+    position: relative;
+    min-height: 100vh;
+    background: url('images/ofha-background.jpg') center center / cover no-repeat fixed;
+}
+
+/* 30% white wash overlay */
+.ofha-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ------------------------------
+   OFHA HEADER IMAGE (breathing room)
+--------------------------------*/
+.ofha-header {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.ofha-header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* ------------------------------
+   CARD SYSTEM (GLOBAL FOR OFHA)
+--------------------------------*/
+.outer-card {
+    max-width: 900px;
+    margin: 0 auto 20px; /* 20px spacing between cards */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.inner-card.ofha-card {
+    background: rgba(150, 180, 220, 0.60);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Darkened OFHA text */
+.ofha-card h2,
+.ofha-card h3,
+.ofha-card p,
+.ofha-card li,
+.ofha-card a {
+    color: #062a55;
+}
+
+/* ------------------------------
+   GLOBAL TEXT SIZE UPGRADE
+--------------------------------*/
+.ofha-card p,
+.ofha-card li {
+    font-size: 1.35rem;
+    line-height: 1.65;
+}
+
+.ofha-card h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.ofha-card h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+/* ------------------------------
+   FIXED INTRO ROW (text left, logo right)
+--------------------------------*/
+.ofha-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.ofha-info-text {
+    flex: 1;
+}
+
+.ofha-info-text p {
+    font-size: 1.6rem;   /* UPDATED */
+    font-weight: 700;
+    text-align: center;
+}
+
+.ofha-info-logo {
+    flex: 0 0 auto;
+    text-align: right;
+}
+
+.ofha-info-logo img {
+    max-width: 160px;
+    height: auto;
+}
+
+/* Center the link text under the logo */
+.ofha-info-logo a.ofha-text-link {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+/* ------------------------------
+   MEMBERSHIP CARD (centered + bold)
+--------------------------------*/
+.ofha-membership p {
+    text-align: center;
+    font-size: 1.6rem;  /* MATCHES intro text */
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+/* ------------------------------
+   REASONS SECTION
+--------------------------------*/
+.ofha-reasons h3 {
+    margin-bottom: 12px;
+}
+
+.ofha-reasons ol {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+/* ------------------------------
+   ADVOCACY SECTION
+--------------------------------*/
+.ofah-advocacy h2 {
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.ofah-advocacy h3 {
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.ofah-advocacy p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* ------------------------------
+   CONSERVATION SECTION
+--------------------------------*/
+.ofah-conservation h2 {
+    margin-bottom: 12px;
+}
+
+.ofah-conservation h3 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.ofah-conservation p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* ------------------------------
+   QUICK LINKS SECTION
+--------------------------------*/
+.quick-links-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #062a55;
+}
+
+.ofha-links-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.ofha-links-row img {
+    width: 165px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.ofha-links-row img:hover {
+    transform: scale(1.05);
+}
+
 /* =========================================================
    WINDSOR SPORTSMEN'S CLUB — FOOTER
 ========================================================= */
