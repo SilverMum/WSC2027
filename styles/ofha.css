@@ -1267,6 +1267,465 @@
     transform: scale(1.05);
 }
 
+/* ------------------------------
+   NAV FIX — keeps nav ABOVE content
+------------------------------ */
+
+/* Keep nav fixed AND above all content */
+.main-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+header {
+    position: relative;
+    z-index: 9998; /* safe, but not overriding nav */
+}
+
+/* =========================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 992px) {
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 16px;
+    }
+
+    .logo img {
+        height: 70px;
+        margin-bottom: 8px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding-right: 0;
+    }
+
+    .hero {
+        margin-top: 130px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .pledge-title-gold,
+    .pledge-title-green {
+        font-size: 1.5rem;
+    }
+
+    .pledge-paragraph-gold,
+    .pledge-paragraph-green {
+        font-size: 1rem;
+    }
+
+    .kitchen-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .kitchen-description {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .ofha-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .range-status-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .activities-text {
+        font-size: 1.1rem;
+    }
+
+    .facebook-button img {
+        width: 60%;
+    }
+
+    .archery-header-img,
+    .ofha-header-img {
+        height: 260px;
+    }
+
+    .archery-image-wrapper img {
+        height: 220px;
+    }
+
+    .ofha-intro-left {
+        font-size: 1.6rem;
+    }
+
+    .ofha-membership p,
+    .ofha-reasons ol,
+    .ofah-advocacy p,
+    .ofah-conservation p {
+        font-size: 1.3rem;
+    }
+}
+
+/* =========================================================
+   UNIVERSAL MOBILE LAYOUT — STACK EVERYTHING + TIGHT PADDING
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Tight global padding */
+    body, main, .content-section, .contact-section,
+    .range-info-section, .range-rules-section,
+    .range-notice-section, .range-trapper-section,
+    .range-simple-section, .activities-section,
+    .private-events-section, .ofha-membership,
+    .ofha-reasons, .ofah-advocacy, .ofah-conservation,
+    .airrifle-wrapper, .tv-wrapper {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Navigation */
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 16px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding-right: 0;
+    }
+
+    /* Hero */
+    .hero {
+        margin-top: 130px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        white-space: normal;
+    }
+
+    /* Kitchen section */
+    .kitchen-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .kitchen-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    /* Max Band */
+    .maxband-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .maxband-left img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Activities divider images */
+    .activities-image {
+        padding: 0 16px;
+        margin: 30px 0;
+    }
+
+    /* Private Events */
+    .private-events-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* OFHA intro */
+    .ofha-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Range status grid */
+    .range-status-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Archery images */
+    .archery-image-wrapper img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 20px 10px;
+    }
+}
+
+/* Even tighter adjustments for very small screens */
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .activities-text,
+    .range-notice-body,
+    .range-info-text,
+    .range-rules-text,
+    .archery-info-text,
+    .tv-info-line {
+        font-size: 1.05rem;
+    }
+
+    .facebook-button img {
+        width: 70%;
+    }
+
+}
+
+/* =========================================================
+   MOBILE NAV — WRAPPED + TAP-TO-OPEN DROPDOWNS
+   ========================================================= */
+@media (max-width: 900px) {
+
+    /* Mobile nav container */
+    .main-nav {
+        justify-content: center !important;
+        padding: 12px 0 !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        order: 1;
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo img {
+        height: 90px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .nav-spacer {
+        display: none;
+    }
+
+    /* WRAPPED NAV — 3 OVER 3 */
+    .nav-links {
+        order: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 6px;
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .nav-links li {
+        flex: 0 0 calc(33.33% - 6px);
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 4px 2px;
+        white-space: nowrap;
+    }
+
+    /* ⭐ HOMEPAGE-ONLY TIGHTER NAV SPACING */
+    .home .nav-links {
+        gap: 4px 6px !important;
+    }
+
+    .home .nav-links li {
+        flex: 0 0 calc(33.33% - 4px) !important;
+    }
+
+    /* ⭐ HOMEPAGE NAV LINK FONT SIZE — MATCH OTHER PAGES */
+    .home .nav-links a {
+        font-size: 1.3rem !important;
+        padding: 2px 0 !important;
+        font-weight: bold;
+    }
+
+    /* ⭐ HOMEPAGE — AUTO-WIDTH NAV */
+    .home .main-nav {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+    }
+
+    /* ⭐ MOBILE DROPDOWN — OVERLAY */
+    .dropdown-menu,
+    .submenu-right {
+        display: none;
+        position: absolute !important;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90% !important;
+        margin-top: 6px;
+        padding: 10px 0;
+        border: 1px solid #ddd;
+        background: white;
+        z-index: 9999;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* ⭐ FIX #1 — MATCH DROPDOWN TEXT SIZE ON HOMEPAGE */
+    .home .dropdown-menu a,
+    .home .submenu-right a {
+        font-size: 1.3rem !important;
+    }
+
+    /* ⭐ FIX #2 — MATCH DROPDOWN WIDTH TO KITCHEN */
+    .home .dropdown-menu,
+    .home .submenu-right {
+        max-width: 360px !important;
+    }
+
+    /* ⭐ MOBILE — MEMBERS SUBMENU OPENS TO THE RIGHT */
+    .dropdown-sub {
+        position: relative;
+    }
+
+    /* ⭐ ARROW FIX — KEEP BESIDE MEMBERS */
+    .submenu-toggle {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin-left: 6px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* ⭐ TOP‑ALIGNED RIGHT‑OPENING SUBMENU (MOBILE) */
+    .dropdown-sub .submenu-right {
+        top: 0 !important;
+        left: 100% !important;
+        transform: none !important;
+        width: auto !important;
+        max-width: 240px !important;
+    }
+
+    .dropdown-sub.open > .submenu-right {
+        display: block;
+    }
+
+    .dropdown.open > .dropdown-menu {
+        display: block;
+    }
+
+    /* ⭐ HOMEPAGE FIX — KEEP MEMBERS + ARROW ON SAME LINE (MOBILE) */
+    .home .dropdown-sub {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+    }
+
+    .home .submenu-link {
+        display: inline-block !important;
+    }
+
+    .home .submenu-toggle {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin-left: 6px !important;
+    }
+}
+
+/* =========================================================
+   DESKTOP DROPDOWNS — DEFAULT HOVER BEHAVIOR
+   ========================================================= */
+@media (min-width: 901px) {
+
+    .dropdown-menu,
+    .submenu-right {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #ddd;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    /* ⭐ DESKTOP — MEMBERS SUBMENU OPENS TO THE RIGHT */
+    .dropdown-sub {
+        position: relative;
+    }
+
+    /* ⭐ ARROW FIX — KEEP BESIDE MEMBERS */
+    .submenu-toggle {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin-left: 6px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* ⭐ TOP‑ALIGNED RIGHT‑OPENING SUBMENU (DESKTOP) */
+    .dropdown-sub .submenu-right {
+        top: 0;
+        left: 100%;
+        transform: none;
+        min-width: 180px;
+    }
+
+    /* ⭐ HOMEPAGE DESKTOP FIX — KEEP MEMBERS + ARROW ON ONE LINE */
+    .home .dropdown-sub {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+    }
+
+    .home .submenu-link {
+        display: inline-block !important;
+    }
+
+    .home .submenu-toggle {
+        display: inline-block !important;
+        margin-left: 6px !important;
+        vertical-align: middle !important;
+    }
+
+    .dropdown:hover > .dropdown-menu,
+    .dropdown-sub:hover > .submenu-right {
+        display: block;
+    }
+}
 /* =========================================================
    WINDSOR SPORTSMEN'S CLUB — FOOTER
 ========================================================= */
