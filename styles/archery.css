@@ -1,9 +1,9 @@
 /* =========================================================
-   ARCHERY PAGE — CLEAN, STANDALONE CSS  (v8 — rebuilt)
+   ARCHERY PAGE — CLEAN, STANDALONE CSS
    ========================================================= */
 
 /* =========================================================
-   NAVIGATION  (UNCHANGED)
+   NAVIGATION
 ========================================================= */
 .main-nav {
     position: fixed;
@@ -149,449 +149,239 @@
     color: #fff !important;
 }
 
-/* ==========================
-   ARCHERY PAGE — NEW LOOK
-========================== */
-
-:root {
-    --green:       #1d4128;   /* headings / icons */
-    --green-btn:   #23422b;   /* buttons */
-    --green-hover: #2f5839;
-    --bg:          #f3f4f1;   /* page background */
-    --card:        #ffffff;
-    --text:        #3a3f3b;
-    --muted:       #5d665f;
-    --shadow:      0 12px 30px rgba(0,0,0,.08);
-    --radius:      20px;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.archery-page {
-    margin: 0;
-    padding-top: 130px;
-    background-color: var(--bg);
-    background-image: __TREES__;
-    background-repeat: repeat-x;
-    background-position: bottom center;
-    background-attachment: fixed;
+/* ------------------------------
+   PAGE BACKGROUND
+--------------------------------*/
+body.archery-page {
+    background: url("images/tree line bg.png") bottom center / cover no-repeat fixed;
+    color: #222;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
+    line-height: 1.6;
 }
 
-.archery-page h1,
-.archery-page h2,
-.archery-page h3 {
-    font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
-}
-
-/* HERO */
-
-.archery-hero {
-    min-height: 520px;
-    background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url("images/Archery-Header.png");
-    background-size: cover;
-    background-position: center 30%;
-    display: flex;
-    align-items: center;
-}
-
-.hero-overlay {
+/* ------------------------------
+   HEADER IMAGE
+--------------------------------*/
+.archery-header-img {
     width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 120px; /* space under fixed nav */
 }
 
-.hero-content {
+/* ------------------------------
+   CARD WRAPPERS
+--------------------------------*/
+.outer-card {
     max-width: 900px;
-    margin: auto;
-    padding: 0 40px;
-    color: #fff;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
     text-align: center;
 }
 
-.hero-kicker {
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    font-size: .95rem;
-    margin: 0 0 15px;
+.inner-card {
+    background: rgba(220, 230, 239, 0.55);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 14px rgba(47, 79, 62, 0.35),
+        0 8px 28px rgba(47, 79, 62, 0.25);
 }
 
-.hero-content h1 {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 600;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
-    margin: 0 0 15px;
+/* Green variant used on Archery */
+.green-card {
+    background: rgba(200, 230, 200, 0.55);
 }
 
-.hero-subtitle {
-    font-size: 1.15rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin: 0 0 35px;
-}
-
-.hero-button {
-    display: inline-block;
-    padding: 13px 36px;
-    border: 2px solid rgba(255,255,255,.75);
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: .9rem;
+/* ------------------------------
+   TITLES + TEXT
+--------------------------------*/
+.archery-title {
+    font-size: 2rem;
     font-weight: 700;
-    transition: .3s ease;
+    margin-bottom: 10px;
 }
 
-.hero-button:hover {
-    background: #fff;
-    color: var(--green);
-    border-color: #fff;
+.archery-season,
+.archery-subtitle,
+.archery-times,
+.archery-simple,
+.archery-pricing,
+.archery-weather,
+.archery-private {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 12px 0;
 }
 
-/* ICON CIRCLES (shared) */
+/* ------------------------------
+   ARCHERY TIMES — FIXED FOR MOBILE
+--------------------------------*/
+@media (max-width: 900px) {
+    .archery-times {
+        font-size: 1.3rem !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+    }
 
-.card-icon {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: var(--green);
-    color: #fff;
+    /* Remove any old cached pseudo-element text */
+    .archery-times::before {
+        content: none !important;
+    }
+}
+
+/* ------------------------------
+   IMAGE STRIP
+--------------------------------*/
+.archery-image-wrapper {
     display: flex;
-    align-items: center;
+    gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.archery-image-wrapper img {
+    width: 30%;
+    min-width: 200px;
+    border-radius: 10px;
+}
+
+/* ------------------------------
+   CALENDAR
+--------------------------------*/
+.archery-calendar-title {
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
-.card-icon svg {
-    width: 26px;
-    height: 26px;
-}
-
-/* INFO CARDS */
-
-.archery-highlights {
-    max-width: 1300px;
-    margin: 70px auto;
-    padding: 0 20px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.info-card {
-    background: var(--card);
-    padding: 35px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.info-card h3 {
-    margin: 0 0 18px;
-    color: var(--green);
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.info-card p {
-    line-height: 1.7;
-    margin: 0 0 10px;
-}
-
-.info-card p strong {
-    font-family: 'Oswald', Arial, sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: .5px;
-}
-
-.info-card hr {
-    margin: 18px 0;
-    border: none;
-    border-top: 1px solid #e5e7e3;
-}
-
-/* GALLERY */
-
-.archery-gallery {
-    max-width: 1300px;
-    margin: 0 auto 70px;
-    padding: 0 20px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.archery-gallery img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-    transition: .3s ease;
-}
-
-.archery-gallery img:hover {
-    transform: scale(1.02);
-}
-
-/* CALENDAR + CANCELLATIONS */
-
-.archery-main-content {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 20px;
-
-    display: grid;
-    grid-template-columns: 1.7fr 1fr;
-    gap: 25px;
-}
-
-.calendar-card,
-.cancel-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 35px;
-    box-shadow: var(--shadow);
-}
-
-.calendar-card {
-    scroll-margin-top: 150px;
-}
-
-.calendar-card h2,
-.cancel-card h2 {
-    color: var(--green);
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 20px;
+.calendar-container {
+    display: flex;
+    justify-content: center;
 }
 
 .calendar-wrapper iframe {
     width: 100%;
-    height: 480px;
+    max-width: 900px;
+    height: 600px;
+    border-radius: 10px;
     border: none;
+}
+
+/* Mobile calendar height */
+@media (max-width: 900px) {
+    .calendar-wrapper iframe {
+        height: 450px;
+    }
+}
+
+/* FIX — Force mobile to use the HTML text for archery times */
+@media (max-width: 900px) {
+    .archery-times {
+        font-size: 1.3rem !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+    }
+
+    /* Remove old cached pseudo-element text */
+    .archery-times::before {
+        content: none !important;
+    }
+}
+/* ------------------------------
+   CONTACT FORM
+--------------------------------*/
+.archery-cancel {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 12px;
-    background: #fafbfa;
+    backdrop-filter: blur(4px);
 }
 
-.cancel-alert {
-    background: #eef0ec;
-    color: var(--green);
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-weight: 700;
+.archery-cancel h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-/* CONTACT */
-
-.contact-archery {
-    max-width: 1300px;
-    margin: 70px auto 90px;
-    padding: 45px;
-
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-
-    display: grid;
-    grid-template-columns: 1fr 1.35fr;
-    gap: 50px;
+.archery-cancel-intro {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.contact-left h2 {
-    color: var(--green);
-    font-size: 1.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 20px;
-}
-
-.contact-left p {
-    line-height: 1.8;
-    margin: 0 0 15px;
-    color: var(--muted);
-}
-
-/* FORM */
-
-.archery-contact-form {
+.archery-cancel-form {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.form-field label {
-    display: block;
-    font-size: .82rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    color: #444;
-    margin-bottom: 6px;
-}
-
-.archery-contact-form input[type="text"],
-.archery-contact-form input[type="email"],
-.archery-contact-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #fcfcfc;
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    transition: border-color .2s ease;
-}
-
-.archery-contact-form input:focus,
-.archery-contact-form textarea:focus {
-    outline: none;
-    border-color: var(--green);
-    background: #fff;
-}
-
-.archery-contact-form textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.form-row-bottom {
-    grid-template-columns: 1fr 2fr;
-    align-items: end;
-}
-
-.consent {
+.field-row {
     display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-row label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.field-row input,
+.field-row textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+}
+
+.field-inline {
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
-    align-items: flex-start;
-    font-size: .85rem;
-    line-height: 1.5;
-    color: var(--muted);
-    padding-bottom: 12px;
 }
 
-.consent input {
-    margin-top: 3px;
-    accent-color: var(--green);
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-}
-
-.archery-contact-form button {
+.field-checkbox {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
+}
 
-    background: var(--green-btn);
-    color: #fff;
+.ac-submit {
+    padding: 12px;
+    background: #1a1a1a;
+    color: white;
     border: none;
-    padding: 17px;
-    border-radius: 12px;
-
-    font-family: 'Oswald', Arial, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
+    border-radius: 10px;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: .3s ease;
+    transition: background 0.2s ease;
 }
 
-.archery-contact-form button:hover {
-    background: var(--green-hover);
-}
-
-/* =========================================================
-   ARCHERY — MOBILE
-   ========================================================= */
-@media (max-width: 900px) {
-
-    .archery-page {
-        padding-top: 110px;
-        background-attachment: scroll;
-    }
-
-    .archery-hero {
-        min-height: 420px;
-    }
-
-    .hero-content {
-        padding: 20px;
-    }
-
-    .archery-highlights {
-        grid-template-columns: 1fr;
-        margin: 50px auto;
-    }
-
-    .archery-gallery {
-        grid-template-columns: 1fr;
-        margin-bottom: 50px;
-    }
-
-    .archery-gallery img {
-        height: 250px;
-    }
-
-    .archery-main-content {
-        grid-template-columns: 1fr;
-    }
-
-    .calendar-wrapper iframe {
-        height: 400px;
-    }
-
-    .contact-archery {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 28px;
-        margin: 50px auto 70px;
-    }
-
-    .form-row,
-    .form-row-bottom {
-        grid-template-columns: 1fr;
-    }
-
-    .consent {
-        padding-bottom: 0;
-    }
+.ac-submit:hover {
+    background: #000;
 }
 
 /* =========================================================
    MOBILE NAVIGATION — FULL CLEANED + CONSOLIDATED VERSION
    ========================================================= */
 
+/* =========================================================
+   1. MOBILE NAV — ALIGNMENT + TOGGLE BEHAVIOR
+   ========================================================= */
 @media (max-width: 900px) {
 
+    /* Disable hover behavior on mobile */
     .dropdown:hover > .dropdown-menu {
         display: none !important;
     }
 
+    /* Normalize dropdown anchor width */
     .nav-links li.dropdown {
         width: auto !important;
     }
@@ -600,16 +390,21 @@ html {
         display: inline-block !important;
     }
 
+    /* Left-align dropdowns */
     .nav-links li.dropdown > .dropdown-menu {
         left: 0 !important;
         transform: translateX(0) !important;
     }
 
+    /* JS-controlled open state */
     .nav-links li.dropdown > .dropdown-menu.open {
         display: block !important;
     }
 }
 
+/* =========================================================
+   2. MOBILE LABEL FIX — TRAP & SKEET
+   ========================================================= */
 @media (max-width: 768px) {
 
     .nav-links > li > a[href="trap-skeet.html"] {
@@ -624,8 +419,12 @@ html {
     }
 }
 
+/* =========================================================
+   3. MOBILE NAV — WRAPPED LAYOUT + TAP-TO-OPEN DROPDOWNS
+   ========================================================= */
 @media (max-width: 900px) {
 
+    /* NAV CONTAINER */
     .main-nav {
         justify-content: center !important;
         padding: 12px 0 !important;
@@ -650,6 +449,7 @@ html {
         display: none;
     }
 
+    /* WRAPPED NAV — 3 OVER 3 */
     .nav-links {
         order: 2;
         display: flex;
@@ -672,6 +472,7 @@ html {
         white-space: nowrap;
     }
 
+    /* HOMEPAGE-SPECIFIC SPACING */
     .home .nav-links {
         gap: 4px 6px !important;
     }
@@ -694,6 +495,7 @@ html {
         margin: 0 auto !important;
     }
 
+    /* MOBILE DROPDOWN OVERLAY */
     .dropdown-menu,
     .submenu-right {
         display: none;
@@ -709,16 +511,19 @@ html {
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
+    /* HOMEPAGE DROPDOWN TEXT SIZE */
     .home .dropdown-menu a,
     .home .submenu-right a {
         font-size: 1.3rem !important;
     }
 
+    /* HOMEPAGE DROPDOWN WIDTH */
     .home .dropdown-menu,
     .home .submenu-right {
         max-width: 360px !important;
     }
 
+    /* MEMBERS SUBMENU — MOBILE RIGHT OPEN */
     .dropdown-sub {
         position: relative;
     }
@@ -747,6 +552,7 @@ html {
         display: block;
     }
 
+    /* HOMEPAGE — KEEP MEMBERS + ARROW INLINE */
     .home .dropdown-sub {
         display: flex !important;
         align-items: center !important;
@@ -765,8 +571,13 @@ html {
     }
 }
 
+/* =========================================================
+   MOBILE NAV — EXTRA RULES NEEDED FOR DROPDOWN VISIBILITY
+   (These were NOT in the unified block yet)
+   ========================================================= */
 @media (max-width: 900px) {
 
+    /* Ensure nav stays above all dropdowns + content */
     .main-nav {
         position: fixed !important;
         top: 0;
@@ -780,6 +591,7 @@ html {
         z-index: 9998;
     }
 
+    /* WRAPPED NAV — 3 OVER 3 (structure only, no conflicts) */
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -800,9 +612,8 @@ html {
         white-space: nowrap;
     }
 }
-
 /* ------------------------------
-   FOOTER  (UNCHANGED)
+   FOOTER
 --------------------------------*/
 .site-footer {
     background-color: #1a1a1a;
