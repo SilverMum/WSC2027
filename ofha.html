@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <title>Windsor Sportsmen’s Club – OFHA</title>
+
+    <title>Windsor Sportsmen’s Club – OFAH</title>
+
     <link rel="stylesheet" href="styles/nav.css">
-    <link rel="stylesheet" href="styles/ofha.css?v=1">
+    <link rel="stylesheet" href="styles/ofha.css?v=2">
     <link rel="stylesheet" href="styles/globalStyles.css?v=1">
     <link rel="stylesheet" href="styles/footer.css">
-    
 </head>
 
 <body class="ofha-bg">
 
 <!-- =========================================================
-     NAVIGATION (DIRECTLY INCLUDED)
+     NAVIGATION — PRESERVED
 ========================================================= -->
+
 <header>
     <nav class="main-nav">
 
-        <!-- LOGO -->
         <div class="logo">
             <img src="images/WINDSOR SPORTSMANS REMAKE.png"
                  alt="Windsor Sportsmen’s Club Logo">
@@ -27,7 +29,6 @@
 
         <div class="nav-spacer"></div>
 
-        <!-- NAV LINKS -->
         <ul class="nav-links">
 
             <li><a href="index.html">Home</a></li>
@@ -35,7 +36,6 @@
             <li><a href="private-events.html">Rentals</a></li>
             <li><a href="kitchen.html">Kitchen</a></li>
 
-            <!-- ACTIVITIES DROPDOWN -->
             <li class="dropdown">
                 <a href="#">Activities ▾</a>
 
@@ -44,7 +44,7 @@
                     <li><a href="trap-skeet.html">Trap & Skeet</a></li>
                     <li><a href="archery.html">Archery</a></li>
                     <li><a href="air-rifle.html">Air Rifle</a></li>
-                    
+
                     <li>
                         <a href="KnifeAxe.html" class="knifeaxe-link">
                             Knife & Axe<br>
@@ -55,14 +55,13 @@
                 </ul>
             </li>
 
-             <!-- MORE DROPDOWN -->
             <li class="dropdown">
                 <a href="#">More ▾</a>
 
                 <ul class="dropdown-menu">
 
                     <li><a href="ofha.html">OFHA</a></li>
-                    <li><a href="cheese-cracker.html">Cheese & Cracker</a></li>                
+                    <li><a href="cheese-cracker.html">Cheese & Cracker</a></li>
                     <li><a href="members.html">Members</a></li>
 
                 </ul>
@@ -72,26 +71,29 @@
     </nav>
 </header>
 
-<!-- ⭐ Spacer under fixed nav (kept by your request) -->
+
+<!-- =========================================================
+     SPACING UNDER EXISTING FIXED NAVIGATION
+========================================================= -->
+
 <section style="height: 160px;"></section>
 
-<!-- ==================================================
-     OFAH PAGE
-================================================== -->
+
+<!-- =========================================================
+     OFAH HERO
+========================================================= -->
 
 <main id="ofha-page">
 
-    <!-- HERO SECTION -->
     <section class="ofha-hero">
 
         <div class="ofha-hero-overlay"></div>
 
         <div class="ofha-hero-content">
 
-            <!-- Replace with your existing OFAH logo if available -->
             <img
-                src="images/ofah-logo.png"
-                alt="Ontario Federation of Anglers and Hunters"
+                src="images/ofhalogo.png"
+                alt="OFAH Logo"
                 class="ofha-hero-logo"
             >
 
@@ -106,7 +108,7 @@
 
             <p class="ofha-hero-subtitle">
                 Supporting responsible outdoor recreation
-                and conservation across Ontario.
+                and conservation across Ontario
             </p>
 
             <a
@@ -124,13 +126,16 @@
     </section>
 
 
-    <!-- MAIN PAGE CONTENT -->
+    <!-- =====================================================
+         MAIN CONTENT CONTAINER
+    ====================================================== -->
+
     <div class="ofha-container">
 
 
-        <!-- ==========================================
-             MEETING ANNOUNCEMENT
-        =========================================== -->
+        <!-- =================================================
+             MEETING INFORMATION
+        ================================================== -->
 
         <section class="ofha-meeting-card">
 
@@ -141,35 +146,42 @@
             <div class="ofha-meeting-content">
 
                 <p class="ofha-small-label">
-                    MONTHLY MEETING
+                    MONTHLY MEETINGS
                 </p>
 
-                <h2>Next OFAH Meeting</h2>
+                <h2>OFAH Meetings</h2>
 
                 <p class="ofha-meeting-time">
-                    First Monday of the Month &bull; 7:00 PM
+                    OFAH meetings are 1st Monday of the month at 7pm.
                 </p>
 
-                <p class="ofha-meeting-note">
-                    OFAH meetings are held on the first Monday
-                    of each month at 7:00 PM.
-                    No meetings in July and August.
+                <p class="ofha-meeting-date">
+                    Next Meeting December 7th 7PM.
                 </p>
 
             </div>
 
-            <div class="ofha-meeting-decoration" aria-hidden="true">
-                <span>OUTDOORS</span>
-                <span>CONSERVATION</span>
-                <span>COMMUNITY</span>
-            </div>
+            <a
+                href="https://www.ofah.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ofha-meeting-logo-link"
+            >
+                <img
+                    src="images/ofhalogo.png"
+                    alt="OFAH Logo"
+                    class="ofha-meeting-logo"
+                >
+
+                <span>OFAH Website ↗</span>
+            </a>
 
         </section>
 
 
-        <!-- ==========================================
-             MEMBERSHIP INTRODUCTION
-        =========================================== -->
+        <!-- =================================================
+             MEMBERSHIP
+        ================================================== -->
 
         <section class="ofha-section">
 
@@ -202,28 +214,37 @@
                         A SPECIAL OFFER FOR CLUB MEMBERS
                     </p>
 
-                    <h3>
-                        OFAH Membership
-                        <span class="ofha-price">$25 / year</span>
-                    </h3>
-
-                    <p class="ofha-standard-price">
-                        Standard OFAH membership:
-                        <strong>$55 / year</strong>
-                    </p>
+                    <h3>Join OFAH Now!</h3>
 
                     <p>
-                        Our OFAH group at Windsor Sportsmen's Club
-                        pays a portion of your OFAH membership,
-                        allowing eligible club members to join
-                        for just $25 per year.
+                        Our OFAH group at Windsor Sports Men’s Club pays for a portion of your OFAH membership.
                     </p>
 
                     <p class="ofha-membership-requirement">
-                        <strong>Important:</strong>
-                        You must be a Windsor Sportsmen's Club
-                        member to take advantage of this offer.
+                        (Must be a member).
                     </p>
+
+                    <div class="ofha-price-row">
+
+                        <div class="ofha-price-box">
+
+                            <span>Join OFAH for</span>
+
+                            <strong>$25.00 / year</strong>
+
+                        </div>
+
+                        <div class="ofha-price-divider"></div>
+
+                        <div class="ofha-price-box">
+
+                            <span>Standard OFAH membership is</span>
+
+                            <strong>$55.00 / year.</strong>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -250,9 +271,9 @@
         </section>
 
 
-        <!-- ==========================================
-             EIGHT MEMBERSHIP BENEFITS
-        =========================================== -->
+        <!-- =================================================
+             TOP EIGHT REASONS TO JOIN OFAH
+        ================================================== -->
 
         <section class="ofha-section ofha-benefits-section">
 
@@ -262,10 +283,10 @@
 
                 <div>
                     <p class="ofha-small-label">
-                        MORE THAN MEMBERSHIP
+                        MEMBER BENEFITS
                     </p>
 
-                    <h2>Why Become an OFAH Member?</h2>
+                    <h2>Top Eight reasons to join OFAH.</h2>
                 </div>
 
                 <span class="ofha-heading-line"></span>
@@ -275,149 +296,121 @@
 
             <div class="ofha-benefits-grid">
 
-                <!-- BENEFIT 1 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">01</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ♧
                     </div>
 
-                    <h3>Club Liability Insurance</h3>
-
                     <p>
-                        Exclusive no-cost OFAH member liability
-                        insurance program.
+                        Exclusive no cost OFAH members liability insurance program (5 million dollars).
                     </p>
-
-                    <span class="ofha-benefit-detail">
-                        $5 million
-                    </span>
 
                 </article>
 
 
-                <!-- BENEFIT 2 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">02</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ◉
                     </div>
 
-                    <h3>Individual Public Liability</h3>
-
                     <p>
-                        OFAH individual members' public liability
-                        insurance.
+                        OFAH individual members public liability insurance (5 million dollars).
                     </p>
-
-                    <span class="ofha-benefit-detail">
-                        $5 million
-                    </span>
 
                 </article>
 
 
-                <!-- BENEFIT 3 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">03</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ♙
                     </div>
 
-                    <h3>Directors &amp; Officers</h3>
-
                     <p>
-                        Directors' and officers' liability
-                        insurance.
+                        Directors’ and officers’ liability insurance.
                     </p>
 
                 </article>
 
 
-                <!-- BENEFIT 4 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">04</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ◎
                     </div>
 
-                    <h3>Range Liability Insurance</h3>
-
                     <p>
-                        Range liability insurance for eligible
-                        activities.
+                        Range liability insurance (conditions apply).
                     </p>
-
-                    <span class="ofha-benefit-detail">
-                        Conditions apply
-                    </span>
 
                 </article>
 
 
-                <!-- BENEFIT 5 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">05</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ⚑
                     </div>
 
-                    <h3>Outdoor Advocacy</h3>
-
                     <p>
-                        Advocacy and protection for your
-                        outdoor interests.
+                        Advocacy and protection for your outdoor interest.
                     </p>
 
                 </article>
 
 
-                <!-- BENEFIT 6 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">06</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ♧
                     </div>
 
-                    <h3>Outdoor Information</h3>
-
                     <p>
-                        Fish and wildlife, land use, and
-                        firearms information.
+                        Fish &amp; Wildlife, land use and firearms information.
                     </p>
 
                 </article>
 
 
-                <!-- BENEFIT 7 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">07</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         %
                     </div>
 
-                    <h3>Exclusive Member Discounts</h3>
-
                     <p>
-                        Access to exclusive OFAH member
-                        discounts.
+                        Exclusive OFAH members discounts.
                     </p>
 
                 </article>
 
 
-                <!-- BENEFIT 8 -->
                 <article class="ofha-benefit-card">
+
+                    <span class="ofha-benefit-number">08</span>
 
                     <div class="ofha-benefit-icon" aria-hidden="true">
                         ▤
                     </div>
 
-                    <h3>Outdoors Magazine</h3>
-
                     <p>
-                        Subscription to Ontario's
-                        outdoor magazine.
+                        Subscription to Outdoors magazine.
                     </p>
 
                 </article>
@@ -427,9 +420,9 @@
         </section>
 
 
-        <!-- ==========================================
+        <!-- =================================================
              FISHING, HUNTING & CONSERVATION
-        =========================================== -->
+        ================================================== -->
 
         <section class="ofha-section ofha-advocacy-section">
 
@@ -450,254 +443,178 @@
             </div>
 
 
-            <p class="ofha-section-intro">
-                The Ontario Federation of Anglers and Hunters
-                advocates for responsible outdoor recreation,
-                sustainable wildlife management, and the
-                protection of Ontario's natural resources.
-            </p>
+            <!-- FISHING ADVOCACY -->
+
+            <article class="ofha-advocacy-card">
+
+                <div class="ofha-advocacy-image">
+
+                    <img
+                        src="images/ofah-fishing.jpg"
+                        alt="Fishing on an Ontario lake"
+                        loading="lazy"
+                    >
+
+                    <span class="ofha-image-label">
+                        FISHING
+                    </span>
+
+                </div>
+
+                <div class="ofha-advocacy-content">
+
+                    <p class="ofha-small-label">
+                        HEALTHY WATERS
+                    </p>
+
+                    <h2>Fishing Advocacy</h2>
+
+                    <h3>
+                        Championing Sustainable Fishing in Ontario
+                    </h3>
+
+                    <p>
+                        Dive into our commitment to advocating for sustainable fishing opportunities across Ontario.
+                        Our efforts are aimed at ensuring healthy waters and abundant fisheries for future generations.
+                        Join us in influencing policies that benefit fishing and protect our aquatic environments.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-            <div class="ofha-advocacy-grid">
+            <!-- HUNTING ADVOCACY -->
+
+            <article class="ofha-advocacy-card">
+
+                <div class="ofha-advocacy-image">
+
+                    <img
+                        src="images/ofah-hunting.jpg"
+                        alt="Ontario woodland and wildlife"
+                        loading="lazy"
+                    >
+
+                    <span class="ofha-image-label">
+                        HUNTING
+                    </span>
+
+                </div>
+
+                <div class="ofha-advocacy-content">
+
+                    <p class="ofha-small-label">
+                        RESPONSIBLE HUNTING
+                    </p>
+
+                    <h2>Hunting Advocacy</h2>
+
+                    <h3>
+                        Championing Sustainable Hunting in Ontario
+                    </h3>
+
+                    <p>
+                        Welcome to the world of hunting with OFAH, where we aim to connect people to the outdoors
+                        through responsible hunting. Whether you’re new or seasoned, we’re dedicated to supporting you
+                        with safety tips, regulatory guidance and access to resources.
+                    </p>
+
+                    <p>
+                        Join us to enhance your skills and advocate alongside us for sustainable hunting opportunities
+                        and wildlife conservation.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-                <!-- FISHING ADVOCACY -->
-                <article class="ofha-advocacy-card">
+            <!-- CONSERVATION ADVOCACY -->
 
-                    <div class="ofha-advocacy-image">
+            <article class="ofha-advocacy-card ofha-conservation-card">
 
-                        <!-- Replace with your fishing image -->
-                        <img
-                            src="images/ofah-fishing.jpg"
-                            alt="Fishing on an Ontario lake"
-                            loading="lazy"
-                        >
+                <div class="ofha-advocacy-image">
 
-                        <span class="ofha-image-label">
-                            FISHING
-                        </span>
+                    <img
+                        src="images/ofah-conservation.jpg"
+                        alt="Ontario wetlands and natural habitat"
+                        loading="lazy"
+                    >
 
-                    </div>
+                    <span class="ofha-image-label">
+                        CONSERVATION
+                    </span>
 
-                    <div class="ofha-advocacy-content">
+                </div>
 
-                        <p class="ofha-small-label">
-                            HEALTHY WATERS. STRONGER FISHERIES.
-                        </p>
+                <div class="ofha-advocacy-content">
 
-                        <h3>Fishing Advocacy</h3>
+                    <p class="ofha-small-label">
+                        PROTECTING OUR NATURAL HERITAGE
+                    </p>
 
-                        <h4>
-                            Championing Sustainable Fishing in Ontario
-                        </h4>
+                    <h2>
+                        Playing a pivotal role in Conservation advocacy across Ontario
+                    </h2>
 
-                        <p>
-                            Dive into our commitment to advocating
-                            for sustainable fishing opportunities
-                            across Ontario. Our efforts are aimed
-                            at ensuring healthy waters and abundant
-                            fisheries for future generations.
-                        </p>
-
-                        <p>
-                            Join us in influencing policies that
-                            benefit fishing and protect our aquatic
-                            environments.
-                        </p>
-
-                        <a
-                            href="https://www.ofah.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="ofha-text-link"
-                        >
-                            EXPLORE OFAH
-                            <span aria-hidden="true">↗</span>
-                        </a>
-
-                    </div>
-
-                </article>
+                    <p>
+                        The OFAH plays a pivotal role in conservation advocacy across Ontario, spearheading initiatives
+                        that positively impact the province’s diverse ecosystems, fish and wildlife populations and the
+                        habitats that support them.
+                    </p>
 
 
-                <!-- HUNTING ADVOCACY -->
-                <article class="ofha-advocacy-card">
+                    <h3>Conservation Projects</h3>
 
-                    <div class="ofha-advocacy-image">
+                    <p>
+                        The OFAH engages in a wide range of conservation projects, from habitat restoration and
+                        enhancement to scientific research and advocacy for policy reforms.
+                    </p>
 
-                        <!-- Replace with your hunting image -->
-                        <img
-                            src="images/ofah-hunting.jpg"
-                            alt="Ontario woodland and wildlife"
-                            loading="lazy"
-                        >
+                    <p>
+                        Examples include OFAH work alongside the Central Lake Ontario Conservation Authority (CLOCA)
+                        to enhance wetland habitats critical for waterfowl and other wildlife species.
+                    </p>
 
-                        <span class="ofha-image-label">
-                            HUNTING
-                        </span>
+                    <p>
+                        Additionally, OFAH works closely with organizations like the Couchiching Conservancy, focusing
+                        on protecting and restoring important habitats.
+                    </p>
 
-                    </div>
-
-                    <div class="ofha-advocacy-content">
-
-                        <p class="ofha-small-label">
-                            RESPONSIBLE HUNTING. WILDLIFE CONSERVATION.
-                        </p>
-
-                        <h3>Hunting Advocacy</h3>
-
-                        <h4>
-                            Championing Sustainable Hunting in Ontario
-                        </h4>
-
-                        <p>
-                            Welcome to the world of hunting with OFAH,
-                            where we aim to connect people to the
-                            outdoors through responsible hunting.
-                        </p>
-
-                        <p>
-                            Whether you're new or seasoned, we're
-                            dedicated to supporting you with safety
-                            tips, regulatory guidance, and access
-                            to resources.
-                        </p>
-
-                        <p>
-                            Join us to enhance your skills and
-                            advocate alongside us for sustainable
-                            hunting opportunities and wildlife
-                            conservation.
-                        </p>
-
-                        <a
-                            href="https://www.ofah.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="ofha-text-link"
-                        >
-                            EXPLORE OFAH
-                            <span aria-hidden="true">↗</span>
-                        </a>
-
-                    </div>
-
-                </article>
+                    <p>
+                        Together, these collaborations shine a bright light on OFAH’s dedication to promoting
+                        responsible stewardship of Ontario’s natural resources.
+                    </p>
 
 
-                <!-- CONSERVATION ADVOCACY -->
-                <article class="ofha-advocacy-card">
+                    <h3>Advocacy</h3>
 
-                    <div class="ofha-advocacy-image">
+                    <p>
+                        The OFAH advocates for evidence-based decision-making that prioritizes conservation, ensuring
+                        the sustainable management of Ontario’s natural resources.
+                    </p>
 
-                        <!-- Replace with your conservation image -->
-                        <img
-                            src="images/ofah-conservation.jpg"
-                            alt="Ontario wetlands and natural habitat"
-                            loading="lazy"
-                        >
+                    <p>
+                        The OFAH’s education and outreach programs empower Ontarians to actively participate in
+                        conservation efforts.
+                    </p>
 
-                        <span class="ofha-image-label">
-                            CONSERVATION
-                        </span>
+                    <p>
+                        By fostering a deeper understanding of environmental issues, OFAH helps cultivate a community
+                        of informed Ontarians committed to conservation.
+                    </p>
 
-                    </div>
+                </div>
 
-                    <div class="ofha-advocacy-content">
-
-                        <p class="ofha-small-label">
-                            PROTECTING OUR NATURAL HERITAGE
-                        </p>
-
-                        <h3>Conservation Advocacy</h3>
-
-                        <h4>
-                            Protecting Ontario's Fish, Wildlife,
-                            and Natural Habitats
-                        </h4>
-
-                        <p>
-                            The OFAH plays a pivotal role in
-                            conservation advocacy across Ontario,
-                            spearheading initiatives that positively
-                            impact the province's diverse ecosystems,
-                            fish and wildlife populations, and the
-                            habitats that support them.
-                        </p>
-
-
-                        <h4 class="ofha-subheading">
-                            Conservation Projects
-                        </h4>
-
-                        <p>
-                            The OFAH engages in habitat restoration
-                            and enhancement, scientific research,
-                            and advocacy for policy reforms.
-                        </p>
-
-                        <p>
-                            Examples include work alongside the
-                            Central Lake Ontario Conservation
-                            Authority (CLOCA) to enhance wetland
-                            habitats critical for waterfowl and
-                            other wildlife species.
-                        </p>
-
-                        <p>
-                            OFAH also works with organizations such
-                            as the Couchiching Conservancy to protect
-                            and restore important habitats.
-                        </p>
-
-                        <p>
-                            Together, these collaborations promote
-                            responsible stewardship of Ontario's
-                            natural resources.
-                        </p>
-
-
-                        <h4 class="ofha-subheading">
-                            Advocacy &amp; Education
-                        </h4>
-
-                        <p>
-                            The OFAH advocates for evidence-based
-                            decision-making that prioritizes
-                            conservation and the sustainable
-                            management of Ontario's natural resources.
-                        </p>
-
-                        <p>
-                            Its education and outreach programs
-                            empower Ontarians to participate in
-                            conservation efforts and help cultivate
-                            a community committed to environmental
-                            stewardship.
-                        </p>
-
-                        <a
-                            href="https://www.ofah.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="ofha-text-link"
-                        >
-                            EXPLORE OFAH
-                            <span aria-hidden="true">↗</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
+            </article>
 
         </section>
 
 
-        <!-- ==========================================
-             FINAL CALL TO ACTION
-        =========================================== -->
+        <!-- =================================================
+             CLOSING SECTION
+        ================================================== -->
 
         <section class="ofha-closing-card">
 
@@ -712,10 +629,8 @@
                 </h2>
 
                 <p>
-                    Learn more about the work of the Ontario
-                    Federation of Anglers and Hunters and
-                    discover how you can support the future
-                    of fishing, hunting, and conservation.
+                    Learn more about the Ontario Federation of Anglers and Hunters
+                    and its work supporting outdoor recreation and conservation.
                 </p>
 
                 <a
@@ -733,42 +648,94 @@
         </section>
 
 
+        <!-- =================================================
+             QUICK LINKS — ORIGINAL DESTINATIONS PRESERVED
+        ================================================== -->
+
+        <section class="ofha-section ofha-quick-links-section">
+
+            <div class="ofha-section-heading">
+
+                <span class="ofha-heading-line"></span>
+
+                <div>
+                    <p class="ofha-small-label">
+                        CONSERVATION RESOURCES
+                    </p>
+
+                    <h2 class="quick-links-title">QUICK LINKS</h2>
+                </div>
+
+                <span class="ofha-heading-line"></span>
+
+            </div>
+
+
+            <div class="ofha-links-row">
+
+                <a
+                    href="https://www.cloca.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="images/centrallink.png"
+                        alt="CLOCA Link"
+                    >
+                </a>
+
+                <a
+                    href="https://couchichingconserv.ca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="images/conservlink.png"
+                        alt="Couchiching Conservancy Link"
+                    >
+                </a>
+
+                <a
+                    href="https://www.invadingspecies.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="images/invadinglink.png"
+                        alt="Invading Species Link"
+                    >
+                </a>
+
+                <a
+                    href="https://www.ontario.ca/page/ministry-natural-resources"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="images/MNR.png"
+                        alt="MNRF Link"
+                    >
+                </a>
+
+            </div>
+
+        </section>
+
     </div>
 
 </main>
 
-<!-- ⭐ QUICK LINKS CARD -->
-<section class="outer-card">
-    <div class="inner-card ofha-card">
-        <h2 class="quick-links-title">QUICK LINKS</h2>
-
-        <section class="ofha-links-row">
-            <a href="https://www.cloca.com/" target="_blank">
-                <img src="images/centrallink.png" alt="CLOCA Link">
-            </a>
-
-            <a href="https://couchichingconserv.ca/" target="_blank">
-                <img src="images/conservlink.png" alt="Couchiching Conservancy Link">
-            </a>
-
-            <a href="https://www.invadingspecies.com/" target="_blank">
-                <img src="images/invadinglink.png" alt="Invading Species Link">
-            </a>
-
-            <a href="https://www.ontario.ca/page/ministry-natural-resources" target="_blank">
-                <img src="images/MNR.png" alt="MNRF Link">
-            </a>
-        </section>
-    </div>
-</section>
 
 <!-- =========================================================
-     FOOTER
+     FOOTER — YOUR EXISTING FOOTER PRESERVED
 ========================================================= -->
-    <footer class="footer">
+
+<footer class="footer">
+
     <div class="footer-container">
 
         <div class="footer-column">
+
             <h3>WINDSOR SPORTSMEN'S CLUB</h3>
 
             <div class="footer-item">
@@ -788,44 +755,64 @@
                 <i class="fas fa-envelope"></i>
                 <span>info@windsorsportsmensclub.org</span>
             </div>
+
         </div>
 
-        <div class="footer-column">
-    <h3>QUICK LINKS</h3>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="private-events.html">Rentals</a></li>
-        <li><a href="kitchen.html">Kitchen</a></li>
-    </ul>
-</div>
-
-<div class="footer-column">
-    <h3>MORE</h3>
-    <ul>
-        <li><a href="ofha.html">OFHA</a></li>
-        <li><a href="cheese-cracker.html">Cheese &amp; Cracker</a></li>
-        <li><a href="members.html">Members</a></li>
-    </ul>
-</div>
 
         <div class="footer-column">
+
+            <h3>QUICK LINKS</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="private-events.html">Rentals</a></li>
+                <li><a href="kitchen.html">Kitchen</a></li>
+            </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>MORE</h3>
+
+            <ul>
+                <li><a href="ofha.html">OFHA</a></li>
+                <li><a href="cheese-cracker.html">Cheese &amp; Cracker</a></li>
+                <li><a href="members.html">Members</a></li>
+            </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
             <h3>HOURS</h3>
+
             <p>Monday - Friday: Coming Soon!</p>
             <p>Saturday: Coming Soon!</p>
             <p>Sunday: Coming Soon!</p>
+
         </div>
 
     </div>
+
 
     <div class="footer-bottom">
         © 2026 Windsor Sportsmen's Club. All Rights Reserved.
     </div>
+
 </footer>
-    
+
+
 <div id="footer-placeholder"></div>
 
-<!-- ⭐ JS MOVED HERE SO NAV WORKS PROPERLY -->
+
+<!-- =========================================================
+     EXISTING NAVIGATION JAVASCRIPT — PRESERVED
+========================================================= -->
+
 <script>
 document.querySelectorAll('.dropdown > a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -845,7 +832,8 @@ document.querySelectorAll('.dropdown-sub > a').forEach(link => {
     });
 });
 </script>
-    
+
 <script src="scripts.js"></script>
+
 </body>
 </html>
