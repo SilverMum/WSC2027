@@ -1523,7 +1523,60 @@ header {
         display: block;
     }
 
+/* ==================================================
+   OFAH QUICK LINKS — HORIZONTAL LAYOUT
+================================================== */
 
+#ofha-page .ofha-links-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: 22px;
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+#ofha-page .ofha-links-row a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    width: 100%;
+}
+
+#ofha-page .ofha-links-row img {
+    display: block;
+
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #ofha-page .ofha-links-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #ofha-page .ofha-links-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #ofha-page .ofha-links-row img {
+        max-width: 100%;
+    }
+}
+   
 /* =========================================================
    WINDSOR SPORTSMEN'S CLUB — FOOTER
 ========================================================= */
