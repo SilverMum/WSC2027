@@ -1,6 +1,5 @@
 /* =========================================================
-   GLOBAL LAYOUT FIX — NO HORIZONTAL SCROLL + STICKY FOOTER
-   (Use this block on any page that gets a bottom scroll bar)
+   GLOBAL LAYOUT
 ========================================================= */
 html, body {
     overflow-x: hidden;
@@ -327,14 +326,14 @@ body.knifeaxe-bg {
 }
 
 /* =========================================================
-   FIX — MAKE TEXTAREA TYPED TEXT BLACK
+MAKE TEXTAREA TYPED TEXT BLACK
 ========================================================= */
 .knifeaxe-form textarea {
     color: black !important;
 }
 
 /* =========================================================
-   FIX — MAKE SUBJECT INPUT TEXT BLACK
+ MAKE SUBJECT INPUT TEXT BLACK
 ========================================================= */
 .knifeaxe-form input {
     color: black !important;
@@ -413,7 +412,6 @@ font-size: 1.1rem;
 font-weight: 600;
 color: #8b1e1e;
 }
-
 
 @media (min-width: 1024px) {
 .knifeaxe-cancellations-card {
