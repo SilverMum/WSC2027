@@ -1574,57 +1574,57 @@ header {
 
 
 /* ==================================================
-   OFAH QUICK LINKS — HOVER ANIMATION
+   OFAH QUICK LINKS — IMAGE-ONLY HOVER EFFECT
 ================================================== */
 
+/* Keep the clickable link free of shadows and effects */
 #ofha-page .ofha-links-row a {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
+    min-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+
     cursor: pointer;
+    text-decoration: none;
+}
+
+/* Apply movement and shadow ONLY to the image */
+#ofha-page .ofha-links-row a img {
+    display: block;
 
     transition:
         transform 0.3s ease,
-        filter 0.3s ease,
-        box-shadow 0.3s ease;
+        filter 0.3s ease;
+
+    filter: drop-shadow(0 0 0 transparent);
 }
 
-/* Smooth movement when hovering */
-#ofha-page .ofha-links-row a:hover {
-    transform: translateY(-7px) scale(1.04);
-
-    filter: brightness(1.06);
-
-    box-shadow: 0 10px 20px rgba(40, 30, 20, 0.18);
-}
-
-/* Slight image emphasis */
-#ofha-page .ofha-links-row a img {
-    transition: transform 0.3s ease;
-}
-
-/* Make the image feel interactive */
+/* Image lifts slightly and gains a shadow on hover */
 #ofha-page .ofha-links-row a:hover img {
-    transform: scale(1.02);
+    transform: translateY(-6px) scale(1.03);
+
+    filter:
+        drop-shadow(0 5px 5px rgba(40, 30, 20, 0.18))
+        brightness(1.04);
 }
 
-/* Visible keyboard focus for accessibility */
+/* Keyboard accessibility */
 #ofha-page .ofha-links-row a:focus-visible {
     outline: 3px solid #781e18;
     outline-offset: 5px;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    #ofha-page .ofha-links-row a,
     #ofha-page .ofha-links-row a img {
         transition: none;
     }
 
-    #ofha-page .ofha-links-row a:hover,
     #ofha-page .ofha-links-row a:hover img {
         transform: none;
     }
