@@ -4,31 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 
-    <title>Windsor Sportsmen's Club — Archery</title>
+    <title>Windsor Sportsmen’s Club</title>
 
-    <!-- Condensed display font for the "new look" headings (optional, remove if offline) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=7">
 
-    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 
 <body class="archery-page">
 
 <!-- =========================================================
-     NAVIGATION (UNCHANGED)
+     NAVIGATION (DIRECTLY INCLUDED)
 ========================================================= -->
 <header>
     <nav class="main-nav">
 
+        <!-- LOGO -->
         <div class="logo">
             <img src="images/WINDSOR SPORTSMANS REMAKE.png"
-                 alt="Windsor Sportsmen's Club Logo">
+                 alt="Windsor Sportsmen’s Club Logo">
         </div>
 
         <div class="nav-spacer"></div>
 
+        <!-- NAV LINKS -->
         <ul class="nav-links">
 
             <li><a href="index.html">Home</a></li>
@@ -36,27 +34,36 @@
             <li><a href="private-events.html">Rentals</a></li>
             <li><a href="kitchen.html">Kitchen</a></li>
 
+            <!-- ACTIVITIES DROPDOWN -->
             <li class="dropdown">
                 <a href="#">Activities ▾</a>
+
                 <ul class="dropdown-menu">
+
                     <li><a href="trap-skeet.html">Trap & Skeet</a></li>
                     <li><a href="archery.html">Archery</a></li>
                     <li><a href="air-rifle.html">Air Rifle</a></li>
+                    
                     <li>
                         <a href="KnifeAxe.html" class="knifeaxe-link">
                             Knife & Axe<br>
                             <span class="knifeaxe-sub">Throwing</span>
                         </a>
                     </li>
+
                 </ul>
             </li>
 
+             <!-- MORE DROPDOWN -->
             <li class="dropdown">
                 <a href="#">More ▾</a>
+
                 <ul class="dropdown-menu">
+
                     <li><a href="ofha.html">OFHA</a></li>
-                    <li><a href="cheese-cracker.html">Cheese & Cracker</a></li>
+                    <li><a href="cheese-cracker.html">Cheese & Cracker</a></li>                
                     <li><a href="members.html">Members</a></li>
+
                 </ul>
             </li>
 
@@ -64,329 +71,167 @@
     </nav>
 </header>
 
-<!-- HERO -->
-<section class="archery-hero">
-
-    <div class="hero-overlay">
-        <div class="hero-content">
-
-            <p class="hero-kicker">Windsor Sportsmen's Club</p>
-
-            <h1>Archery</h1>
-
-            <p class="hero-subtitle">Accuracy. Focus. Fun.</p>
-
-            <a href="#archery-calendar" class="hero-button">View Calendar</a>
-
-        </div>
-    </div>
-
+<!-- ARCHERY HEADER IMAGE -->
+<section class="archery-header">
+    <img 
+        src="images/Archery-Header1.png" 
+        alt="Archery Header Image" 
+        class="archery-header-img"
+    >
 </section>
 
-<!-- INFO CARDS -->
-<section class="archery-highlights">
+<!-- ⭐ ARCHERY INFO — CARD 1 -->
+<section class="outer-card">
+    <div class="inner-card green-card">
 
-    <div class="info-card">
+        <h2 class="archery-title">Thursday Night Archery</h2>
 
-        <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-        </div>
-
-        <h3>Thursday Night Archery</h3>
-
-        <p>
-            The Archery Season will officially begin
-            April 30th, 2026.
+        <p class="archery-season">
+            The Archery Season will officially begin April 30th, 2026
         </p>
 
     </div>
+</section>
 
-    <div class="info-card">
+<!-- ⭐ ARCHERY INFO — CARD 2 -->
+<section class="outer-card">
+    <div class="inner-card green-card">
 
-        <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-            </svg>
-        </div>
+        <p class="archery-subtitle">
+            Thursday Night Archery is Broken Down into 2 Sessions:
+        </p>
 
-        <h3>Sessions &amp; Details</h3>
+        <p class="archery-times">
+            5:30 - 6:30 pm<br>
+            6:30 - 7:30 pm<br>
+            Due to low participation, session 3 has been removed until further notice.<br>
+            Sessions 1 and 2 are open to all ages.<br>
+        </p>
 
-        <p><strong>5:30 - 6:30 PM</strong></p>
-        <p><strong>6:30 - 7:30 PM</strong></p>
+        <p class="archery-simple">
+            No Experience Required.<br>
+            No Registration Required.<br>
+            Simply Show up and Shoot
+        </p>
 
-        <hr>
+        <p class="archery-pricing">
+            $5.00 for Non-Members, $3.00 for Members.
+        </p>
 
-        <p>No Experience Required</p>
-        <p>No Registration Required</p>
-        <p>Simply Show Up and Shoot</p>
-
-        <hr>
-
-        <p>$5.00 Non-Members</p>
-        <p>$3.00 Members</p>
-
-        <hr>
-
-        <p>
-            Inclement Weather Will Cancel
-            Archery for the Evening
+        <p class="archery-weather">
+            Inclement Weather Will Cancel Archery for the Evening
         </p>
 
     </div>
-
-    <div class="info-card">
-
-        <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-        </div>
-
-        <h3>Private Events</h3>
-
-        <p>
-            For private events please contact us
-            using the form below.
-        </p>
-
-        <p>Minimum of 10 participants.</p>
-        <p>4 weeks notice required.</p>
-        <p>Pricing subject to change.</p>
-
-    </div>
-
 </section>
 
-<!-- IMAGE GALLERY -->
-<section class="archery-gallery">
+<!-- ⭐ ARCHERY INFO — CARD 3 -->
+<section class="outer-card">
+    <div class="inner-card green-card">
 
-    <img src="images/20261004_140812.jpg" alt="Archery">
-    <img src="images/archery2.png" alt="Archery Target">
-    <img src="images/ArcherySet-Up.png" alt="Archery Range">
-
-</section>
-
-<!-- CALENDAR + CANCELLATIONS -->
-<section class="archery-main-content">
-
-    <div class="calendar-card" id="archery-calendar">
-
-        <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-        </div>
-
-        <h2>Archery Calendar 2026</h2>
-
-        <div class="calendar-wrapper">
-
-            <iframe
-                src="https://calendar.google.com/calendar/embed?src=4ce53730cd1fa998a93d1d41cbc800535bea0e3bdc8a513fe752bfe8b943680c%40group.calendar.google.com&ctz=America%2FToronto&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
-                frameborder="0"
-                scrolling="no">
-            </iframe>
-
-        </div>
-
-    </div>
-
-    <div class="cancel-card">
-
-        <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                <line x1="12" y1="9" x2="12" y2="13"/>
-                <line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-        </div>
-
-        <h2>Archery Cancellations</h2>
-
-        <div class="cancel-alert">
-            Oct 15th 2026
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="contact-archery">
-
-    <div class="contact-left">
-
-        <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-            </svg>
-        </div>
-
-        <h2>Contact Archery</h2>
-
-        <p>Have a question about Archery?</p>
-
-        <p>
-            Need information about Thursday Night
-            Archery or Private Events?
-        </p>
-
-        <p>
-            Send us a message and it will be
-            delivered directly to the coordinator.
+        <p class="archery-private">
+            For private events please contact us using the form below.<br>
+            Private events require a minimum of 10 participants and 4 weeks notice.<br>
+            Pricing subject to change.
         </p>
 
     </div>
-
-    <div class="contact-right">
-
-        <form class="archery-contact-form"
-              action="https://formsubmit.co/adamveldhuis@hotmail.ca"
-              method="POST">
-
-            <div class="form-row">
-
-                <div class="form-field">
-                    <label for="arch-name">Name</label>
-                    <input id="arch-name" type="text" name="name"
-                           placeholder="Your Name" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="arch-email">Email</label>
-                    <input id="arch-email" type="email" name="email"
-                           placeholder="Your Email" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="arch-subject">Subject</label>
-                    <input id="arch-subject" type="text" name="subject"
-                           placeholder="Archery Inquiry" required>
-                </div>
-
-            </div>
-
-            <div class="form-field">
-                <label for="arch-msg">Message</label>
-                <textarea id="arch-msg" name="messages" rows="5"
-                          placeholder="Write your message here..."
-                          required></textarea>
-            </div>
-
-            <div class="form-row form-row-bottom">
-
-                <div class="form-field captcha-field">
-                    <label for="arch-captcha">3 + 4 = ?</label>
-                    <input id="arch-captcha" type="text" name="captcha"
-                           placeholder="Your answer" required>
-                </div>
-
-                <label class="consent">
-                    <input type="checkbox" required>
-                    <span>
-                        I agree that my information may be used
-                        to process this inquiry.
-                    </span>
-                </label>
-
-            </div>
-
-            <button type="submit">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-                Send Message
-            </button>
-
-        </form>
-
-    </div>
-
 </section>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-    <footer class="footer">
-    <div class="footer-container">
+<section class="outer-card wide-card">
+    <div class="inner-card green-card wide-inner">
 
-        <div class="footer-column">
-            <h3>WINDSOR SPORTSMEN'S CLUB</h3>
-
-            <div class="footer-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>
-                    2401 Dougall Ave<br>
-                    Windsor, Ontario N8X 1T3
-                </span>
-            </div>
-
-            <div class="footer-item">
-                <i class="fas fa-phone"></i>
-                <span>(519) 966-1243</span>
-            </div>
-
-            <div class="footer-item">
-                <i class="fas fa-envelope"></i>
-                <span>info@windsorsportsmensclub.org</span>
-            </div>
-        </div>
-
-        <div class="footer-column">
-    <h3>QUICK LINKS</h3>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="private-events.html">Rentals</a></li>
-        <li><a href="kitchen.html">Kitchen</a></li>
-    </ul>
-</div>
-
-<div class="footer-column">
-    <h3>MORE</h3>
-    <ul>
-        <li><a href="ofha.html">OFHA</a></li>
-        <li><a href="cheese-cracker.html">Cheese &amp; Cracker</a></li>
-        <li><a href="members.html">Members</a></li>
-    </ul>
-</div>
-
-        <div class="footer-column">
-            <h3>HOURS</h3>
-            <p>Monday - Friday: Coming Soon!</p>
-            <p>Saturday: Coming Soon!</p>
-            <p>Sunday: Coming Soon!</p>
+        <div class="archery-image-wrapper">
+            <img src="images/20261004_140812.jpg" alt="Archery Image 1">
+            <img src="images/archery2.png" alt="Archery Image 2">
+            <img src="images/ArcherySet-Up.png" alt="Archery Set Up">
         </div>
 
     </div>
+</section>
 
-    <div class="footer-bottom">
-        © 2026 Windsor Sportsmen's Club. All Rights Reserved.
+<!-- ARCHERY CANCELLATIONS -->
+
+    <!-- ARCHERY CANCELLATIONS -->
+<section class="outer-card">
+    <div class="inner-card green-card">
+
+        <h2 class="archery-cancel-title">Archery Cancellations</h2>
+
+        <div class="archery-dates">
+            Oct 15th 2026<br>
+        </div>
+
     </div>
-</footer>
+</section>
     
-<div id="footer-placeholder"></div>
-<script src="scripts/load-footer.js"></script>
+<!-- ARCHERY CALENDAR -->
+<section class="outer-card wide-card">
+    <div class="inner-card green-card wide-inner">
 
+        <h2 class="archery-calendar-title">Archery Calendar 2026</h2>
+
+        <div class="calendar-container">
+            <div class="calendar-wrapper">
+                <iframe 
+                    src="https://calendar.google.com/calendar/embed?src=4ce53730cd1fa998a93d1d41cbc800535bea0e3bdc8a513fe752bfe8b943680c%40group.calendar.google.com&ctz=America%2FToronto&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+                    style="border:0"
+                    frameborder="0"
+                    scrolling="no">
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="archery-cancel">
+  <h2>Contact Archery</h2>
+  <p class="archery-cancel-intro">
+    Have a question about Archery? Send us a message below and it will be delivered directly to the coordinator.
+  </p>
+
+  <form class="archery-cancel-form" action="https://formsubmit.co/adamveldhuis@hotmail.ca" method="POST">
+    <div class="field-row">
+      <label for="ac-name">Name</label>
+      <input type="text" id="ac-name" name="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="field-row">
+      <label for="ac-email">Email</label>
+      <input type="email" id="ac-email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="field-row">
+      <label for="ac-subject">Subject</label>
+      <input type="text" id="ac-subject" name="subject" placeholder="e.g. Archery Inquiry" required>
+    </div>
+
+    <div class="field-row">
+      <label for="ac-message">Message</label>
+      <textarea id="ac-message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+    </div>
+
+    <div class="field-row field-inline">
+      <label for="ac-captcha">3 + 4 = ?</label>
+      <input type="text" id="ac-captcha" name="captcha" placeholder="Your answer" required>
+    </div>
+
+    <div class="field-row field-checkbox">
+      <label>
+        <input type="checkbox" name="consent" required>
+        I agree that my information may be used to process this inquiry.
+      </label>
+    </div>
+
+    <button type="submit" class="ac-submit">Send Message</button>
+  </form>
+</section>
+
+<!-- ⭐ FOOTER -->
+<footer class="site-footer">
+    <p>©2024 Windsor Sportsmen's Club. All Rights Reserved.</p>
+</footer>
 <script src="scripts.js"></script>
 </body>
 </html>
