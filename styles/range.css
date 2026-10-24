@@ -1,354 +1,1290 @@
-/* --------------------------------------------------
-   INFO 8 — FORM COLOR FIXES (LEFTOVER FROM OLD FORM)
--------------------------------------------------- */
 
-.ts-contact-card label,
-.ts-contact-card h3,
-.ts-contact-card .field-checkbox label {
-    color: white !important;
+/* =========================================================
+   WINDSOR SPORTSMEN'S CLUB
+   TRAP & SKEET PAGE — STANDALONE STYLESHEET
+   Replaces styles.css on trap-skeet.html
+========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET AND BASE STYLES
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.ts-contact-card input,
-.ts-contact-card textarea {
-    background: white !important;
-    color: black !important;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.ts-contact-card input::placeholder,
-.ts-contact-card textarea::placeholder {
-    color: black !important;
+html {
+    scroll-behavior: smooth;
 }
 
-/* --------------------------------------------------
-   CONTACT POPUP LEFT/RIGHT + ORANGE FORM CARD
--------------------------------------------------- */
-
-.ts-contact-flex {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: transparent;
 }
 
-.ts-contact-left {
-    flex: 0 0 40%;
+body.trap-skeet-bg {
+    min-height: 100vh;
+    background: url("../images/trap-skeet-background.png")
+        no-repeat center center fixed;
+    background-size: cover;
 }
 
-.ts-contact-right {
-    flex: 0 0 60%;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-}
-
-.ts-contact-card {
-    background: #ff9f43;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    margin-top: 9px;
-    margin-left: -19px;
-    margin-right: 8px;
-}
-
-/* --------------------------------------------------
-   FORMSPREE FORM (REPLACES GOOGLE FORM)
--------------------------------------------------- */
-
-.wsc-contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 40px;
-}
-
-.wsc-contact-form input,
-.wsc-contact-form textarea {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
-
-.wsc-contact-form button {
-    background: #ff9f43;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-#thankyou-message {
-    text-align: center;
-    padding: 40px;
-}
-
-.thankyou-card {
-    background: #ff9f43;
-    padding: 40px;
-    border-radius: 12px;
-    color: white;
-    font-size: 1.4rem;
-}
-
-/* --------------------------------------------------
-   FIXED‑SIZE MODAL OVERLAY
--------------------------------------------------- */
-
-.ts-overlay {
+body.trap-skeet-bg::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.75);
-    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body.trap-skeet-bg img {
+    max-width: 100%;
+}
+
+body.trap-skeet-bg a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   2. NAVIGATION
+========================================================= */
+
+header {
+    position: relative;
+    z-index: 9998;
+}
+
+.main-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999 !important;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
+
+    padding: 10px 0;
+    background-color: #1a1a1a;
+    border-bottom: none;
+}
+
+.nav-spacer {
+    display: none;
+}
+
+.logo img {
+    height: 110px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+    padding-right: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 10px 14px;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-links > li > a:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+    box-shadow: none;
+    transform: translateY(-2px);
+}
+
+/* Dropdown menus */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 220px;
+    padding: 8px 0;
+    list-style: none;
+
+    background-color: #1a1a1a !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
     z-index: 99999;
 }
 
-/* --------------------------------------------------
-   MODAL BOX
--------------------------------------------------- */
-
-.ts-overlay-content {
-    width: 70vw;
-    height: 70vh;
-    margin-top: 12.5vh;
-    background: rgba(0,0,0,0.6);
-    border: 4px solid rgba(255,255,255,0.4);
-    border-radius: 12px;
-    position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    padding: 30px;
-    color: white;
+.dropdown:hover > .dropdown-menu {
+    display: block;
 }
 
-/* --------------------------------------------------
-   FLOATING X BUTTON
--------------------------------------------------- */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
 
-.ts-close-wrapper {
-    position: fixed;
-    top: calc(12.5vh + 7px);
-    right: calc(15vw - 12px + 26px);
-    width: 38px;
-    height: 38px;
-    background: rgba(0,0,0,0.85);
-    border: 2px solid rgba(255,255,255,0.6);
-    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    white-space: normal;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Knife & Axe two-line navigation link */
+
+.knifeaxe-link {
+    line-height: 1.1;
+}
+
+.knifeaxe-sub {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Keep any existing submenu elements functional */
+
+.dropdown-sub {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.submenu-toggle {
+    color: #fff !important;
+}
+
+.submenu-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    min-width: 200px;
+    padding: 8px 0;
+    list-style: none;
+
+    background-color: #1a1a1a !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 99999;
+}
+
+.dropdown-sub:hover > .submenu-right {
+    display: block;
+}
+
+.submenu-right a {
+    display: block;
+    padding: 10px 18px;
+    color: #fff !important;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.submenu-right a:hover {
+    background-color: #333;
+}
+
+
+/* =========================================================
+   3. SPACE AND HEADER IMAGE
+========================================================= */
+
+.trap-skeet-bg .page-header {
+    margin-top: 20px;
+}
+
+.page-header img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   4. ANNOUNCEMENT AND CALENDAR
+========================================================= */
+
+.trap-skeet-bg .ts-announcement {
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    margin: 40px auto;
+
+    gap: 40px;
+    padding: 0 5px;
+}
+
+.trap-skeet-bg .ts-announcement .ts-left {
+    flex: 0 0 40% !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 20px !important;
+    margin-right: 40px !important;
+
+    text-align: left !important;
+    line-height: 1.7 !important;
+    font-style: normal !important;
+}
+
+.trap-skeet-bg .ts-left,
+.trap-skeet-bg .ts-left h2,
+.trap-skeet-bg .ts-left h3,
+.trap-skeet-bg .ts-left p,
+.trap-skeet-bg .ts-left ul,
+.trap-skeet-bg .ts-left li,
+.trap-skeet-bg .ts-left strong,
+.trap-skeet-bg .ts-left em {
+    color: white !important;
+}
+
+.trap-skeet-bg .ts-left h2,
+.trap-skeet-bg .ts-left h3 {
+    font-style: normal !important;
+    margin-left: 0 !important;
+}
+
+.trap-skeet-bg .ts-left h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.trap-skeet-bg .ts-left h3 {
+    font-size: 1.45rem;
+    font-weight: 800 !important;
+    margin-top: 22px;
+    margin-bottom: 12px;
+}
+
+.trap-skeet-bg .ts-left p {
+    font-size: 1.6rem !important;
+    margin-left: 0 !important;
+    margin-bottom: 10px;
+    font-style: normal !important;
+}
+
+.trap-skeet-bg .ts-left p strong {
+    font-size: 1.45rem;
+    font-weight: 800 !important;
+    font-style: normal !important;
+}
+
+.trap-skeet-bg .ts-left p em {
+    font-size: 1.3rem;
+    font-style: italic !important;
+}
+
+.trap-skeet-bg .ts-left ul {
+    margin-left: 60px !important;
+    margin-bottom: 20px;
+
+    line-height: 1.7 !important;
+    font-size: 1.1rem !important;
+    font-style: normal !important;
+}
+
+.trap-skeet-bg .ts-left li {
+    margin-bottom: 8px !important;
+    font-style: normal !important;
+}
+
+/* Facebook and Instagram buttons */
+
+.trap-skeet-bg .fb-bottom-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 200000;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
 }
 
-.ts-close {
-    font-size: 1.6rem;
-    color: white;
-    font-weight: bold;
+.trap-skeet-bg .fb-bottom-button img {
+    display: block;
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto 0;
+
+    transition: all 0.2s ease;
+}
+
+.trap-skeet-bg .fb-bottom-button img:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* Calendar column */
+
+.trap-skeet-bg .ts-announcement .ts-right {
+    flex: 0 0 60% !important;
+    max-width: 900px;
+
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 5px !important;
+}
+
+.trap-skeet-bg .ts-right iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Orange calendar frame */
+
+.trap-skeet-bg .calendar-card {
+    width: 100%;
+    max-width: 900px;
+
+    margin-left: -40px !important;
+    margin-right: auto;
+
+    padding: 5px 5px 3px;
+    background: #ff9f43;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.trap-skeet-bg .calendar-card iframe {
+    display: block;
+    width: 100%;
+    height: 640px !important;
+
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   5. INFORMATION CARD GRID
+========================================================= */
+
+.trap-skeet-bg .ts-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 5px;
+}
+
+.trap-skeet-bg .ts-card {
+    display: block;
+    min-width: 0;
+
+    overflow: hidden;
+    text-align: center;
     text-decoration: none;
-    line-height: 1;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* --------------------------------------------------
-   MODAL TYPOGRAPHY
--------------------------------------------------- */
+.trap-skeet-bg .ts-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
 
-.ts-overlay-content p,
-.ts-overlay-content li,
-.ts-overlay-content strong,
-.ts-overlay-content em {
+.trap-skeet-bg .ts-card-image {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.trap-skeet-bg .ts-card p {
+    padding: 15px 10px 20px;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: white;
+}
+
+
+/* =========================================================
+   6. INFORMATION OVERLAYS
+========================================================= */
+
+.trap-skeet-bg .ts-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 99999;
+}
+
+/* Popup content */
+
+.trap-skeet-bg .ts-overlay-content {
+    position: relative;
+
+    width: 70vw;
+    height: 70vh;
+    margin-top: 12.5vh;
+    padding: 30px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+}
+
+/* Popup text */
+
+.trap-skeet-bg .ts-overlay-content p,
+.trap-skeet-bg .ts-overlay-content li,
+.trap-skeet-bg .ts-overlay-content strong,
+.trap-skeet-bg .ts-overlay-content em {
     font-size: 1.25rem;
     line-height: 1.6;
 }
 
-.ts-overlay-content h2 {
+.trap-skeet-bg .ts-overlay-content h2 {
+    margin-bottom: 15px;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 15px;
 }
 
-.ts-overlay-content h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
+.trap-skeet-bg .ts-overlay-content h3 {
     margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-.ts-overlay-content .package-block p {
+.trap-skeet-bg .ts-overlay-content .package-block p {
     margin: 4px 0;
 }
 
+/* Close button */
+
+.trap-skeet-bg .ts-close-wrapper {
+    position: fixed;
+    top: calc(12.5vh + 7px);
+    right: calc(15vw - 12px + 26px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    z-index: 200000;
+}
+
+.trap-skeet-bg .ts-close {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.trap-skeet-bg .ts-close:hover {
+    color: #ff9f43;
+}
+
+/* General popup lists */
+
+.trap-skeet-bg .ts-overlay-content ul,
+.trap-skeet-bg .ts-overlay-content ol {
+    padding-left: 25px;
+}
+
+.trap-skeet-bg .red-text {
+    color: #ff4d4d !important;
+}
+
+
 /* =========================================================
-   WINDSOR SPORTSMEN'S CLUB — FOOTER
+   7. HOURS POPUP — RANGE OPEN BUTTON
 ========================================================= */
 
-/* MAIN FOOTER */
-.footer {
+.trap-skeet-bg .range-open-button-wrapper {
+    text-align: center;
+}
+
+.trap-skeet-bg .range-open-button-img {
+    display: block;
+    width: 52.5%;
+    max-width: 255px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Indented information in hours popup */
+
+.trap-skeet-bg .range-indent {
+    padding-left: 25px;
+}
+
+
+/* =========================================================
+   8. RANGE RULES — RESTRICTED FIREARMS IMAGE
+========================================================= */
+
+.trap-skeet-bg .restricted-firearms-wrapper {
+    text-align: center;
+}
+
+.trap-skeet-bg .range-restricted-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    object-fit: contain;
+}
+
+.trap-skeet-bg .range-revised-date {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: white;
+}
+
+
+/* =========================================================
+   9. CONTACT POPUP — TWO-COLUMN LAYOUT
+========================================================= */
+
+.trap-skeet-bg .ts-contact-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.trap-skeet-bg .ts-contact-left {
+    flex: 0 0 40%;
+    min-width: 0;
+    color: white;
+}
+
+.trap-skeet-bg .ts-contact-right {
+    flex: 0 0 60%;
+    min-width: 0;
+    color: white;
+}
+
+.trap-skeet-bg .ts-contact-card {
+    margin-top: 9px;
+    margin-left: -15px;
+    margin-right: 4px;
+    padding: 20px;
+
+    background: #ff9f43;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.trap-skeet-bg .ts-contact-card label,
+.trap-skeet-bg .ts-contact-card h3,
+.trap-skeet-bg .ts-contact-card .field-checkbox label {
+    color: white !important;
+}
+
+.trap-skeet-bg .ts-contact-card input,
+.trap-skeet-bg .ts-contact-card textarea {
+    display: block;
+    width: calc(100% - 10px);
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+
+    color: black !important;
+    background: white !important;
+    border: none;
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.trap-skeet-bg .ts-contact-card input::placeholder,
+.trap-skeet-bg .ts-contact-card textarea::placeholder {
+    color: black !important;
+}
+
+.trap-skeet-bg .ts-contact-card label {
+    font-weight: 600;
+}
+
+.trap-skeet-bg .ts-contact-card button {
     width: 100%;
-    background: #102719;
-    color: #f7f0e4;
+    padding: 12px;
+
+    color: white;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.trap-skeet-bg .ts-contact-card button:hover {
+    background: #000;
+}
+
+.trap-skeet-bg .mask-title,
+.trap-skeet-bg .mask-subtitle {
+    color: white;
+}
+
+.trap-skeet-bg .thankyou-card {
+    color: white;
+    background: #ff9f43;
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   10. WEATHER WIDGET
+========================================================= */
+
+.trap-skeet-bg .ts-weather {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 0;
+}
+
+.trap-skeet-bg .ts-weather > div {
+    width: 100% !important;
+}
+
+
+/* =========================================================
+   11. FOOTER
+========================================================= */
+
+.trap-skeet-bg .footer {
+    width: 100%;
     margin: 0;
     padding: 0;
+
+    color: #f7f0e4;
+    background: #102719;
+
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
-.footer *,
-.footer *::before,
-.footer *::after {
+.trap-skeet-bg .footer *,
+.trap-skeet-bg .footer *::before,
+.trap-skeet-bg .footer *::after {
     box-sizing: border-box;
 }
 
-/* FOOTER CONTENT CONTAINER */
-.footer-container {
+.trap-skeet-bg .footer-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr;
+    align-items: start;
+    gap: 40px;
+
     max-width: 1250px;
     margin: 0 auto;
     padding: 55px 35px 45px;
-    display: grid;
-    grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr;
-    gap: 40px;
-    align-items: start;
 }
 
-/* FOOTER COLUMNS */
-.footer-column {
+.trap-skeet-bg .footer-column {
     min-width: 0;
 }
 
-/* COLUMN HEADINGS */
-.footer-column h3 {
+.trap-skeet-bg .footer-column h3 {
+    margin: 0 0 25px;
+    padding-bottom: 12px;
+
     color: #c6a568;
+    border-bottom: 2px solid rgba(198, 165, 104, 0.55);
+
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 1.5px;
     line-height: 1.5;
-    margin: 0 0 25px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(198, 165, 104, 0.55);
 }
 
-/* ADDRESS, PHONE AND EMAIL ITEMS */
-.footer-item {
+.trap-skeet-bg .footer-item {
     display: flex;
     align-items: flex-start;
     gap: 13px;
+
     margin-bottom: 19px;
+
     color: #f7f0e4;
     font-size: 14px;
     line-height: 1.8;
 }
 
-/* CONTACT ICONS */
-.footer-item i {
-    color: #c6a568;
-    font-size: 17px;
+.trap-skeet-bg .footer-item i {
     width: 20px;
     min-width: 20px;
-    text-align: center;
     margin-top: 4px;
+
+    color: #c6a568;
+    font-size: 17px;
+    text-align: center;
 }
 
-/* FOOTER PARAGRAPHS */
-.footer-column p {
+.trap-skeet-bg .footer-column p {
+    margin: 0 0 10px;
+
     color: #f7f0e4;
     font-size: 14px;
     line-height: 1.8;
-    margin: 0 0 10px;
 }
 
-/* FOOTER LISTS */
-.footer-column ul {
-    list-style: none;
+.trap-skeet-bg .footer-column ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-.footer-column ul li {
+.trap-skeet-bg .footer-column ul li {
     margin-bottom: 13px;
 }
 
-/* FOOTER LINKS */
-.footer-column a {
+.trap-skeet-bg .footer-column a {
     display: inline-block;
+
     color: #f7f0e4;
-    text-decoration: none;
     font-size: 14px;
     line-height: 1.6;
+    text-decoration: none;
+
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
-/* LINK HOVER EFFECT */
-.footer-column a:hover {
+.trap-skeet-bg .footer-column a:hover {
     color: #c6a568;
     transform: translateX(4px);
 }
 
-/* FOOTER BOTTOM COPYRIGHT BAR */
-.footer-bottom {
+.trap-skeet-bg .footer-bottom {
     width: 100%;
-    background: #07180f;
-    color: #cfc7b8;
-    text-align: center;
     padding: 20px 15px;
+
+    color: #cfc7b8;
+    background: #07180f;
+    border-top: 1px solid rgba(198, 165, 104, 0.35);
+
     font-size: 13px;
     line-height: 1.7;
-    border-top: 1px solid rgba(198, 165, 104, 0.35);
+    text-align: center;
 }
 
+
 /* =========================================================
-   TABLETS
+   12. TABLET RESPONSIVE STYLES
 ========================================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 992px) {
 
-    .footer-container {
+    /* Navigation */
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 16px;
+    }
+
+    .logo img {
+        height: 70px;
+        margin-bottom: 8px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding-right: 0;
+    }
+
+    /* Announcement and calendar */
+
+    .trap-skeet-bg .ts-announcement {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .trap-skeet-bg .ts-announcement .ts-left,
+    .trap-skeet-bg .ts-announcement .ts-right {
+        flex: 1 1 100% !important;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 16px;
+        padding-right: 16px !important;
+    }
+
+    .trap-skeet-bg .ts-announcement .ts-left {
+        text-align: left !important;
+    }
+
+    .trap-skeet-bg .ts-left ul {
+        margin-left: 25px !important;
+    }
+
+    .trap-skeet-bg .calendar-card {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0;
+    }
+
+    .trap-skeet-bg .calendar-card iframe {
+        height: 450px !important;
+    }
+
+    .trap-skeet-bg .ts-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .trap-skeet-bg .ts-contact-flex {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .trap-skeet-bg .ts-contact-left,
+    .trap-skeet-bg .ts-contact-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .trap-skeet-bg .ts-contact-card {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Footer */
+
+    .trap-skeet-bg .footer-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 40px 35px;
         padding: 45px 30px 35px;
     }
-
 }
 
+
 /* =========================================================
-   MOBILE PHONES
+   13. MOBILE NAVIGATION
 ========================================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 900px) {
 
-    .footer-container {
+    /* Let the page's mobile navigation script control dropdowns */
+
+    .dropdown:hover > .dropdown-menu {
+        display: none !important;
+    }
+
+    .nav-links li.dropdown {
+        width: auto !important;
+    }
+
+    .nav-links li.dropdown > a {
+        display: inline-block !important;
+    }
+
+    .nav-links li.dropdown > .dropdown-menu {
+        left: 0 !important;
+        transform: translateX(0) !important;
+    }
+
+    .nav-links li.dropdown.open > .dropdown-menu {
+        display: block !important;
+    }
+
+    .dropdown-menu {
+        max-width: 90vw;
+    }
+
+    .dropdown-menu a {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   14. MOBILE PHONE STYLES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Navigation */
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 12px;
+    }
+
+    .logo img {
+        height: 60px;
+        margin-bottom: 0;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        padding: 7px 8px;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-menu {
+        min-width: 180px;
+    }
+
+    .dropdown-menu a {
+        padding: 9px 12px;
+        font-size: 1rem;
+    }
+
+    /* Page content */
+
+    .trap-skeet-bg .page-header {
+        margin-top: 10px;
+    }
+
+    .trap-skeet-bg .ts-announcement {
+        margin: 25px auto;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        gap: 20px;
+    }
+
+    .trap-skeet-bg .ts-announcement .ts-left,
+    .trap-skeet-bg .ts-announcement .ts-right {
+        padding-left: 10px;
+        padding-right: 10px !important;
+    }
+
+    .trap-skeet-bg .ts-left h2 {
+        font-size: 1.7rem;
+    }
+
+    .trap-skeet-bg .ts-left h3 {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    .trap-skeet-bg .ts-left p {
+        font-size: 1.15rem !important;
+    }
+
+    .trap-skeet-bg .ts-left ul {
+        margin-left: 20px !important;
+        font-size: 1rem !important;
+    }
+
+    .trap-skeet-bg .fb-bottom-button {
+        gap: 10px;
+    }
+
+    .trap-skeet-bg .fb-bottom-button img {
+        width: 190px;
+        max-width: 100%;
+    }
+
+    .trap-skeet-bg .calendar-card iframe {
+        height: 450px !important;
+    }
+
+    /* Information cards */
+
+    .trap-skeet-bg .ts-card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 30px auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .trap-skeet-bg .ts-card-image {
+        height: 160px;
+    }
+
+    .trap-skeet-bg .ts-card p {
+        font-size: 1.1rem;
+    }
+
+    /* Full-screen popup */
+
+    .trap-skeet-bg .ts-overlay {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+
+        overflow-y: auto;
+        padding: 0;
+        margin: 0;
+
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 99999;
+    }
+
+    /* Sticky close button */
+
+    .trap-skeet-bg .ts-close-wrapper {
+        position: sticky;
+        top: 0;
+        right: auto;
+
+        display: flex;
+        justify-content: flex-end;
+
+        width: 100%;
+        height: auto;
+        padding: 15px 15px 0 0;
+
+        background: rgba(0, 0, 0, 0.55);
+        border: none;
+        border-radius: 0;
+        z-index: 100000;
+    }
+
+    .trap-skeet-bg .ts-close {
+        padding: 5px 10px;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* Scrollable popup content */
+
+    .trap-skeet-bg .ts-overlay-content {
+        width: 92%;
+        max-width: 500px;
+        height: auto;
+        max-height: 85vh;
+        max-height: 85dvh;
+
+        margin-top: 0;
+        margin-bottom: 40px;
+        padding: 22px 18px 40px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        color: #fff !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .trap-skeet-bg .ts-overlay-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .trap-skeet-bg .ts-overlay-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .trap-skeet-bg .ts-overlay-content p,
+    .trap-skeet-bg .ts-overlay-content li,
+    .trap-skeet-bg .ts-overlay-content strong,
+    .trap-skeet-bg .ts-overlay-content em {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #fff !important;
+        overflow-wrap: anywhere;
+    }
+
+    .trap-skeet-bg .ts-overlay-content ul,
+    .trap-skeet-bg .ts-overlay-content ol {
+        padding-left: 20px;
+        color: #fff !important;
+    }
+
+    .trap-skeet-bg .ts-overlay-content ul ul,
+    .trap-skeet-bg .ts-overlay-content ol ul {
+        padding-left: 25px;
+        margin-top: 8px;
+    }
+
+    .trap-skeet-bg .range-indent {
+        padding-left: 10px;
+    }
+
+    .trap-skeet-bg .range-open-button-img {
+        width: 80%;
+        max-width: 260px;
+    }
+
+    .trap-skeet-bg .range-restricted-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 15px auto;
+    }
+
+    .trap-skeet-bg .restricted-firearms-wrapper {
+        text-align: center;
+    }
+
+    .trap-skeet-bg .range-revised-date {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+        color: #fff !important;
+    }
+
+    /* Contact popup and form */
+
+    .trap-skeet-bg .ts-contact-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .trap-skeet-bg .ts-contact-left,
+    .trap-skeet-bg .ts-contact-right {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .trap-skeet-bg .ts-contact-card {
+        margin: 0;
+        padding: 15px;
+    }
+
+    .trap-skeet-bg .ts-contact-card input,
+    .trap-skeet-bg .ts-contact-card textarea {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /* Footer */
+
+    .trap-skeet-bg .footer-container {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 35px 24px 30px;
     }
 
-    .footer-column h3 {
-        font-size: 16px;
+    .trap-skeet-bg .footer-column h3 {
         margin-bottom: 18px;
+        font-size: 16px;
     }
 
-    .footer-item {
-        font-size: 14px;
+    .trap-skeet-bg .footer-item {
         gap: 12px;
         margin-bottom: 15px;
-    }
-
-    .footer-column p,
-    .footer-column a {
         font-size: 14px;
     }
 
-    .footer-column ul li {
+    .trap-skeet-bg .footer-column p,
+    .trap-skeet-bg .footer-column a {
+        font-size: 14px;
+    }
+
+    .trap-skeet-bg .footer-column ul li {
         margin-bottom: 10px;
     }
 
-    .footer-bottom {
+    .trap-skeet-bg .footer-bottom {
         padding: 18px 15px;
         font-size: 12px;
     }
-
 }
