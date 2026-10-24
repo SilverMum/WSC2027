@@ -1,40 +1,81 @@
-/* =========================================================
-   ARCHERY PAGE — CLEAN, STANDALONE CSS
-   ========================================================= */
 
 /* =========================================================
-   NAVIGATION
+   WINDSOR SPORTSMEN'S CLUB — ARCHERY PAGE STYLES
+   Standalone stylesheet: page, navigation, and footer
 ========================================================= */
+
+
+/* =========================================================
+   STANDALONE PAGE BASE
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: transparent;
+}
+
+
+/* =========================================================
+   STANDALONE NAVIGATION — DESKTOP
+========================================================= */
+
+header {
+    position: relative;
+    z-index: 9998;
+}
+
 .main-nav {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2000;
+    z-index: 9999 !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0;
     padding: 10px 0;
     background-color: #1a1a1a;
-    border-bottom: 1px solid #ddd;
+    border-bottom: none;
 }
 
 .nav-spacer {
     display: none;
 }
 
+.logo {
+    flex-shrink: 0;
+}
+
 .logo img {
-    height: 110px;
-    width: auto;
     display: block;
+    width: auto;
+    height: 110px;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 30px;
     align-items: center;
+    gap: 30px;
     padding-right: 20px;
+    list-style: none;
 }
 
 .nav-links li {
@@ -42,82 +83,92 @@
 }
 
 .nav-links a {
+    display: inline-block;
     padding: 10px 14px;
+    border-radius: 4px;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #fff;
+    line-height: 1.35;
     text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.2s ease;
     white-space: nowrap;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .nav-links > li > a:hover {
     background-color: #333 !important;
     color: #fff !important;
+    box-shadow: none;
     transform: translateY(-2px);
 }
 
-.submenu-toggle {
-    color: #fff !important;
-}
 
-/* Trap & Skeet two-line item */
-.nav-trap-skeet a {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #fff;
-    padding: 10px 14px;
-    line-height: 1.1;
-    display: inline-block;
-    text-align: left !important;
-}
+/* =========================================================
+   NAVIGATION DROPDOWNS
+========================================================= */
 
-.nav-trap-skeet a span {
-    font-size: 0.85em;
-    font-weight: 600;
-    display: block;
-    color: #fff;
-}
-
-/* Dropdown menus */
 .dropdown {
     position: relative;
 }
 
-.dropdown-menu {
-    display: none;
+.dropdown-menu,
+.submenu-right {
     position: absolute;
-    top: 100%;
-    left: 0;
+    z-index: 99999;
+    display: none;
     min-width: 220px;
     padding: 8px 0;
     list-style: none;
-    background-color: #1a1a1a !important;
-    border: none !important;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 2100;
+    background: #1a1a1a !important;
+    border: 0 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
-.dropdown:hover > .dropdown-menu {
+.dropdown-menu {
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown-sub:hover > .submenu-right {
     display: block;
 }
 
-.dropdown-menu a {
+.dropdown-menu a,
+.submenu-right a {
     display: block;
     padding: 10px 18px;
-    font-size: 1.5rem;
-    font-weight: 600;
     color: #fff !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
     white-space: normal;
+    transition: background-color 0.2s ease;
 }
 
-.dropdown-menu a:hover {
-    background-color: #333;
-    color: #fff;
+.dropdown-menu a:hover,
+.submenu-right a:hover {
+    background: #333 !important;
+    color: #fff !important;
 }
 
-/* Right-side submenu */
+.nav-links li.dropdown-sub {
+    position: relative;
+}
+
+.dropdown-sub > a {
+    padding-right: 18px;
+}
+
+.submenu-right {
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+}
+
 .dropdown-sub {
     display: flex;
     align-items: center;
@@ -125,38 +176,20 @@
     white-space: nowrap;
 }
 
-.submenu-right {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    min-width: 200px;
-    padding: 8px 0;
-    background-color: #1a1a1a !important;
-    border: none !important;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 2200;
+.submenu-link,
+.submenu-toggle {
+    display: inline-block;
 }
 
-.dropdown-sub:hover > .submenu-right {
-    display: block;
-}
-
-.submenu-right a {
-    padding: 10px 18px;
-    font-size: 1.5rem;
-    font-weight: 600;
+.submenu-toggle {
     color: #fff !important;
 }
 
-/* =========================================================
-   WINDSOR SPORTSMEN'S CLUB — ARCHERY PAGE STYLES
-   Extracted from the existing styles.css
-========================================================= */
 
 /* =========================================================
    ARCHERY HEADER IMAGE
 ========================================================= */
+
 .archery-header {
     max-width: 1200px;
     margin: 0 auto;
@@ -164,20 +197,25 @@
 }
 
 .archery-header-img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
     border-radius: 10px;
     object-fit: cover;
 }
 
+
 /* =========================================================
    ARCHERY PAGE SPACING + BACKGROUND
 ========================================================= */
+
 .archery-page {
     padding-top: 140px;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
+        linear-gradient(
+            rgba(255, 255, 255, 0.60),
+            rgba(255, 255, 255, 0.60)
+        ),
         url("images/archery-background.jpg");
     background-size: cover;
     background-position: center;
@@ -189,9 +227,11 @@
     margin-bottom: 40px;
 }
 
+
 /* =========================================================
    ARCHERY INTRO / INFORMATION
 ========================================================= */
+
 .archery-info {
     max-width: 800px;
     margin: 0 auto;
@@ -205,9 +245,9 @@
 }
 
 .archery-title {
+    margin-bottom: 20px;
     font-size: 2.4rem;
     font-weight: 700;
-    margin-bottom: 20px;
 }
 
 .archery-season,
@@ -215,8 +255,8 @@
 .archery-times,
 .archery-simple,
 .archery-pricing {
-    font-size: 1.4rem;
     margin-bottom: 20px;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
@@ -229,22 +269,24 @@
 }
 
 .archery-weather {
-    font-size: 1.4rem;
-    color: #8b0000;
-    font-weight: 700;
     margin-bottom: 30px;
+    color: #8b0000;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .archery-private {
+    margin: 40px 0;
     font-size: 1.8rem;
     line-height: 1.5;
-    margin: 40px 0;
     font-weight: 600;
 }
+
 
 /* =========================================================
    ARCHERY IMAGE TRIO
 ========================================================= */
+
 .archery-image-wrapper {
     display: flex;
     justify-content: center;
@@ -254,23 +296,24 @@
 }
 
 .archery-image-wrapper img {
-    height: 260px;
     width: auto;
+    height: 260px;
     object-fit: cover;
 }
 
+
 /* =========================================================
    CARD STYLES USED BY THE ARCHERY PAGE
-   These shared classes are included because Archery cards use them.
 ========================================================= */
+
 .outer-card {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     backdrop-filter: blur(4px);
-    position: relative;
 }
 
 .outer-card.wide-card {
@@ -278,15 +321,15 @@
 }
 
 .inner-card.green-card {
-    background: rgba(220, 245, 230, 0.55);
+    position: relative;
+    z-index: 1;
     padding: 30px;
+    background: rgba(220, 245, 230, 0.55);
     border-radius: 12px;
     text-align: center;
     box-shadow:
         0 6px 18px rgba(10, 50, 30, 0.55),
         0 12px 32px rgba(10, 50, 30, 0.35);
-    position: relative;
-    z-index: 1;
 }
 
 .inner-card.green-card.wide-inner {
@@ -301,9 +344,11 @@
     color: #063b1d;
 }
 
+
 /* =========================================================
    ARCHERY CANCELLATIONS
 ========================================================= */
+
 .archery-cancellations {
     text-align: center;
 }
@@ -314,15 +359,17 @@
 }
 
 .archery-dates {
+    color: #000;
     font-size: 1.6rem;
     font-weight: bold;
     text-align: center;
-    color: #000;
 }
+
 
 /* =========================================================
    ARCHERY CANCELLATION CONTACT FORM
 ========================================================= */
+
 .archery-cancel {
     max-width: 700px;
     margin: 0 auto;
@@ -331,21 +378,26 @@
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     color: #f5f5f5;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 }
 
 .archery-cancel h2 {
     margin: 0 0 0.5rem;
+    color: #4cc26b;
     font-size: 1.8rem;
     letter-spacing: 0.04em;
-    color: #4cc26b;
     text-transform: uppercase;
 }
 
 .archery-cancel-intro {
     margin: 0 0 1.5rem;
-    font-size: 0.95rem;
     color: #cccccc;
+    font-size: 0.95rem;
 }
 
 .archery-cancel-form {
@@ -362,18 +414,18 @@
 }
 
 .field-row label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
     color: #bbbbbb;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .field-row input,
 .field-row textarea {
+    padding: 0.6rem 0.75rem;
     background: #000;
     border: 1px solid #b3261e;
     border-radius: 4px;
-    padding: 0.6rem 0.75rem;
     color: #f5f5f5;
     font-size: 0.95rem;
 }
@@ -419,8 +471,8 @@
 }
 
 .field-checkbox {
-    font-size: 0.8rem;
     color: #bbbbbb;
+    font-size: 0.8rem;
 }
 
 .field-checkbox input {
@@ -430,19 +482,22 @@
 
 .ac-submit {
     grid-column: 1 / 3;
-    margin-top: 0.5rem;
     align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.8rem;
     background: #b3261e;
-    color: #ffffff;
     border: none;
     border-radius: 999px;
-    padding: 0.7rem 1.8rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
     font-size: 0.9rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.2s ease;
 }
 
 .ac-submit:hover {
@@ -456,36 +511,44 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+
 /* =========================================================
    ARCHERY CALENDAR
 ========================================================= */
-#archery-calendar .calendar-container {
+
+.archery-page .calendar-container {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
     padding: 15px;
     border-radius: 6px;
+    box-sizing: border-box;
 }
 
-#archery-calendar .calendar-container iframe {
+.archery-page .calendar-container iframe {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: 600px;
     border: 0;
 }
 
 .archery-calendar-title {
-    text-align: center;
-    font-size: 2rem;
     margin-bottom: 20px;
+    font-size: 2rem;
     letter-spacing: 1px;
+    text-align: center;
     text-decoration: underline;
     text-decoration-color: black;
     text-underline-offset: 6px;
 }
 
+
 /* =========================================================
-   RESPONSIVE ARCHERY STYLES
+   RESPONSIVE ARCHERY STYLES — TABLET
 ========================================================= */
+
 @media (max-width: 900px) {
     body.archery-page .archery-title {
         font-size: 1.7rem !important;
@@ -511,12 +574,12 @@
     body.archery-page::before {
         content: "ARCHERY";
         display: block;
-        text-align: center;
-        font-size: 2.2rem;
-        font-weight: 700;
         margin-top: 120px;
         margin-bottom: 20px;
         color: #ffffff;
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
     }
 
     .archery-cancel-title {
@@ -527,30 +590,157 @@
     .archery-cancel-title::after {
         content: "Archery Cancelations";
         display: block;
+        color: inherit;
         font-size: 1.4rem;
         font-weight: 700;
-        color: inherit;
+    }
+
+    /* Navigation layout for tablet and mobile. */
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+        gap: 10px;
+        padding: 12px !important;
+    }
+
+    .logo {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo img {
+        width: auto;
+        height: 90px;
+        margin: 0 auto;
+    }
+
+    .nav-spacer {
+        display: none;
+    }
+
+    .nav-links {
+        order: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links > li {
+        flex: 0 0 calc(33.333% - 6px);
+        min-width: 0;
+        text-align: center;
+    }
+
+    .nav-links > li > a {
+        padding: 4px 2px;
+        font-size: 1.1rem;
+        white-space: normal;
+    }
+
+    /* Mobile dropdowns use the .open class toggled by scripts.js. */
+    .dropdown:hover > .dropdown-menu,
+    .dropdown-sub:hover > .submenu-right {
+        display: none !important;
+    }
+
+    .dropdown-menu,
+    .submenu-right {
+        position: absolute !important;
+        top: 100%;
+        left: 0 !important;
+        transform: none !important;
+        width: max-content !important;
+        min-width: 180px;
+        max-width: min(88vw, 320px);
+        margin-top: 6px;
+        padding: 8px 0;
+        background: #1a1a1a !important;
+        border: 1px solid #444 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .dropdown-menu a,
+    .submenu-right a {
+        padding: 9px 14px;
+        font-size: 1rem;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .dropdown.open > .dropdown-menu,
+    .dropdown-sub.open > .submenu-right,
+    .nav-links li.dropdown > .dropdown-menu.open {
+        display: block !important;
+    }
+
+    .dropdown-sub {
+        position: relative;
+    }
+
+    .dropdown-sub .submenu-right {
+        top: 0 !important;
+        left: 100% !important;
+        width: auto !important;
+        max-width: min(75vw, 240px);
+        margin-top: 0;
+    }
+
+    /* Preserve the current session text on mobile. */
+    body.archery-page .archery-times {
+        font-size: 1.3rem !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+    }
+
+    body.archery-page .archery-times::before {
+        content: none !important;
+        display: none !important;
+    }
+
+    body.archery-page .archery-times br {
+        display: initial;
     }
 }
 
+
+/* =========================================================
+   RESPONSIVE ARCHERY STYLES — MOBILE
+========================================================= */
+
 @media (max-width: 768px) {
     #archery-calendar {
+        max-width: 100% !important;
         padding-left: 6% !important;
         padding-right: 6% !important;
         border-left-width: 0;
         border-right-width: 0;
-        max-width: 100% !important;
     }
 
-    #archery-calendar .calendar-container {
+    .archery-page .calendar-container {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
 
-    #archery-calendar .calendar-container iframe {
+    .archery-page .calendar-container iframe {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
+    }
+
+    .archery-page .calendar-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow-x: hidden !important;
     }
 
     .archery-image-wrapper img {
@@ -583,413 +773,22 @@
     .archery-image-wrapper img {
         height: 220px;
     }
-}
-
-@media (max-width: 480px) {
-    .archery-info-text {
-        font-size: 1.05rem;
-    }
-}
-
-
-/* =========================================================
-   MOBILE NAVIGATION — FULL CLEANED + CONSOLIDATED VERSION
-   ========================================================= */
-
-/* =========================================================
-   1. MOBILE NAV — ALIGNMENT + TOGGLE BEHAVIOR
-   ========================================================= */
-@media (max-width: 900px) {
-
-    /* Disable hover behavior on mobile */
-    .dropdown:hover > .dropdown-menu {
-        display: none !important;
-    }
-
-    /* Normalize dropdown anchor width */
-    .nav-links li.dropdown {
-        width: auto !important;
-    }
-
-    .nav-links li.dropdown > a {
-        display: inline-block !important;
-    }
-
-    /* Left-align dropdowns */
-    .nav-links li.dropdown > .dropdown-menu {
-        left: 0 !important;
-        transform: translateX(0) !important;
-    }
-
-    /* JS-controlled open state */
-    .nav-links li.dropdown > .dropdown-menu.open {
-        display: block !important;
-    }
-}
-
-/* =========================================================
-   2. MOBILE LABEL FIX — TRAP & SKEET
-   ========================================================= */
-@media (max-width: 768px) {
-
-    .nav-links > li > a[href="trap-skeet.html"] {
-        font-size: 0 !important;
-        position: relative;
-    }
-
-    .nav-links > li > a[href="trap-skeet.html"]::after {
-        content: "Trap & Skeet";
-        font-size: 16px;
-        color: inherit;
-    }
-}
-
-/* =========================================================
-   3. MOBILE NAV — WRAPPED LAYOUT + TAP-TO-OPEN DROPDOWNS
-   ========================================================= */
-@media (max-width: 900px) {
-
-    /* NAV CONTAINER */
-    .main-nav {
-        justify-content: center !important;
-        padding: 12px 0 !important;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo {
-        order: 1;
-        text-align: center;
-        width: 100%;
-    }
-
-    .logo img {
-        height: 90px;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .nav-spacer {
-        display: none;
-    }
-
-    /* WRAPPED NAV — 3 OVER 3 */
-    .nav-links {
-        order: 2;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px 6px;
-        width: 100%;
-        padding: 0;
-        margin-top: 0;
-    }
-
-    .nav-links li {
-        flex: 0 0 calc(33.33% - 6px);
-        text-align: center;
-    }
-
-    .nav-links a {
-        font-size: 1.3rem;
-        padding: 4px 2px;
-        white-space: nowrap;
-    }
-
-    /* HOMEPAGE-SPECIFIC SPACING */
-    .home .nav-links {
-        gap: 4px 6px !important;
-    }
-
-    .home .nav-links li {
-        flex: 0 0 calc(33.33% - 4px) !important;
-    }
-
-    .home .nav-links a {
-        font-size: 1.3rem !important;
-        padding: 2px 0 !important;
-        font-weight: bold;
-    }
-
-    .home .main-nav {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 auto !important;
-    }
-
-    /* MOBILE DROPDOWN OVERLAY */
-    .dropdown-menu,
-    .submenu-right {
-        display: none;
-        position: absolute !important;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90% !important;
-        margin-top: 6px;
-        padding: 10px 0;
-        border: 1px solid #ddd;
-        background: white;
-        z-index: 9999;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    /* HOMEPAGE DROPDOWN TEXT SIZE */
-    .home .dropdown-menu a,
-    .home .submenu-right a {
-        font-size: 1.3rem !important;
-    }
-
-    /* HOMEPAGE DROPDOWN WIDTH */
-    .home .dropdown-menu,
-    .home .submenu-right {
-        max-width: 360px !important;
-    }
-
-    /* MEMBERS SUBMENU — MOBILE RIGHT OPEN */
-    .dropdown-sub {
-        position: relative;
-    }
-
-    .submenu-toggle {
-        display: inline-block !important;
-        vertical-align: middle !important;
-        margin-left: 6px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .dropdown-sub .submenu-right {
-        top: 0 !important;
-        left: 100% !important;
-        transform: none !important;
-        width: auto !important;
-        max-width: 240px !important;
-    }
-
-    .dropdown-sub.open > .submenu-right {
-        display: block;
-    }
-
-    .dropdown.open > .dropdown-menu {
-        display: block;
-    }
-
-    /* HOMEPAGE — KEEP MEMBERS + ARROW INLINE */
-    .home .dropdown-sub {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        white-space: nowrap !important;
-    }
-
-    .home .submenu-link {
-        display: inline-block !important;
-    }
-
-    .home .submenu-toggle {
-        display: inline-block !important;
-        margin-left: 6px !important;
-        vertical-align: middle !important;
-    }
-}
-
-/* =========================================================
-   MOBILE NAV — EXTRA RULES NEEDED FOR DROPDOWN VISIBILITY
-   (These were NOT in the unified block yet)
-   ========================================================= */
-@media (max-width: 900px) {
-
-    /* Ensure nav stays above all dropdowns + content */
-    .main-nav {
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999 !important;
-    }
-
-    header {
-        position: relative;
-        z-index: 9998;
-    }
-
-    /* WRAPPED NAV — 3 OVER 3 (structure only, no conflicts) */
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px 6px;
-        width: 100%;
-        padding: 0;
-        margin-top: 0;
-    }
-
-    .nav-links li {
-        flex: 0 0 calc(33.33% - 6px);
-        text-align: center;
-    }
-
-    .nav-links a {
-        font-size: 1.3rem;
-        padding: 4px 2px;
-        white-space: nowrap;
-    }
-}
-
-/* =========================================================
-   WINDSOR SPORTSMEN'S CLUB — FOOTER
-========================================================= */
-
-/* MAIN FOOTER */
-.footer {
-    width: 100%;
-    background: #102719;
-    color: #f7f0e4;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-}
-
-.footer *,
-.footer *::before,
-.footer *::after {
-    box-sizing: border-box;
-}
-
-/* FOOTER CONTENT CONTAINER */
-.footer-container {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 55px 35px 45px;
-    display: grid;
-    grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-/* FOOTER COLUMNS */
-.footer-column {
-    min-width: 0;
-}
-
-/* COLUMN HEADINGS */
-.footer-column h3 {
-    color: #c6a568;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    line-height: 1.5;
-    margin: 0 0 25px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(198, 165, 104, 0.55);
-}
-
-/* ADDRESS, PHONE AND EMAIL ITEMS */
-.footer-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-    margin-bottom: 19px;
-    color: #f7f0e4;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* CONTACT ICONS */
-.footer-item i {
-    color: #c6a568;
-    font-size: 17px;
-    width: 20px;
-    min-width: 20px;
-    text-align: center;
-    margin-top: 4px;
-}
-
-/* FOOTER PARAGRAPHS */
-.footer-column p {
-    color: #f7f0e4;
-    font-size: 14px;
-    line-height: 1.8;
-    margin: 0 0 10px;
-}
-
-/* FOOTER LISTS */
-.footer-column ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 13px;
-}
-
-/* FOOTER LINKS */
-.footer-column a {
-    display: inline-block;
-    color: #f7f0e4;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 1.6;
-    transition: color 0.25s ease, transform 0.25s ease;
-}
-
-/* LINK HOVER EFFECT */
-.footer-column a:hover {
-    color: #c6a568;
-    transform: translateX(4px);
-}
-
-/* FOOTER BOTTOM COPYRIGHT BAR */
-.footer-bottom {
-    width: 100%;
-    background: #07180f;
-    color: #cfc7b8;
-    text-align: center;
-    padding: 20px 15px;
-    font-size: 13px;
-    line-height: 1.7;
-    border-top: 1px solid rgba(198, 165, 104, 0.35);
-}
-
-/* =========================================================
-   TABLETS
-========================================================= */
-
-@media (max-width: 950px) {
 
     .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 40px 35px;
-        padding: 45px 30px 35px;
-    }
-
-}
-
-/* =========================================================
-   MOBILE PHONES
-========================================================= */
-
-@media (max-width: 550px) {
-
-    .footer-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 30px;
         padding: 35px 24px 30px;
     }
 
     .footer-column h3 {
-        font-size: 16px;
         margin-bottom: 18px;
+        font-size: 16px;
     }
 
     .footer-item {
-        font-size: 14px;
         gap: 12px;
         margin-bottom: 15px;
+        font-size: 14px;
     }
 
     .footer-column p,
@@ -1005,5 +804,192 @@
         padding: 18px 15px;
         font-size: 12px;
     }
+}
 
+@media (max-width: 480px) {
+    .archery-info-text {
+        font-size: 1.05rem;
+    }
+
+    .main-nav {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .logo img {
+        height: 76px;
+    }
+
+    .nav-links {
+        gap: 4px;
+    }
+
+    .nav-links > li {
+        flex-basis: calc(33.333% - 4px);
+    }
+
+    .nav-links > li > a {
+        padding: 4px 1px;
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   STANDALONE FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #102719;
+    color: #f7f0e4;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.footer *,
+.footer *::before,
+.footer *::after {
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr;
+    align-items: start;
+    gap: 40px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 35px 45px;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-column h3 {
+    margin: 0 0 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(198, 165, 104, 0.55);
+    color: #c6a568;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 19px;
+    color: #f7f0e4;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.footer-item i {
+    flex: 0 0 20px;
+    width: 20px;
+    margin-top: 4px;
+    color: #c6a568;
+    font-size: 17px;
+    text-align: center;
+}
+
+.footer-column p {
+    margin: 0 0 10px;
+    color: #f7f0e4;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 13px;
+}
+
+.footer-column a {
+    display: inline-block;
+    color: #f7f0e4;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #c6a568;
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    width: 100%;
+    padding: 20px 15px;
+    border-top: 1px solid rgba(198, 165, 104, 0.35);
+    background: #07180f;
+    color: #cfc7b8;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER — TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 35px;
+        padding: 45px 30px 35px;
+    }
+}
+
+
+/* =========================================================
+   FOOTER — MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+    .footer-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding: 35px 24px 30px;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 18px;
+        font-size: 16px;
+    }
+
+    .footer-item {
+        gap: 12px;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .footer-column p,
+    .footer-column a {
+        font-size: 14px;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        padding: 18px 15px;
+        font-size: 12px;
+    }
 }
