@@ -1,9 +1,3 @@
-/* =========================================================
-   Windsor Sportsmen's Club — NEW Homepage Styles
-   styles/index.css
-   All visual changes for the new homepage live HERE.
-========================================================= */
-
 /* ----- Color palette (from the mockup) ----- */
 :root {
     --navy: #101c2e;
@@ -728,4 +722,3 @@
     }
 
 }
-
