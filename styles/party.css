@@ -1,10 +1,4 @@
 /* ==================================================
-   WINDSOR SPORTSMEN'S CLUB
-   RENTALS / PRIVATE EVENTS PAGE
-================================================== */
-
-
-/* ==================================================
    PAGE BASE
 ================================================== */
 
@@ -52,7 +46,6 @@
     color: inherit;
 }
 
-
 /* ==================================================
    HERO SECTION
 ================================================== */
@@ -68,7 +61,6 @@
 
     overflow: hidden;
 }
-
 
 /* HERO TEXT */
 
@@ -122,7 +114,6 @@
     display: block;
 }
 
-
 /* DECORATIVE DIVIDER */
 
 #private-events-page .rentals-title-divider {
@@ -159,7 +150,6 @@
     line-height: 1.8;
 }
 
-
 /* HERO IMAGE */
 
 #private-events-page .rentals-hero-image {
@@ -173,12 +163,8 @@
     background: var(--rentals-cream-dark);
 }
 
-
 /* ==================================================
    IMAGE PLACEHOLDERS
-
-   Replace these placeholders with actual images
-   when the page layout has been approved.
 ================================================== */
 
 #private-events-page .rentals-image-placeholder {
@@ -227,8 +213,7 @@
     font-style: italic;
 }
 
-
-/* Hero placeholder fills the hero image area */
+/* Hero placeholder */
 
 #private-events-page .rentals-hero-image
 .rentals-image-placeholder {
@@ -236,7 +221,6 @@
 
     border: none;
 }
-
 
 /* ==================================================
    RENTAL SPACES SECTION
@@ -252,7 +236,6 @@
             var(--rentals-cream) 75%
         );
 }
-
 
 /* SECTION HEADING */
 
@@ -284,7 +267,6 @@
     background: var(--rentals-gold);
 }
 
-
 /* ==================================================
    RENTAL CARD GRID
 ================================================== */
@@ -301,7 +283,6 @@
 
     margin: 0 auto;
 }
-
 
 /* INDIVIDUAL CARD */
 
@@ -327,7 +308,6 @@
         border-color 0.25s ease;
 }
 
-
 /* CARD HOVER */
 
 @media (hover: hover) {
@@ -341,7 +321,6 @@
     }
 
 }
-
 
 /* CIRCULAR CARD ICON */
 
@@ -369,7 +348,6 @@
     line-height: 1;
 }
 
-
 /* CARD IMAGE */
 
 #private-events-page .rentals-card-image {
@@ -396,7 +374,6 @@
 .rentals-image-placeholder p {
     font-size: 0.9rem;
 }
-
 
 /* CARD TEXT */
 
@@ -442,7 +419,6 @@
     line-height: 1.65;
 }
 
-
 /* ==================================================
    RENTAL GUIDE / CALL TO ACTION
 ================================================== */
@@ -477,7 +453,6 @@
         );
 }
 
-
 /* GUIDE ICON */
 
 #private-events-page .rentals-guide-icon {
@@ -499,7 +474,6 @@
     line-height: 1;
 }
 
-
 /* GUIDE TITLE */
 
 #private-events-page .rentals-guide-title h2 {
@@ -517,7 +491,6 @@
     display: block;
 }
 
-
 /* GUIDE DIVIDER */
 
 #private-events-page .rentals-guide-divider {
@@ -526,7 +499,6 @@
 
     background: var(--rentals-gold);
 }
-
 
 /* GUIDE DESCRIPTION */
 
@@ -539,7 +511,6 @@
     line-height: 1.7;
 }
 
-
 /* GUIDE BUTTON AREA */
 
 #private-events-page .rentals-guide-action {
@@ -550,7 +521,6 @@
 
     min-width: 0;
 }
-
 
 /* PDF BUTTON */
 
@@ -599,7 +569,6 @@
     outline-offset: 4px;
 }
 
-
 /* PDF ICON */
 
 #private-events-page .rentals-pdf-icon {
@@ -608,7 +577,6 @@
     font-size: 1.5rem;
     line-height: 1;
 }
-
 
 /* GUIDE NOTE */
 
@@ -623,11 +591,9 @@
     text-align: center;
 }
 
-
 /* ==================================================
    RESPONSIVE DESIGN
 ================================================== */
-
 
 /* MEDIUM DESKTOP / SMALL LAPTOP */
 
@@ -658,7 +624,6 @@
     }
 
 }
-
 
 /* TABLET */
 
@@ -739,7 +704,6 @@
     }
 
 }
-
 
 /* MOBILE */
 
