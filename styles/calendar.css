@@ -1,17 +1,598 @@
 
 /* =========================================================
-   WINDSOR SPORTSMEN'S CLUB — FOOTER
+   WINDSOR SPORTSMEN'S CLUB — CALENDAR PAGE
+   STANDALONE STYLESHEET
+   Includes: base styles, navigation, dropdowns, calendar,
+   responsive/mobile layouts, and footer.
 ========================================================= */
 
-/* MAIN FOOTER */
-.footer {
-    width: 100%;
-    background: #102719;
-    color: #f7f0e4;
+
+/* =========================================================
+   1. GLOBAL RESET AND BASE STYLES
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+    line-height: 1.6;
+    color: #222;
+    background-color: transparent;
+}
+
+
+/* =========================================================
+   2. NAVIGATION — DESKTOP
+========================================================= */
+
+header {
+    position: relative;
+    z-index: 9998;
+}
+
+.main-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 0;
+    background-color: #1a1a1a;
+    border-bottom: none;
+}
+
+.nav-spacer {
+    display: none;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    height: 110px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    padding-right: 20px;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 10px 14px;
+
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-radius: 4px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-links > li > a:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+    box-shadow: none;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   3. NAVIGATION DROPDOWN MENUS
+========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu,
+.submenu-right {
+    position: absolute;
+    z-index: 99999;
+
+    display: none;
+    min-width: 220px;
+    padding: 8px 0;
+
+    list-style: none;
+    background: #1a1a1a !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-menu {
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown-sub:hover > .submenu-right {
+    display: block;
+}
+
+.dropdown-menu a,
+.submenu-right a {
+    display: block;
+    padding: 10px 18px;
+
+    color: #fff !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: normal;
+
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover,
+.submenu-right a:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+.nav-links li.dropdown-sub {
+    position: relative;
+}
+
+.dropdown-sub > a {
+    padding-right: 18px;
+}
+
+.submenu-right {
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+}
+
+.dropdown-sub {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.submenu-link,
+.submenu-toggle {
+    display: inline-block;
+}
+
+.submenu-toggle {
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   4. CALENDAR PAGE BACKGROUND
+========================================================= */
+
+.calendar-bg {
+    min-height: 100vh;
+
+    background-image: url("../images/calbg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.calendar-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   5. CALENDAR PAGE LAYOUT
+========================================================= */
+
+.calendar-page {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+#wsc-calendar {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0;
+
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   6. CALENDAR TITLE
+========================================================= */
+
+.calendar-title {
+    display: inline-block;
+
+    margin: 70px auto 30px;
+    padding-bottom: 6px;
+
+    color: #000;
+    font-size: 2.6rem;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   7. GOOGLE CALENDAR CONTAINER
+========================================================= */
+
+.calendar-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#wsc-calendar .calendar-container {
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.calendar-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.calendar-container iframe {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   8. OPTIONAL CALENDAR HEADER IMAGE STYLES
+   Kept available in case you add the image back later.
+========================================================= */
+
+.calendar-header-wrapper {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.calendar-header-img {
+    display: block;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.calendar-header-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   9. TABLET NAVIGATION
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 16px;
+    }
+
+    .logo img {
+        height: 70px;
+        margin-bottom: 8px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding-right: 0;
+    }
+}
+
+
+/* =========================================================
+   10. MOBILE NAVIGATION AND CALENDAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Navigation layout */
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+        gap: 10px;
+
+        padding: 12px 8px !important;
+    }
+
+    .logo {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo img {
+        width: auto;
+        height: 76px;
+        margin: 0 auto;
+    }
+
+    .nav-spacer {
+        display: none;
+    }
+
+    .nav-links {
+        order: 2;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 4px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links > li {
+        flex: 0 0 calc(33.333% - 4px);
+        min-width: 0;
+        text-align: center;
+    }
+
+    .nav-links > li > a {
+        display: inline-block;
+        width: 100%;
+        padding: 4px 2px;
+
+        font-size: 1rem;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+
+    /* Mobile dropdown menus */
+
+    .dropdown:hover > .dropdown-menu,
+    .dropdown-sub:hover > .submenu-right {
+        display: none !important;
+    }
+
+    .dropdown-menu,
+    .submenu-right {
+        position: absolute !important;
+        top: 100%;
+        left: 0 !important;
+
+        width: max-content !important;
+        min-width: 180px;
+        max-width: min(88vw, 320px);
+
+        margin-top: 6px;
+        padding: 8px 0;
+
+        background: #1a1a1a !important;
+        border: 1px solid #444 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .dropdown-menu a,
+    .submenu-right a {
+        display: block;
+        padding: 9px 14px;
+
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: left;
+        white-space: normal;
+    }
+
+    /*
+       These rules support dropdowns controlled by scripts.js
+       when it adds the .open class.
+    */
+
+    .dropdown.open > .dropdown-menu,
+    .dropdown-sub.open > .submenu-right,
+    .nav-links li.dropdown > .dropdown-menu.open {
+        display: block !important;
+    }
+
+    .dropdown-sub {
+        position: relative;
+    }
+
+    .dropdown-sub .submenu-right {
+        top: 0 !important;
+        left: 100% !important;
+
+        width: auto !important;
+        max-width: min(75vw, 240px);
+        margin-top: 0;
+    }
+
+
+    /* Calendar layout */
+
+    .calendar-page {
+        padding: 12px;
+    }
+
+    .calendar-title {
+        margin-top: 30px;
+        margin-bottom: 24px;
+
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    #wsc-calendar {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-left: 6% !important;
+        padding-right: 6% !important;
+
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+
+    #wsc-calendar .calendar-container {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .calendar-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .calendar-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        overflow-x: hidden !important;
+    }
+
+    .calendar-wrapper iframe,
+    .calendar-container iframe {
+        display: block;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 600px;
+
+        border: 0;
+    }
+
+    .calendar-header-img {
+        margin-top: 60px;
+    }
+}
+
+
+/* =========================================================
+   11. SMALL MOBILE PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .calendar-page {
+        padding: 8px;
+    }
+
+    .calendar-title {
+        font-size: 1.8rem;
+    }
+
+    .main-nav {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .logo img {
+        height: 76px;
+    }
+
+    .nav-links {
+        gap: 4px;
+    }
+
+    .nav-links > li {
+        flex-basis: calc(33.333% - 4px);
+    }
+
+    .nav-links > li > a {
+        padding: 4px 1px;
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   12. FOOTER — MAIN STYLING
+========================================================= */
+
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: #102719;
+    color: #f7f0e4;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer *,
@@ -20,137 +601,163 @@
     box-sizing: border-box;
 }
 
-/* FOOTER CONTENT CONTAINER */
 .footer-container {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 55px 35px 45px;
     display: grid;
     grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr;
-    gap: 40px;
     align-items: start;
+
+    gap: 40px;
+    max-width: 1250px;
+
+    margin: 0 auto;
+    padding: 55px 35px 45px;
 }
 
-/* FOOTER COLUMNS */
 .footer-column {
     min-width: 0;
 }
 
-/* COLUMN HEADINGS */
 .footer-column h3 {
+    margin: 0 0 25px;
+    padding-bottom: 12px;
+
     color: #c6a568;
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 1.5px;
     line-height: 1.5;
-    margin: 0 0 25px;
-    padding-bottom: 12px;
+
     border-bottom: 2px solid rgba(198, 165, 104, 0.55);
 }
 
-/* ADDRESS, PHONE AND EMAIL ITEMS */
+
+/* =========================================================
+   13. FOOTER CONTACT DETAILS
+========================================================= */
+
 .footer-item {
     display: flex;
     align-items: flex-start;
     gap: 13px;
+
     margin-bottom: 19px;
+
     color: #f7f0e4;
     font-size: 14px;
     line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 
-/* CONTACT ICONS */
 .footer-item i {
-    color: #c6a568;
-    font-size: 17px;
+    flex: 0 0 20px;
     width: 20px;
     min-width: 20px;
-    text-align: center;
+
     margin-top: 4px;
+
+    color: #c6a568;
+    font-size: 17px;
+    text-align: center;
 }
 
-/* FOOTER PARAGRAPHS */
+
+/* =========================================================
+   14. FOOTER TEXT AND LINKS
+========================================================= */
+
 .footer-column p {
+    margin: 0 0 10px;
+
     color: #f7f0e4;
     font-size: 14px;
     line-height: 1.8;
-    margin: 0 0 10px;
 }
 
-/* FOOTER LISTS */
 .footer-column ul {
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .footer-column ul li {
     margin-bottom: 13px;
 }
 
-/* FOOTER LINKS */
 .footer-column a {
     display: inline-block;
+
     color: #f7f0e4;
-    text-decoration: none;
     font-size: 14px;
     line-height: 1.6;
-    transition: color 0.25s ease, transform 0.25s ease;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-/* LINK HOVER EFFECT */
 .footer-column a:hover {
     color: #c6a568;
     transform: translateX(4px);
 }
 
-/* FOOTER BOTTOM COPYRIGHT BAR */
-.footer-bottom {
-    width: 100%;
-    background: #07180f;
-    color: #cfc7b8;
-    text-align: center;
-    padding: 20px 15px;
-    font-size: 13px;
-    line-height: 1.7;
-    border-top: 1px solid rgba(198, 165, 104, 0.35);
-}
 
 /* =========================================================
-   TABLETS
+   15. FOOTER COPYRIGHT BAR
+========================================================= */
+
+.footer-bottom {
+    width: 100%;
+    padding: 20px 15px;
+
+    background: #07180f;
+    color: #cfc7b8;
+
+    border-top: 1px solid rgba(198, 165, 104, 0.35);
+
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* =========================================================
+   16. FOOTER — TABLETS
 ========================================================= */
 
 @media (max-width: 950px) {
 
     .footer-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 40px 35px;
         padding: 45px 30px 35px;
     }
-
 }
 
+
 /* =========================================================
-   MOBILE PHONES
+   17. FOOTER — MOBILE PHONES
 ========================================================= */
 
 @media (max-width: 550px) {
 
     .footer-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+
         gap: 30px;
         padding: 35px 24px 30px;
     }
 
     .footer-column h3 {
-        font-size: 16px;
         margin-bottom: 18px;
+        font-size: 16px;
     }
 
     .footer-item {
-        font-size: 14px;
         gap: 12px;
         margin-bottom: 15px;
+        font-size: 14px;
     }
 
     .footer-column p,
@@ -166,5 +773,4 @@
         padding: 18px 15px;
         font-size: 12px;
     }
-
 }
