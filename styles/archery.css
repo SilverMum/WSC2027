@@ -1318,6 +1318,18 @@
     }
 }
 
+/* ARCHERY HERO TEXT COLORS */
+
+/* Match the club name to Thursday Night Archery */
+.archery-hero-eyebrow {
+    color: #b99a60;
+}
+
+/* Make the subtitle white */
+.archery-hero-subtitle {
+    color: #ffffff;
+}
+
 /* =========================================================
    STANDALONE FOOTER
 ========================================================= */
