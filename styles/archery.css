@@ -190,16 +190,11 @@
 
 .archery-hero-image {
     position: absolute;
-    z-index: -2;
     inset: 0;
     background:
-        linear-gradient(
-            90deg,
-            rgba(10, 24, 19, 0.55),
-            rgba(10, 24, 19, 0.72)
-        ),
-        url("../images/archery-hero.jpg") center 48% / cover no-repeat,
-        #294537;
+        url("../images/archeryheaderimg.png")
+        center 48% / cover no-repeat;
+    z-index: 0;
 }
 
 .archery-hero-image::after {
