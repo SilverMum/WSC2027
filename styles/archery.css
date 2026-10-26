@@ -1320,13 +1320,13 @@
 
 /* ARCHERY HERO TEXT COLORS */
 
-/* Match the club name to Thursday Night Archery */
-.archery-hero-eyebrow {
-    color: #b99a60;
+/* Windsor Sportsmen's Club — match Thursday Night Archery */
+#archery-page .archery-hero-eyebrow {
+    color: #f3c65c;
 }
 
-/* Make the subtitle white */
-.archery-hero-subtitle {
+/* Accuracy. Concentration. Fun. — white */
+#archery-page .archery-hero-subtitle {
     color: #ffffff;
 }
 
