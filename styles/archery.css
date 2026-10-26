@@ -177,24 +177,25 @@
 
 .archery-hero {
     position: relative;
-    isolation: isolate;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 320px;
     overflow: hidden;
-    background: #18382b;
-    color: #fff;
-    text-align: center;
+    isolation: isolate;
 }
 
+/* Background image stays behind the words */
 .archery-hero-image {
     position: absolute;
     inset: 0;
     background:
         url("../images/archeryheaderimg.png")
         center 48% / cover no-repeat;
-    z-index: 0;
+    z-index: -1;
+}
+
+/* Keep all header wording visible above the image */
+.archery-hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .archery-hero-image::after {
