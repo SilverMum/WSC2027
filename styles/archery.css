@@ -1,4 +1,151 @@
 /* =========================================================
+   NAVIGATION
+========================================================= */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-spacer {
+    display: none;
+}
+
+.logo img {
+    height: 110px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    padding: 10px 14px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-links > li > a:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+.submenu-toggle {
+    color: #fff !important;
+}
+
+/* Trap & Skeet two-line item */
+.nav-trap-skeet a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 14px;
+    line-height: 1.1;
+    display: inline-block;
+    text-align: left !important;
+}
+
+.nav-trap-skeet a span {
+    font-size: 0.85em;
+    font-weight: 600;
+    display: block;
+    color: #fff;
+}
+
+/* Dropdown menus */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    padding: 8px 0;
+    list-style: none;
+    background-color: #1a1a1a !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 2100;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff !important;
+    white-space: normal;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Right-side submenu */
+.dropdown-sub {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.submenu-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    padding: 8px 0;
+    background-color: #1a1a1a !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 2200;
+}
+
+.dropdown-sub:hover > .submenu-right {
+    display: block;
+}
+
+.submenu-right a {
+    padding: 10px 18px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff !important;
+}
+
+/* =========================================================
    COLOURS AND PAGE BASE
 ========================================================= */
 
@@ -56,119 +203,6 @@
     width: min(1200px, calc(100% - 48px));
     margin-left: auto;
     margin-right: auto;
-}
-
-/* =========================================================
-   NAVIGATION
-   Uses the classes in archery.html
-========================================================= */
-
-.main-nav {
-    position: relative;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    min-height: 76px;
-    padding: 10px max(24px, calc((100% - 1200px) / 2));
-    background: #10201e;
-    color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.main-nav a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.nav-logo img {
-    display: block;
-    width: 245px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 26px;
-}
-
-.nav-links > a,
-.nav-dropdown-toggle {
-    padding: 10px 0;
-    color: #fff;
-    background: transparent;
-    border: 0;
-    font: inherit;
-    font-size: 14px;
-    cursor: pointer;
-    white-space: nowrap;
-    text-decoration: none;
-}
-
-.nav-links > a:hover,
-.nav-dropdown-toggle:hover {
-    color: var(--archery-gold, #d9a641);
-}
-
-.nav-dropdown {
-    position: relative;
-}
-
-.nav-dropdown-toggle span {
-    margin-left: 4px;
-}
-
-.nav-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    min-width: 210px;
-    padding: 8px;
-    background: #142923;
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    border-radius: 8px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
-    display: block;
-}
-
-.nav-dropdown-menu a {
-    display: block;
-    padding: 10px 12px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.nav-dropdown-menu a:hover,
-.nav-dropdown-menu a[aria-current="page"] {
-    color: #142923;
-    background: var(--archery-gold, #d9a641);
-}
-
-.mobile-menu-toggle {
-    display: none;
-    color: white;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 24px;
-    cursor: pointer;
 }
 
 /* =========================================================
