@@ -1869,3 +1869,41 @@
         padding: 17px 11px;
     }
 }
+
+/* =========================================================
+   SOCIAL MEDIA TEXT BUTTONS
+========================================================= */
+
+#trap-skeet-page .ts-social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    border: 2px solid var(--ts-gold);
+    border-radius: 6px;
+    background: var(--ts-green);
+    color: #ffffff;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#trap-skeet-page .ts-social-button:hover {
+    background: var(--ts-gold-light);
+    color: var(--ts-green-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(16, 39, 25, 0.18);
+}
+
+#trap-skeet-page .ts-social-button:focus-visible {
+    outline: 3px solid var(--ts-gold);
+    outline-offset: 4px;
+}
