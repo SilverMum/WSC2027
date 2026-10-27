@@ -74,19 +74,19 @@
          HERO BANNER
     ================================================== -->
 
-   <section class="ts-hero"
-         aria-label="Trap and Skeet"
-         style="margin-top: 85px;">
+    <section class="ts-hero"
+             aria-label="Trap and Skeet"
+             style="margin-top: 85px;">
 
-    <img src="images/trapskeetnewheadernowords.png"
-         alt="Windsor Sportsmen's Club Trap and Skeet Range">
+        <img src="images/trapskeetnewheadernowords.png"
+             alt="Windsor Sportsmen's Club Trap and Skeet Range">
 
-    <div class="ts-hero-overlay">
-        <p>WINDSOR SPORTSMEN'S CLUB</p>
-        <h1>TRAP &amp; SKEET</h1>
-        <span>SPORTSMANSHIP • SAFETY • COMMUNITY</span>
-    </div>
-</section>
+        <div class="ts-hero-overlay">
+            <p>WINDSOR SPORTSMEN'S CLUB</p>
+            <h1>TRAP &amp; SKEET</h1>
+            <span>SPORTSMANSHIP • SAFETY • COMMUNITY</span>
+        </div>
+    </section>
 
     <div class="ts-container">
 
@@ -172,80 +172,105 @@
 
             <nav class="ts-card-grid" aria-label="Trap and Skeet information sections">
 
-                <a href="#info1" class="ts-card">
+                <button type="button" class="ts-card" data-target="info1" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">i</span>
                     <span class="ts-card-copy">
                         <strong>General Information</strong>
                         <span>Getting started at our range.</span>
                         <span class="ts-card-link">Explore details →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info2" class="ts-card">
+                <button type="button" class="ts-card" data-target="info2" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">◷</span>
                     <span class="ts-card-copy">
                         <strong>Hours of Operation</strong>
                         <span>Summer and winter schedules.</span>
                         <span class="ts-card-link">View hours →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info3" class="ts-card">
+                <button type="button" class="ts-card" data-target="info3" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">$</span>
                     <span class="ts-card-copy">
                         <strong>Fees &amp; Memberships</strong>
                         <span>Rates and membership options.</span>
                         <span class="ts-card-link">View pricing →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info4" class="ts-card">
+                <button type="button" class="ts-card" data-target="info4" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">▤</span>
                     <span class="ts-card-copy">
                         <strong>2026 Member Pre-Shot Packages</strong>
                         <span>Bronze, Silver and Gold packages.</span>
                         <span class="ts-card-link">Compare packages →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info5" class="ts-card">
+                <button type="button" class="ts-card" data-target="info5" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">✓</span>
                     <span class="ts-card-copy">
                         <strong>Shooter Requirements</strong>
                         <span>Licensing and protective equipment.</span>
                         <span class="ts-card-link">Review requirements →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info6" class="ts-card">
+                <button type="button" class="ts-card" data-target="info6" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">▰</span>
                     <span class="ts-card-copy">
                         <strong>Ammunition Types</strong>
                         <span>Approved target loads for each range.</span>
                         <span class="ts-card-link">Check ammunition →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info7" class="ts-card">
+                <button type="button" class="ts-card" data-target="info7" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">☷</span>
                     <span class="ts-card-copy">
                         <strong>Range Rules</strong>
                         <span>Safety rules and range procedures.</span>
                         <span class="ts-card-link">Read the rules →</span>
                     </span>
-                </a>
+                </button>
 
-                <a href="#info8" class="ts-card">
+                <button type="button" class="ts-card" data-target="info8" aria-controls="ts-expanded-content" aria-expanded="false">
                     <span class="ts-card-icon" aria-hidden="true">☎</span>
                     <span class="ts-card-copy">
                         <strong>Contact Trap &amp; Skeet</strong>
                         <span>Facilities, questions and enquiries.</span>
                         <span class="ts-card-link">Contact us →</span>
                     </span>
-                </a>
+                </button>
 
             </nav>
+
+            <!-- EXPANDED INFORMATION PANEL -->
+            <div
+                class="ts-expanded-info"
+                id="ts-expanded-info"
+                aria-live="polite"
+                hidden>
+
+                <div class="ts-expanded-toolbar">
+                    <span class="ts-expanded-label">RANGE INFORMATION</span>
+
+                    <button
+                        type="button"
+                        class="ts-close-details"
+                        id="ts-close-details">
+                        Close Details ×
+                    </button>
+                </div>
+
+                <div id="ts-expanded-content"></div>
+            </div>
+
         </section>
+
+        <!-- ORIGINAL INFORMATION SECTIONS -->
+        <div id="ts-detail-source" hidden>
 
         <!-- =============================================
              GENERAL INFORMATION
@@ -440,7 +465,7 @@
             </div>
         </section>
 
-        <!-- =============================================
+                    <!-- =============================================
              MEMBER PRE-SHOT PACKAGES
         ============================================== -->
 
@@ -698,6 +723,9 @@
             </div>
         </section>
 
+        </div>
+        <!-- END ORIGINAL INFORMATION SECTIONS -->
+
         <!-- =============================================
              WEATHER
         ============================================== -->
@@ -722,7 +750,7 @@
     </div>
 </main>
 
-<!-- WEATHER WIDGET SCRIPT -->
+    <!-- WEATHER WIDGET SCRIPT -->
 <script async src="https://app3.weatherwidget.org/js/?id=ww_41794d68d185f"></script>
 
 <!-- =====================================================
@@ -792,6 +820,79 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
             this.parentElement.classList.toggle('open');
         }
     });
+});
+</script>
+
+<!-- TRAP & SKEET INFORMATION CARD INTERACTION -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll(
+        '#trap-skeet-page .ts-card[data-target]'
+    );
+
+    const source = document.getElementById('ts-detail-source');
+    const panel = document.getElementById('ts-expanded-info');
+    const content = document.getElementById('ts-expanded-content');
+    const closeButton = document.getElementById('ts-close-details');
+
+    if (!cards.length || !source || !panel || !content || !closeButton) {
+        return;
+    }
+
+    let activeCard = null;
+    let activeSection = null;
+
+    function returnSectionToSource(section) {
+        if (section && section.parentElement === content) {
+            source.appendChild(section);
+        }
+    }
+
+    function closeDetails() {
+        returnSectionToSource(activeSection);
+        activeSection = null;
+
+        if (activeCard) {
+            activeCard.classList.remove('is-active');
+            activeCard.setAttribute('aria-expanded', 'false');
+        }
+
+        activeCard = null;
+        panel.hidden = true;
+    }
+
+    cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            const targetId = card.dataset.target;
+            const targetSection = document.getElementById(targetId);
+
+            if (!targetSection) {
+                return;
+            }
+
+            if (activeCard === card) {
+                closeDetails();
+                return;
+            }
+
+            returnSectionToSource(activeSection);
+
+            if (activeCard) {
+                activeCard.classList.remove('is-active');
+                activeCard.setAttribute('aria-expanded', 'false');
+            }
+
+            content.appendChild(targetSection);
+            activeSection = targetSection;
+            activeCard = card;
+
+            card.classList.add('is-active');
+            card.setAttribute('aria-expanded', 'true');
+            panel.hidden = false;
+        });
+    });
+
+    closeButton.addEventListener('click', closeDetails);
 });
 </script>
 
