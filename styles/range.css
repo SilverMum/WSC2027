@@ -1646,3 +1646,226 @@
         animation-iteration-count: 1 !important;
     }
 }
+
+/* =========================================================
+   19. EXPANDABLE INFORMATION CARDS
+   Details open beneath the card grid instead of jumping
+   to another location on the page.
+========================================================= */
+
+/* Keep the original information sections hidden until selected.
+   JavaScript moves the selected section into the visible panel. */
+
+#ts-detail-source[hidden],
+#trap-skeet-page .ts-expanded-info[hidden] {
+    display: none !important;
+}
+
+
+/* Make the information cards work and look like buttons */
+
+#trap-skeet-page .ts-card {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+/* Keep the original hover effect and highlight the selected card */
+
+#trap-skeet-page .ts-card.is-active {
+    transform: translateY(-3px);
+    border-color: var(--ts-gold);
+    background: var(--ts-white);
+    box-shadow:
+        0 0 0 2px rgba(196, 161, 91, 0.35),
+        0 8px 20px rgba(16, 39, 25, 0.12);
+}
+
+#trap-skeet-page .ts-card.is-active .ts-card-link {
+    color: var(--ts-green);
+}
+
+
+/* Visible keyboard focus */
+
+#trap-skeet-page .ts-card:focus-visible,
+#trap-skeet-page .ts-close-details:focus-visible {
+    outline: 3px solid #8a621d;
+    outline-offset: 4px;
+}
+
+
+/* Main expanded details panel */
+
+#trap-skeet-page .ts-expanded-info {
+    display: block;
+    width: 100%;
+    margin: 30px 0 45px;
+    padding: clamp(16px, 3vw, 32px);
+
+    border: 1px solid var(--ts-border);
+    border-top: 4px solid var(--ts-gold);
+    border-radius: 10px;
+
+    background: var(--ts-cream);
+    box-shadow: 0 10px 28px rgba(16, 39, 25, 0.10);
+
+    scroll-margin-top: 24px;
+}
+
+
+/* Panel heading and close button row */
+
+#trap-skeet-page .ts-expanded-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--ts-border);
+}
+
+
+/* Small label above the displayed information */
+
+#trap-skeet-page .ts-expanded-label {
+    margin: 0;
+    color: var(--ts-green);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+
+/* Close Details button */
+
+#trap-skeet-page .ts-close-details {
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 42px;
+    padding: 9px 15px;
+
+    border: 1px solid var(--ts-gold);
+    border-radius: 5px;
+
+    color: var(--ts-white);
+    background: var(--ts-green);
+
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+#trap-skeet-page .ts-close-details:hover {
+    transform: translateY(-2px);
+    color: var(--ts-green-dark);
+    background: var(--ts-gold-light);
+    box-shadow: 0 5px 12px rgba(16, 39, 25, 0.12);
+}
+
+
+/* Display the selected original information section inside the panel */
+
+#trap-skeet-page #ts-expanded-content {
+    width: 100%;
+    min-width: 0;
+}
+
+#trap-skeet-page #ts-expanded-content > .ts-detail-section {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* Keep images and wide content inside the panel */
+
+#trap-skeet-page #ts-expanded-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+#trap-skeet-page #ts-expanded-content table {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   20. EXPANDED PANEL — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+    #trap-skeet-page .ts-expanded-info {
+        margin: 22px 0 32px;
+        padding: 16px;
+        border-radius: 8px;
+        scroll-margin-top: 20px;
+    }
+
+    #trap-skeet-page .ts-expanded-toolbar {
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 17px;
+        padding-bottom: 13px;
+    }
+
+    #trap-skeet-page .ts-expanded-label {
+        font-size: 0.7rem;
+    }
+
+    #trap-skeet-page .ts-close-details {
+        min-height: 40px;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+    }
+
+    #trap-skeet-page #ts-expanded-content > .ts-detail-section {
+        padding: 20px 14px;
+    }
+}
+
+
+/* =========================================================
+   21. EXPANDED PANEL — SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+    #trap-skeet-page .ts-expanded-info {
+        padding: 12px;
+    }
+
+    #trap-skeet-page .ts-expanded-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #trap-skeet-page .ts-close-details {
+        align-self: flex-start;
+    }
+
+    #trap-skeet-page #ts-expanded-content > .ts-detail-section {
+        padding: 17px 11px;
+    }
+}
