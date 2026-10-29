@@ -1,240 +1,658 @@
 /* =========================================================
-   NAVIGATION — DESKTOP BASE
+   WINDSOR SPORTSMEN'S CLUB
+   SHARED NAVIGATION STYLES
+   Desktop • Tablets • Mobile Phones
 ========================================================= */
+
+/* =========================================================
+   GLOBAL NAVIGATION SAFEGUARDS
+========================================================= */
+
+.main-nav,
+.main-nav * {
+    box-sizing: border-box;
+}
+
 .main-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2000;
+    z-index: 9999;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
-    background-color: #1a1a1a;
-    border-bottom: 1px solid #ddd;
+
+    min-height: 100px;
+    padding: 10px 20px;
+
+    background: #1a1a1a;
+    border-bottom: 1px solid #3a3a3a;
+
+    isolation: isolate;
 }
+
+/* =========================================================
+   NAVIGATION SPACER
+   Hidden by default. Enable only if a page uses it.
+========================================================= */
 
 .nav-spacer {
     display: none;
 }
 
-.logo img {
-    height: 110px;
-    width: auto;
-    display: block;
+/* =========================================================
+   LOGO — LEFT SIDE
+========================================================= */
+
+.logo {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    z-index: 2;
 }
 
+.logo img {
+    display: block;
+    width: auto;
+    height: 80px;
+    max-width: 190px;
+    object-fit: contain;
+}
+
+/* =========================================================
+   MAIN NAVIGATION LINKS — CENTERED
+========================================================= */
+
 .nav-links {
-    list-style: none;
+    position: relative;
+
     display: flex;
-    gap: 30px;
     align-items: center;
-    padding-right: 20px;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+    padding: 0 10px;
+
+    list-style: none;
 }
 
 .nav-links li {
     position: relative;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
 }
+
+/* Main navigation buttons */
 
 .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
     padding: 10px 14px;
-    font-size: 1.2rem;
+
+    color: #ffffff;
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 1rem;
     font-weight: 600;
-    color: #fff;
+    line-height: 1.3;
+    text-align: center;
     text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
     white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.nav-links > li > a:hover {
-    background-color: #333 !important;
-    color: #fff !important;
+/* Hover and keyboard focus */
+
+.nav-links > li > a:hover,
+.nav-links > li > a:focus-visible {
+    color: #ffffff;
+    background: #383838;
+    border-color: #b99a60;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     transform: translateY(-2px);
+    outline: none;
 }
 
-.submenu-toggle {
-    color: #fff !important;
+/* Keyboard accessibility */
+
+.nav-links a:focus-visible {
+    outline: 2px solid #d6b873;
+    outline-offset: 3px;
 }
 
-/* =========================================================
-   TRAP & SKEET TWO-LINE ITEM
-========================================================= */
-.nav-trap-skeet a {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #fff;
-    padding: 10px 14px;
-    line-height: 1.1;
-    display: inline-block;
-    text-align: left !important;
-}
+/* Active/current page, when aria-current is set */
 
-.nav-trap-skeet a span {
-    font-size: 0.85em;
-    font-weight: 600;
-    display: block;
-    color: #fff;
+.nav-links a[aria-current="page"] {
+    color: #ffffff;
+    background: #333333;
+    border-color: #b99a60;
 }
 
 /* =========================================================
-   DROPDOWN — DESKTOP
+   DROPDOWN BUTTONS
 ========================================================= */
+
 .dropdown {
     position: relative;
 }
 
+/* Dropdown arrow for buttons using .submenu-toggle */
+
+.submenu-toggle::after {
+    content: "";
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-left: 9px;
+    margin-top: -4px;
+
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.dropdown:hover > .submenu-toggle::after,
+.dropdown:focus-within > .submenu-toggle::after,
+.dropdown.open > .submenu-toggle::after {
+    transform: rotate(225deg);
+    margin-top: 4px;
+}
+
+/* =========================================================
+   DROPDOWN MENU — DESKTOP
+========================================================= */
+
 .dropdown-menu {
     display: none;
+
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 220px;
-    padding: 8px 0;
+
+    min-width: 230px;
+    max-width: 300px;
+
+    margin: 0;
+    padding: 8px;
+
     list-style: none;
-    background-color: #1a1a1a !important;
-    border: none !important;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 2100;
+
+    background: #1a1a1a;
+    border: 1px solid #444444;
+    border-top: 2px solid #b99a60;
+    border-radius: 0 0 6px 6px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    z-index: 10001;
 }
 
-.dropdown:hover > .dropdown-menu {
+/* Show desktop dropdown on hover or keyboard focus */
+
+@media (min-width: 901px) {
+    .dropdown:hover > .dropdown-menu,
+    .dropdown:focus-within > .dropdown-menu,
+    .dropdown.open > .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Dropdown links */
+
+.dropdown-menu li {
     display: block;
+    width: 100%;
 }
 
 .dropdown-menu a {
-    display: block;
-    padding: 10px 18px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-height: 42px;
+
+    padding: 10px 14px;
+
+    color: #ffffff;
+    background: transparent;
+
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    text-decoration: none;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+    color: #ffffff;
+    background: #383838;
+    border-color: #b99a60;
+    outline: none;
+}
+
+/* =========================================================
+   RIGHT-SIDE SUBMENU — MEMBERS
+========================================================= */
+
+.dropdown-sub {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
     white-space: normal;
 }
 
-.dropdown-menu a:hover {
-    background-color: #333;
-    color: #fff;
+/* Right-pointing arrow */
+
+.dropdown-sub > a::after {
+    content: "";
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-left: auto;
+    flex-shrink: 0;
+
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+
+    transform: rotate(45deg);
 }
 
-/* =========================================================
-   RIGHT-SIDE SUBMENU (Members)
-========================================================= */
-.dropdown-sub {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-}
+/* Nested submenu */
 
 .submenu-right {
     display: none;
+
     position: absolute;
-    top: 0;
+    top: -8px;
     left: 100%;
+
     min-width: 200px;
-    padding: 8px 0;
-    background-color: #1a1a1a !important;
-    border: none !important;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 2200;
+    max-width: 280px;
+
+    margin: 0;
+    padding: 8px;
+
+    list-style: none;
+
+    background: #1a1a1a;
+    border: 1px solid #444444;
+    border-top: 2px solid #b99a60;
+    border-radius: 5px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    z-index: 10002;
 }
 
-.dropdown-sub:hover > .submenu-right {
-    display: block;
-}
+/* Desktop nested submenu behavior */
 
-/* =========================================================
-   MOBILE — HOVER DISABLE + JS OPEN SUPPORT
-========================================================= */
-@media (max-width: 900px) {
-
-    .dropdown:hover > .dropdown-menu {
-        display: none !important;
-    }
-
-    .nav-links li.dropdown > .dropdown-menu.open {
-        display: block !important;
-    }
-
+@media (min-width: 901px) {
+    .dropdown-sub:hover > .submenu-right,
+    .dropdown-sub:focus-within > .submenu-right,
     .dropdown-sub.open > .submenu-right {
-        display: block !important;
+        display: block;
     }
 }
 
 /* =========================================================
-   MOBILE — WRAPPED LAYOUT (3 OVER 3)
+   TRAP & SKEET — TWO-LINE LABEL SUPPORT
 ========================================================= */
-@media (max-width: 900px) {
+
+.nav-trap-skeet > a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1.15;
+    text-align: center;
+}
+
+.nav-trap-skeet > a span {
+    display: block;
+
+    color: inherit;
+    font-size: 0.82em;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
 
     .main-nav {
-        justify-content: center !important;
-        padding: 12px 0 !important;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        z-index: 9999 !important;
+        min-height: 92px;
+        padding: 10px 12px 10px 155px;
+    }
+
+    .logo {
+        left: 12px;
     }
 
     .logo img {
-        height: 90px;
-        margin: 0 auto;
+        height: 66px;
+        max-width: 135px;
     }
 
     .nav-links {
-        order: 2;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px 6px;
-        width: 100%;
+        gap: 4px;
         padding: 0;
     }
 
-    .nav-links li {
-        flex: 0 0 calc(33.33% - 6px);
-        text-align: center;
+    .nav-links > li > a {
+        min-height: 42px;
+        padding: 9px 8px;
+        font-size: 0.91rem;
     }
 
-    .nav-links a {
-        font-size: 1.3rem;
-        padding: 4px 2px;
+    .dropdown-menu a {
+        font-size: 0.95rem;
     }
 }
 
 /* =========================================================
-   MOBILE — DROPDOWN OVERLAY
+   MOBILE AND TABLET DROPDOWN BEHAVIOR
+   Tap-to-open is supported through .open classes.
 ========================================================= */
+
 @media (max-width: 900px) {
+
+    /* Disable hover-only opening on touch layouts */
+
+    .dropdown:hover > .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open > .dropdown-menu,
+    .nav-links li.dropdown > .dropdown-menu.open {
+        display: block;
+    }
+
+    .dropdown-sub.open > .submenu-right,
+    .dropdown-sub > .submenu-right.open {
+        display: block;
+    }
+
+    /* Dropdown panel */
 
     .dropdown-menu,
     .submenu-right {
+        position: static;
+
         display: none;
-        position: absolute !important;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90% !important;
-        margin-top: 6px;
-        padding: 10px 0;
-        border: 1px solid #ddd;
-        background: white;
-        z-index: 9999;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+
+        margin: 5px 0 0;
+        padding: 6px;
+
+        background: #242424;
+        border: 1px solid #444444;
+        border-top: 2px solid #b99a60;
+        border-radius: 5px;
+
+        box-shadow: none;
+
+        transform: none;
+    }
+
+    .dropdown-menu a,
+    .submenu-right a {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 40px;
+
+        padding: 9px 8px;
+
+        color: #ffffff;
+        font-size: 0.95rem;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    /* Nested submenu appears below its parent */
+
+    .dropdown-sub {
+        display: block;
+    }
+
+    .dropdown-sub > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .dropdown-sub > a::after {
+        margin-left: 0;
     }
 }
 
 /* =========================================================
-   MOBILE — TRAP & SKEET LABEL FIX
+   MOBILE PHONES — THREE COLUMNS
 ========================================================= */
-@media (max-width: 768px) {
-    .nav-links > li > a[href="trap-skeet.html"] {
-        font-size: 0 !important;
+
+@media (max-width: 700px) {
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        padding: 10px 8px 12px;
+
+        background: #1a1a1a;
+        border-bottom: 1px solid #444444;
+
+        z-index: 9999;
+    }
+
+    /* Center logo above the navigation links on phones */
+
+    .logo {
+        position: relative;
+        top: auto;
+        left: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        margin: 0;
+        transform: none;
+    }
+
+    .logo img {
+        width: auto;
+        height: 58px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Three-column button layout */
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+
+        width: 100%;
+        max-width: 540px;
+
+        gap: 4px;
+
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .nav-links > li {
+        flex: 0 0 calc(33.333% - 4px);
+        min-width: 0;
+        text-align: center;
+    }
+
+    .nav-links > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 38px;
+
+        padding: 7px 3px;
+
+        font-size: 0.88rem;
+        line-height: 1.2;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+
+        transform: none;
+    }
+
+    .nav-links > li > a:hover,
+    .nav-links > li > a:focus-visible {
+        transform: none;
+    }
+
+    /* Trap & Skeet label on smaller screens */
+
+    .nav-trap-skeet > a {
+        font-size: 0.84rem;
+    }
+
+    .nav-trap-skeet > a span {
+        font-size: 0.78em;
+    }
+
+    /* Keep dropdowns within the mobile navigation layout */
+
+    .nav-links > li.dropdown {
         position: relative;
     }
 
-    .nav-links > li > a[href="trap-skeet.html"]::after {
-        content: "Trap & Skeet";
-        font-size: 16px;
-        color: inherit;
+    .dropdown-menu,
+    .submenu-right {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* =========================================================
+   EXTRA-SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .main-nav {
+        padding: 8px 5px 10px;
+        gap: 6px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .nav-links {
+        gap: 3px;
+    }
+
+    .nav-links > li {
+        flex-basis: calc(33.333% - 3px);
+    }
+
+    .nav-links > li > a {
+        min-height: 36px;
+        padding: 6px 2px;
+        font-size: 0.79rem;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-links a,
+    .submenu-toggle::after {
+        transition: none;
+    }
+
+    .nav-links > li > a:hover {
+        transform: none;
     }
 }
