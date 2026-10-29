@@ -741,3 +741,95 @@
         display: block !important;
     }
 }
+
+/* =========================================================
+   SHARED NAVIGATION TYPOGRAPHY
+   Consistent fonts and text sizes on every page
+========================================================= */
+
+/* One consistent font throughout the navigation */
+.main-nav,
+.main-nav a,
+.main-nav button,
+.main-nav .nav-links,
+.main-nav .dropdown-menu,
+.main-nav .submenu-right {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Main navigation buttons */
+.main-nav .nav-links > li > a {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* Dropdown menu links */
+.main-nav .dropdown-menu a,
+.main-nav .submenu-right a {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* Trap & Skeet special label */
+.main-nav .nav-trap-skeet > a {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+.main-nav .nav-trap-skeet > a span {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.2;
+}
+
+/* Tablet navigation */
+@media (min-width: 701px) and (max-width: 1100px) {
+    .main-nav .nav-links > li > a {
+        font-size: 14px !important;
+    }
+
+    .main-nav .dropdown-menu a,
+    .main-nav .submenu-right a {
+        font-size: 14px !important;
+    }
+}
+
+/* Mobile navigation */
+@media (max-width: 700px) {
+    .main-nav .nav-links > li > a {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+
+    .main-nav .dropdown-menu a,
+    .main-nav .submenu-right a {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+
+    .main-nav .nav-trap-skeet > a {
+        font-size: 14px !important;
+    }
+
+    .main-nav .nav-trap-skeet > a span {
+        font-size: 12px !important;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+    .main-nav .nav-links > li > a {
+        font-size: 12px !important;
+    }
+
+    .main-nav .dropdown-menu a,
+    .main-nav .submenu-right a {
+        font-size: 13px !important;
+    }
+}
