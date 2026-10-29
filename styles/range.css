@@ -1907,3 +1907,13 @@
     outline: 3px solid var(--ts-gold);
     outline-offset: 4px;
 }
+
+/* ==========================================
+   TRAP & SKEET — MOBILE HEADER SPACING
+========================================== */
+
+@media (max-width: 700px) {
+    #trap-skeet-page {
+        margin-top: 180px;
+    }
+}
