@@ -1850,3 +1850,12 @@ main {
     }
 }
 
+/* ==========================================
+   KITCHEN PAGE — MOBILE HEADER SPACING
+========================================== */
+
+@media (max-width: 650px) {
+    #kitchen-page {
+        margin-top: 180px;
+    }
+}
