@@ -1,4 +1,10 @@
 /* ==================================================
+   WINDSOR SPORTSMEN'S CLUB — OFAH PAGE STYLES
+   OFAH page styling followed by the existing nav/footer CSS.
+================================================== */
+
+
+/* ==================================================
    PAGE VARIABLES
 ================================================== */
 
@@ -56,6 +62,7 @@
 #ofha-page p:last-child {
     margin-bottom: 0;
 }
+
 
 /* ==================================================
    HERO SECTION
@@ -155,6 +162,7 @@
     font-weight: 600;
 }
 
+
 /* ==================================================
    BUTTONS
 ================================================== */
@@ -215,6 +223,7 @@
     outline-offset: 4px;
 }
 
+
 /* ==================================================
    MAIN CONTAINER
 ================================================== */
@@ -226,6 +235,7 @@
     margin: 0 auto;
     padding: 34px 30px 50px;
 }
+
 
 /* ==================================================
    SECTION HEADINGS
@@ -280,6 +290,7 @@
     font-weight: 800;
     line-height: 1.25;
 }
+
 
 /* ==================================================
    MEETING CARD
@@ -382,6 +393,7 @@
     opacity: 0.75;
 }
 
+
 /* ==================================================
    MEMBERSHIP CARD
 ================================================== */
@@ -474,6 +486,7 @@
     line-height: 1.5;
 }
 
+
 /* ==================================================
    MEMBERSHIP BENEFITS GRID
 ================================================== */
@@ -553,6 +566,7 @@
     font-weight: 800;
 }
 
+
 /* ==================================================
    ADVOCACY INTRODUCTION
 ================================================== */
@@ -567,6 +581,7 @@
     line-height: 1.8;
     text-align: center;
 }
+
 
 /* ==================================================
    ADVOCACY CARDS
@@ -713,6 +728,7 @@
     text-decoration: underline;
 }
 
+
 /* ==================================================
    CLOSING CALL TO ACTION
 ================================================== */
@@ -767,6 +783,7 @@
     line-height: 1.8;
 }
 
+
 /* ==================================================
    TABLET LAYOUT
 ================================================== */
@@ -817,6 +834,7 @@
     }
 
 }
+
 
 /* ==================================================
    MOBILE LAYOUT
@@ -879,6 +897,7 @@
         letter-spacing: 1px;
     }
 
+
     /* Meeting */
 
     #ofha-page .ofha-meeting-card {
@@ -919,6 +938,7 @@
         text-align: left;
     }
 
+
     /* Membership */
 
     #ofha-page .ofha-membership-card {
@@ -954,6 +974,7 @@
         width: 100%;
     }
 
+
     /* Benefits */
 
     #ofha-page .ofha-benefits-grid {
@@ -979,6 +1000,7 @@
     #ofha-page .ofha-benefit-card p {
         font-size: 0.82rem;
     }
+
 
     /* Advocacy */
 
@@ -1011,6 +1033,7 @@
         font-size: 1.4rem;
     }
 
+
     /* Closing */
 
     #ofha-page .ofha-closing-card {
@@ -1019,6 +1042,7 @@
     }
 
 }
+
 
 /* ==================================================
    REDUCED MOTION ACCESSIBILITY
@@ -1033,6 +1057,8 @@
         transition: none !important;
         animation: none !important;
     }
+
+}
 
 /* ------------------------------
    NAV FIX — keeps nav ABOVE content
@@ -1492,7 +1518,7 @@ header {
     .dropdown-sub:hover > .submenu-right {
         display: block;
     }
-
+}
 /* ==================================================
    OFAH QUICK LINKS — HORIZONTAL LAYOUT
 ================================================== */
@@ -1546,6 +1572,7 @@ header {
         max-width: 100%;
     }
 }
+
 
 /* ==================================================
    OFAH QUICK LINKS — IMAGE-ONLY HOVER EFFECT
@@ -1772,4 +1799,14 @@ header {
         font-size: 12px;
     }
 
+}
+
+/* =========================================
+   OFAH BANNER — MOBILE SPACING FIX
+========================================= */
+
+@media (max-width: 768px) {
+    #ofha-page .ofha-hero {
+        margin-top: 20px;
+    }
 }
