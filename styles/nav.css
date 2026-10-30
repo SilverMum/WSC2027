@@ -833,3 +833,34 @@
         font-size: 13px !important;
     }
 }
+
+/* =========================================================
+   DESKTOP DROPDOWN COLOUR PROTECTION
+   Prevents page-specific CSS from overriding the shared
+   navigation dropdown colours.
+========================================================= */
+
+@media (min-width: 901px) {
+
+    .main-nav .dropdown-menu,
+    .main-nav .submenu-right {
+        background-color: #1a1a1a !important;
+        border: 1px solid #444444 !important;
+        border-top: 2px solid #b99a60 !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .main-nav .dropdown-menu a,
+    .main-nav .submenu-right a {
+        color: #ffffff !important;
+        background-color: transparent !important;
+    }
+
+    .main-nav .dropdown-menu a:hover,
+    .main-nav .dropdown-menu a:focus-visible,
+    .main-nav .submenu-right a:hover,
+    .main-nav .submenu-right a:focus-visible {
+        color: #ffffff !important;
+        background-color: #383838 !important;
+    }
+}
