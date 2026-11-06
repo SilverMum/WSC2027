@@ -1,600 +1,1747 @@
 /* =========================================================
-   GLOBAL LAYOUT
+   1. GLOBAL PAGE SETTINGS
 ========================================================= */
-html, body {
-    overflow-x: hidden;
-    height: auto;
-}
 
 * {
     box-sizing: border-box;
 }
 
-/* =========================================================
-   AXE PAGE — FORCE ALL TEXT WHITE
-========================================================= */
-.knifeaxe-container,
-.knifeaxe-container * {
-    color: #ffffff !important;
-}
-
-/* ------------------------------
-   KNIFE & AXE BACKGROUND IMAGE
---------------------------------*/
-body.knifeaxe-bg {
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.30)),
-        url("../images/lukasz-szmigiel-2ShvY8Lf6l0-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* ------------------------------
-   KNIFE & AXE PAGE WRAPPER
---------------------------------*/
-.knifeaxe-container {
-    max-width: 900px;
-    margin: 120px auto 60px;
-    padding: 0 20px;
-    width: 100%;
+html {
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-/* ------------------------------
-   HERO SECTION
---------------------------------*/
-.knifeaxe-hero {
-    text-align: center;
-    margin-top: 200px;       /* space under nav */
-    margin-bottom: 200px;
-}
-
-.knifeaxe-hero h1 {
-    font-size: clamp(3rem, 5vw, 5rem);
-    font-weight: 800;
-    line-height: 1.05;
+body.knifeaxe-bg {
     margin: 0;
     padding: 0;
-}
-
-/* Subtitle block */
-.knifeaxe-subtitle {
-    font-size: 1.4rem;        /* smaller than title */
-    font-weight: 600;
-    margin-top: 30px;         /* moves it down from the title */
-    line-height: 1.3;
-    opacity: 0.9;
-}
-
-/* Stretched second line */
-.knifeaxe-subtitle-long {
-    display: inline-block;
-    letter-spacing: 2px;      /* stretch horizontally */
-    text-transform: uppercase; /* optional */
-}
-
-/* ------------------------------
-   PROGRAM DETAILS
---------------------------------*/
-.knifeaxe-details {
-    margin-bottom: 40px;
-}
-
-.knifeaxe-details h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.knifeaxe-details p {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-/* ------------------------------
-   CONTACT SECTION
---------------------------------*/
-.knifeaxe-contact {
-    margin-bottom: 40px;
-}
-
-.knifeaxe-contact h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.contact-button {
-    margin-top: 15px;
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    background-color: #1a1a1a;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.contact-button:hover {
-    background-color: #333;
-}
-
-/* ------------------------------
-   RULES SECTION
---------------------------------*/
-.knifeaxe-rules {
-    margin-bottom: 40px;
-}
-
-.knifeaxe-rules h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.knifeaxe-rules ul {
-    padding-left: 20px;
-}
-
-.knifeaxe-rules li {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-/* ------------------------------
-   GALLERY SECTION
---------------------------------*/
-.knifeaxe-gallery {
-    margin-bottom: 60px;
-}
-
-.knifeaxe-gallery h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    width: 100%;
     overflow-x: hidden;
+
+    background-color: #f7f0e4;
+
+    color: #17291e;
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
 }
 
-.img-placeholder {
-    background-color: #ddd;
-    padding: 40px 0;
-    text-align: center;
-    font-size: 1.2rem;
-    border-radius: 8px;
+#knifeaxe-page {
+    --ka-green: #102719;
+    --ka-dark: #091a11;
+    --ka-cream: #f7f0e4;
+    --ka-gold: #c4a15b;
+    --ka-gold-light: #dfc48b;
+    --ka-burgundy: #651e19;
+    --ka-text: #263329;
+
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    padding: 0 35px 70px;
+}
+
+#knifeaxe-page h1,
+#knifeaxe-page h2,
+#knifeaxe-page h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ka-green);
+}
+
+#knifeaxe-page p {
+    color: var(--ka-text);
+}
+
+#knifeaxe-page a {
+    text-decoration: none;
 }
 
 /* =========================================================
-   AXE PAGE — PROGRAM DETAILS CARD
+   2. HERO BANNER
 ========================================================= */
 
-.knifeaxe-details-card {
-    background: rgba(210, 180, 140, 0.30);
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 900px;
-    margin: 60px auto;
-    backdrop-filter: blur(2px);
-}
+.ka-hero {
+    position: relative;
 
-.details-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px 40px;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    min-height: 440px;
+
+    margin: 0 -35px 65px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(9, 26, 17, 0.98) 0%,
+            rgba(16, 39, 25, 0.96) 53%,
+            rgba(16, 39, 25, 0.55) 100%
+        );
+
+    border-bottom: 7px solid var(--ka-gold);
 }
 
-.detail-item {
+.ka-hero-content {
+    position: relative;
+    z-index: 2;
+
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 65px 35px 65px max(55px, calc((100vw - 1350px) / 2));
 }
 
-.detail-icon {
-    font-size: 2rem;
-    line-height: 1;
-    background: rgba(255, 255, 255, 0.25); /* soft white circle */
-    padding: 10px;
-    border-radius: 50%;
+.ka-hero-eyebrow {
+    color: var(--ka-gold-light) !important;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin: 0 0 15px;
+}
+
+.ka-hero h1 {
+    color: var(--ka-cream) !important;
+
+    font-size: clamp(3.2rem, 6vw, 6.2rem);
+
+    line-height: 0.98;
+
+    text-transform: uppercase;
+    font-weight: 900;
+
+    margin: 0;
+
+    letter-spacing: -2px;
+}
+
+.ka-hero h1 span {
+    display: block;
+
+    color: var(--ka-gold) !important;
+}
+
+.ka-hero-divider {
+    width: 100%;
+    max-width: 470px;
+    height: 4px;
+
+    background: var(--ka-gold);
+
+    margin: 27px 0 18px;
+}
+
+.ka-hero-tagline {
+    color: var(--ka-cream) !important;
+
+    font-family: Georgia, serif;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+
+    font-style: italic;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin: 0;
+}
+
+.ka-hero-image {
+    position: relative;
+
+    min-height: 440px;
+
+    padding: 20px 20px 20px 0;
+}
+
+.ka-image-placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-}
 
-.detail-item h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
+    width: 100%;
+    height: 100%;
 
-.detail-item p {
-    margin: 3px 0 0;
-    font-size: 1.1rem;
-}
+    min-height: 220px;
 
-/* Weather note bar */
-.weather-note {
-    margin-top: 35px;
-    background: rgba(0, 128, 0, 0.15);
-    padding: 18px 20px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1rem;
-    font-style: italic;
-}
-
-/* Stop italic text inside the rules card */
-.knifeaxe-rules li {
-    font-style: normal;
-}
-
-/* Left-align ONLY the rules section */
-.knifeaxe-rules,
-.knifeaxe-rules li,
-.rules-content,
-.rules-content li {
-    text-align: left;
-}
-
-/* Keep your bold text bold */
-.knifeaxe-rules li strong {
-    font-weight: bold;
-}
-
-/* Wide Card Layout */
-.knifeaxe-card {
-    display: flex;
-    gap: 30px;
-    background: #5a4632; /* brown like your other cards */
-    border: 4px solid #2f5e2f; /* green border */
     padding: 25px;
-    border-radius: 12px;
-    margin: 40px auto;
-    max-width: 1100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16, 39, 25, 0.10),
+            rgba(16, 39, 25, 0.35)
+        ),
+        #c8b18b;
+
+    border: 2px dashed rgba(16, 39, 25, 0.45);
+
+    color: #263329 !important;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-/* Left Side */
-.knifeaxe-left {
-    flex: 1;
-    color: white;
+.ka-hero-image .ka-image-placeholder {
+    min-height: 100%;
+
+    border: 3px solid var(--ka-gold);
+
+    background:
+        linear-gradient(
+            rgba(16, 39, 25, 0.12),
+            rgba(16, 39, 25, 0.25)
+        ),
+        #9c7950;
+
+    color: #fff8e9 !important;
 }
 
-.knifeaxe-left h2 {
+/* =========================================================
+   3. INTRODUCTION SECTION
+========================================================= */
+
+.ka-introduction {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 55px;
+
+    align-items: center;
+
+    margin: 0 auto 70px;
+
+    max-width: 1300px;
+}
+
+.ka-intro-content {
+    padding: 20px 0;
+}
+
+.ka-section-eyebrow {
+    display: block;
+
+    color: #947039;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
     margin-bottom: 10px;
 }
 
-.contact-button {
-    margin-top: 15px;
-    padding: 10px 18px;
-    background: #2f5e2f;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
+.ka-intro-content h2,
+.ka-section-heading h2,
+.ka-contact-coordinator h2 {
+    font-family: Georgia, "Times New Roman", serif;
 
-/* Right Side */
-.knifeaxe-right {
-    flex: 2;
-    color: white;
-}
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
 
-.knifeaxe-intro {
-    margin-bottom: 20px;
-}
+    line-height: 1.15;
 
-/* Form Fields */
-.knifeaxe-form .field-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-.knifeaxe-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.knifeaxe-form input,
-.knifeaxe-form textarea {
-    padding: 10px;
-    border-radius: 6px;
-    border: 2px solid #2f5e2f;
-    background: #fdfdfd;
-}
-
-/* Checkbox */
-.field-checkbox {
-    margin-top: 10px;
-}
-
-/* Submit Button */
-.ka-submit {
-    margin-top: 15px;
-    padding: 12px 20px;
-    background: #2f5e2f;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* =========================================================
-MAKE TEXTAREA TYPED TEXT BLACK
-========================================================= */
-.knifeaxe-form textarea {
-    color: black !important;
-}
-
-/* =========================================================
- MAKE SUBJECT INPUT TEXT BLACK
-========================================================= */
-.knifeaxe-form input {
-    color: black !important;
-}
-
-@media (max-width: 600px) {
-
-    /* Fix Program Details overflow */
-    .knifeaxe-details-card {
-        padding: 20px !important;
-        box-sizing: border-box;
-    }
-
-    .details-grid {
-        grid-template-columns: 1fr !important; /* collapse to 1 column */
-        gap: 20px !important;
-        width: 100% !important;
-    }
-
-    .detail-item {
-        width: 100% !important;
-        overflow-wrap: break-word;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 600px) {
-
-    /* Stack coordinator + form vertically */
-    .knifeaxe-card {
-        flex-direction: column !important;
-        padding: 20px !important;
-        box-sizing: border-box;
-    }
-
-    .knifeaxe-left,
-    .knifeaxe-right {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    /* Fix form fields overflowing */
-    .knifeaxe-form .field-row {
-        width: 100% !important;
-        display: block !important;
-    }
-
-    .knifeaxe-form input,
-    .knifeaxe-form textarea {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-}
-
-/* ==========================================
-CANCELLATIONS SECTION
-========================================== */
- 
-.cancellations-card {
-background: #fff5f5;
-border-left: 6px solid #d62828;
-border-radius: 10px;
-padding: 1rem 1.25rem;
-margin-bottom: 1rem;
-}
- 
-.cancellations-card:last-child {
-margin-bottom: 0;
-}
- 
-.cancel-date-text {
-margin: 0;
-text-align: center;
-font-size: 1.1rem;
-font-weight: 600;
-color: #8b1e1e;
-}
-
-@media (min-width: 1024px) {
-.knifeaxe-cancellations-card {
-width: 50%;
-margin: 20px auto;
-border: 3px solid red;
-border-radius: 10px;
-text-align: center;
-padding: 1rem;
-box-sizing: border-box;
- 
-background: rgba(255, 0, 0, 0.2) !important;
- 
-min-height: 200px; /* temporary test */
-}
-}
-
-/* =========================================================
-   WINDSOR SPORTSMEN'S CLUB — FOOTER
-========================================================= */
-
-/* MAIN FOOTER */
-.footer {
-    width: 100%;
-    background: #102719;
-    color: #f7f0e4;
     margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+
+    color: var(--ka-green);
 }
 
-.footer *,
-.footer *::before,
-.footer *::after {
-    box-sizing: border-box;
+.ka-gold-line {
+    width: 100%;
+    max-width: 390px;
+
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--ka-gold),
+        var(--ka-gold-light),
+        transparent
+    );
+
+    margin: 18px 0 23px;
 }
 
-/* FOOTER CONTENT CONTAINER */
-.footer-container {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 55px 35px 45px;
+.ka-intro-content > p {
+    font-size: 1.13rem;
+    line-height: 1.85;
+
+    margin: 0 0 17px;
+
+    color: #353d34;
+}
+
+.ka-intro-content .ka-intro-highlight {
+    font-family: Georgia, serif;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    color: var(--ka-green);
+
+    margin-top: 18px;
+}
+
+.ka-intro-image {
+    height: 370px;
+
+    overflow: hidden;
+
+    border: 8px solid #fffaf0;
+
+    outline: 1px solid #d5c5a5;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    transform: rotate(1deg);
+}
+
+.ka-intro-image .ka-image-placeholder {
+    min-height: 100%;
+    background-color: #b99b70;
+}
+
+/* =========================================================
+   4. BUTTONS
+========================================================= */
+
+.ka-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    background: var(--ka-green);
+
+    color: var(--ka-cream) !important;
+
+    padding: 15px 27px;
+
+    border: 2px solid var(--ka-gold);
+    border-radius: 5px;
+
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: all 0.25s ease;
+
+    margin-top: 15px;
+}
+
+.ka-button span {
+    color: var(--ka-gold) !important;
+
+    font-size: 1.8rem;
+    line-height: 0.8;
+}
+
+.ka-button:hover {
+    background: var(--ka-gold);
+
+    color: var(--ka-green) !important;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.16);
+}
+
+.ka-button:hover span {
+    color: var(--ka-green) !important;
+}
+
+/* =========================================================
+   5. QUICK HIGHLIGHTS
+========================================================= */
+
+.ka-highlights {
     display: grid;
-    grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr;
-    gap: 40px;
-    align-items: start;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+
+    padding: 38px 20px;
+
+    margin: 0 -10px 80px;
+
+    background: var(--ka-green);
+
+    border-top: 4px solid var(--ka-gold);
+    border-bottom: 4px solid var(--ka-gold);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
 }
 
-/* FOOTER COLUMNS */
-.footer-column {
-    min-width: 0;
-}
-
-/* COLUMN HEADINGS */
-.footer-column h3 {
-    color: #c6a568;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    line-height: 1.5;
-    margin: 0 0 25px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(198, 165, 104, 0.55);
-}
-
-/* ADDRESS, PHONE AND EMAIL ITEMS */
-.footer-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-    margin-bottom: 19px;
-    color: #f7f0e4;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* CONTACT ICONS */
-.footer-item i {
-    color: #c6a568;
-    font-size: 17px;
-    width: 20px;
-    min-width: 20px;
+.ka-highlight {
     text-align: center;
-    margin-top: 4px;
+
+    padding: 10px 20px;
+
+    border-right: 1px solid rgba(196, 161, 91, 0.65);
 }
 
-/* FOOTER PARAGRAPHS */
-.footer-column p {
-    color: #f7f0e4;
-    font-size: 14px;
-    line-height: 1.8;
+.ka-highlight:last-child {
+    border-right: none;
+}
+
+.ka-highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 18px;
+
+    border: 4px solid var(--ka-gold);
+
+    border-radius: 50%;
+
+    background: var(--ka-dark);
+
+    color: var(--ka-gold-light);
+
+    font-family: Georgia, serif;
+    font-size: 2.6rem;
+}
+
+.ka-highlight h3 {
+    color: var(--ka-cream) !important;
+
+    font-size: 1.05rem;
+
+    letter-spacing: 0.5px;
+
     margin: 0 0 10px;
 }
 
-/* FOOTER LISTS */
-.footer-column ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+.ka-highlight p {
+    color: #e8ddc7 !important;
 
-.footer-column ul li {
-    margin-bottom: 13px;
-}
+    font-size: 0.95rem;
 
-/* FOOTER LINKS */
-.footer-column a {
-    display: inline-block;
-    color: #f7f0e4;
-    text-decoration: none;
-    font-size: 14px;
     line-height: 1.6;
-    transition: color 0.25s ease, transform 0.25s ease;
-}
 
-/* LINK HOVER EFFECT */
-.footer-column a:hover {
-    color: #c6a568;
-    transform: translateX(4px);
-}
-
-/* FOOTER BOTTOM COPYRIGHT BAR */
-.footer-bottom {
-    width: 100%;
-    background: #07180f;
-    color: #cfc7b8;
-    text-align: center;
-    padding: 20px 15px;
-    font-size: 13px;
-    line-height: 1.7;
-    border-top: 1px solid rgba(198, 165, 104, 0.35);
+    margin: 0;
 }
 
 /* =========================================================
-   TABLETS
+   6. SHARED SECTION HEADINGS
 ========================================================= */
 
-@media (max-width: 950px) {
+.ka-section-heading {
+    text-align: center;
 
-    .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 40px 35px;
-        padding: 45px 30px 35px;
+    max-width: 800px;
+
+    margin: 0 auto 40px;
+}
+
+.ka-section-heading h2 {
+    margin-bottom: 13px;
+}
+
+.ka-section-heading > p {
+    font-size: 1.05rem;
+
+    margin: 0;
+
+    color: #60675e;
+}
+
+/* =========================================================
+   7. PROGRAM DETAILS SECTION
+========================================================= */
+
+.ka-program-section {
+    padding: 55px 40px 45px;
+
+    margin-bottom: 75px;
+
+    background: #eee3cf;
+
+    border: 1px solid #d9c8a7;
+
+    border-radius: 8px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.ka-program-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.ka-program-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 190px;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background: #fffaf0;
+
+    border: 1px solid #d4c09a;
+
+    border-radius: 7px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.25s ease;
+}
+
+.ka-program-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--ka-gold);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.ka-program-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 13px;
+
+    background: var(--ka-green);
+
+    border-radius: 50%;
+
+    font-size: 1.6rem;
+}
+
+.ka-program-card h3 {
+    color: #947039 !important;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.83rem;
+
+    letter-spacing: 2px;
+
+    margin: 0 0 8px;
+}
+
+.ka-program-card p {
+    font-family: Georgia, serif;
+
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    line-height: 1.5;
+
+    margin: 0;
+
+    color: var(--ka-green);
+}
+
+/* =========================================================
+   8. WEATHER NOTICE
+========================================================= */
+
+.ka-weather-notice {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+
+    margin-top: 30px;
+
+    padding: 18px 25px;
+
+    background: var(--ka-green);
+
+    border-left: 5px solid var(--ka-gold);
+
+    border-radius: 5px;
+}
+
+.ka-weather-icon {
+    color: var(--ka-gold);
+
+    font-size: 1.9rem;
+}
+
+.ka-weather-notice p {
+    color: var(--ka-cream) !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+    font-style: italic;
+
+    margin: 0;
+}
+
+/* =========================================================
+   9. CANCELLATIONS SECTION
+========================================================= */
+
+.ka-cancellations-section {
+    padding: 35px 35px 45px;
+
+    margin-bottom: 80px;
+
+    background: #f2e6d4;
+
+    border: 1px solid #d9c8a7;
+
+    border-left: 6px solid var(--ka-burgundy);
+
+    border-radius: 7px;
+}
+
+.ka-cancellations-section .ka-section-heading {
+    margin-bottom: 30px;
+}
+
+.ka-cancellations-section .ka-section-heading h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.ka-cancellations-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.ka-cancellation-card {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    min-height: 85px;
+
+    padding: 20px;
+
+    background: #fffaf0;
+
+    border: 1px solid #dfc8b5;
+
+    border-radius: 5px;
+}
+
+.ka-cancellation-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 35px;
+    height: 35px;
+
+    background: var(--ka-burgundy);
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cancel-date-text {
+    color: var(--ka-burgundy) !important;
+
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    margin: 0;
+}
+
+/* =========================================================
+   10. RULES AND SAFETY SECTION
+========================================================= */
+
+.ka-rules-section {
+    margin-bottom: 85px;
+}
+
+.ka-safety-intro {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    margin-bottom: 30px;
+
+    background: #e8dcc6;
+
+    border-left: 6px solid var(--ka-gold);
+
+    border-radius: 5px;
+}
+
+.ka-safety-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 55px;
+    height: 55px;
+
+    background: var(--ka-green);
+
+    color: var(--ka-gold);
+
+    border-radius: 50%;
+
+    font-size: 1.7rem;
+}
+
+.ka-safety-intro p {
+    color: var(--ka-green) !important;
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+.ka-rules-card {
+    background: #fffaf0;
+
+    border: 1px solid #d9c8a7;
+
+    border-radius: 7px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.ka-rules-card-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 23px 30px;
+
+    background: var(--ka-green);
+
+    border-bottom: 4px solid var(--ka-gold);
+}
+
+.ka-rules-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid var(--ka-gold);
+
+    border-radius: 50%;
+
+    color: var(--ka-gold-light);
+
+    font-family: Georgia, serif;
+
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.ka-rules-card-heading h3 {
+    color: var(--ka-cream) !important;
+
+    font-size: 1.55rem;
+
+    margin: 0;
+}
+
+.ka-rules-list,
+.ka-procedures-list {
+    margin: 0;
+
+    padding: 30px 35px 30px 70px;
+
+    color: var(--ka-text);
+}
+
+.ka-rules-list li,
+.ka-procedures-list li {
+    padding: 13px 12px;
+
+    margin-bottom: 5px;
+
+    border-bottom: 1px solid #e8dece;
+
+    font-size: 0.98rem;
+
+    line-height: 1.75;
+
+    color: #303c32;
+}
+
+.ka-rules-list li:last-child,
+.ka-procedures-list li:last-child {
+    border-bottom: none;
+}
+
+.ka-rules-list li::marker,
+.ka-procedures-list li::marker {
+    color: #a27e39;
+
+    font-weight: bold;
+}
+
+.ka-rules-list li strong,
+.ka-procedures-list li strong {
+    color: #303c32;
+
+    font-weight: 600;
+}
+
+.ka-rules-list ul {
+    padding-left: 25px;
+
+    margin-top: 12px;
+}
+
+.ka-rules-list ul li {
+    background: #f2eadb;
+
+    padding: 13px 18px;
+
+    border-left: 3px solid var(--ka-gold);
+
+    border-bottom: none;
+}
+
+/* =========================================================
+   11. GALLERY SECTION
+========================================================= */
+
+.ka-gallery-section {
+    padding: 50px 35px;
+
+    margin-bottom: 80px;
+
+    background: #eee3cf;
+
+    border-top: 4px solid var(--ka-gold);
+    border-bottom: 4px solid var(--ka-gold);
+}
+
+.ka-gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.ka-gallery-item {
+    height: 260px;
+
+    padding: 8px;
+
+    background: #fffaf0;
+
+    border: 1px solid #d5c4a4;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.10);
+
+    transition: transform 0.25s ease;
+}
+
+.ka-gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.ka-gallery-item .ka-image-placeholder {
+    min-height: 100%;
+
+    background: #c2aa82;
+}
+
+/* =========================================================
+   12. CONTACT SECTION
+========================================================= */
+
+.ka-contact-section {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 45px;
+
+    align-items: start;
+
+    padding: 45px;
+
+    margin-bottom: 75px;
+
+    background: #e9ddc9;
+
+    border: 1px solid #d3c09d;
+
+    border-radius: 8px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.ka-contact-coordinator {
+    padding: 15px 0;
+}
+
+.ka-contact-coordinator > p {
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: #454e43;
+
+    margin-bottom: 30px;
+}
+
+.ka-coordinator-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 20px;
+
+    background: var(--ka-green);
+
+    border-left: 5px solid var(--ka-gold);
+
+    border-radius: 5px;
+}
+
+.ka-coordinator-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    border: 2px solid var(--ka-gold);
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+}
+
+.ka-coordinator-box span {
+    display: block;
+
+    color: var(--ka-gold-light);
+
+    font-size: 0.7rem;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.ka-coordinator-box h3 {
+    color: var(--ka-cream) !important;
+
+    font-size: 1.3rem;
+
+    margin: 3px 0 0;
+}
+
+.ka-contact-form-container {
+    padding: 30px;
+
+    background: #fffaf0;
+
+    border: 1px solid #d5c4a4;
+
+    border-radius: 6px;
+}
+
+.ka-contact-form-container h2 {
+    font-family: Georgia, serif;
+
+    color: var(--ka-green);
+
+    font-size: 1.85rem;
+
+    line-height: 1.3;
+
+    margin: 0 0 12px;
+}
+
+.ka-contact-form-container .knifeaxe-intro {
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+    color: #5a6158;
+}
+
+/* =========================================================
+   13. CONTACT FORM FIELDS
+========================================================= */
+
+.knifeaxe-form {
+    width: 100%;
+}
+
+.knifeaxe-form .field-row {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-bottom: 19px;
+}
+
+.knifeaxe-form label {
+    color: var(--ka-green);
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.knifeaxe-form input:not([type="checkbox"]),
+.knifeaxe-form textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #fff;
+
+    border: 1px solid #cbbd9f;
+
+    border-radius: 4px;
+
+    color: #222 !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.knifeaxe-form input:focus,
+.knifeaxe-form textarea:focus {
+    border-color: var(--ka-gold);
+
+    box-shadow: 0 0 0 3px rgba(196, 161, 91, 0.20);
+}
+
+.knifeaxe-form textarea {
+    min-height: 125px;
+
+    resize: vertical;
+}
+
+.knifeaxe-form input::placeholder,
+.knifeaxe-form textarea::placeholder {
+    color: #999 !important;
+}
+
+/* Checkbox */
+
+.knifeaxe-form .field-checkbox {
+    display: block;
+
+    margin-top: 10px;
+}
+
+.knifeaxe-form .field-checkbox label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #414a40;
+
+    font-size: 0.85rem;
+    font-weight: normal;
+
+    line-height: 1.6;
+}
+
+.knifeaxe-form input[type="checkbox"] {
+    flex-shrink: 0;
+
+    width: 17px;
+    height: 17px;
+
+    margin-top: 3px;
+
+    accent-color: var(--ka-green);
+}
+
+/* Submit button */
+
+.ka-submit {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 14px 28px;
+
+    background: var(--ka-green);
+
+    color: var(--ka-cream);
+
+    border: 2px solid var(--ka-gold);
+
+    border-radius: 4px;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.ka-submit span {
+    color: var(--ka-gold);
+    font-size: 1.5rem;
+}
+
+.ka-submit:hover {
+    background: var(--ka-gold);
+
+    color: var(--ka-green);
+
+    transform: translateY(-2px);
+}
+
+.ka-submit:hover span {
+    color: var(--ka-green);
+}
+
+/* =========================================================
+   14. CLOSING BANNER
+========================================================= */
+
+.ka-closing-banner {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 330px;
+
+    margin: 0 -35px -70px;
+
+    padding: 60px 30px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(7, 24, 15, 0.94),
+            rgba(16, 39, 25, 0.94)
+        );
+
+    border-top: 7px solid var(--ka-gold);
+}
+
+.ka-closing-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+.ka-closing-eyebrow {
+    display: block;
+
+    color: var(--ka-gold-light);
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.ka-closing-banner h2 {
+    color: var(--ka-cream) !important;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+
+    line-height: 1.2;
+
+    margin: 0;
+}
+
+.ka-closing-banner h2 span {
+    display: block;
+
+    color: var(--ka-gold) !important;
+}
+
+.ka-closing-banner p {
+    color: #eee4d1 !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.25rem;
+    font-style: italic;
+
+    margin: 20px 0;
+}
+
+.ka-closing-button {
+    background: var(--ka-gold);
+
+    color: var(--ka-green) !important;
+}
+
+.ka-closing-button span {
+    color: var(--ka-green) !important;
+}
+
+.ka-closing-button:hover {
+    background: var(--ka-cream);
+}
+
+/* =========================================================
+   15. TABLET RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    #knifeaxe-page {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .ka-hero {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    .ka-hero-content {
+        padding-left: 35px;
+    }
+
+    .ka-hero h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .ka-introduction {
+        gap: 30px;
+    }
+
+    .ka-program-section {
+        padding: 40px 25px;
+    }
+
+    .ka-contact-section {
+        grid-template-columns: 1fr 1.3fr;
+
+        gap: 25px;
+
+        padding: 30px;
+    }
+
+    .ka-closing-banner {
+        margin-left: -25px;
+        margin-right: -25px;
     }
 
 }
 
 /* =========================================================
-   MOBILE PHONES
+   16. SMALL TABLETS
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .ka-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .ka-hero-content {
+        padding: 65px 35px 40px;
+    }
+
+    .ka-hero-image {
+        min-height: 280px;
+
+        padding: 0 25px 25px;
+    }
+
+    .ka-introduction {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .ka-intro-image {
+        height: 320px;
+
+        transform: none;
+    }
+
+    .ka-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ka-highlight:nth-child(2) {
+        border-right: none;
+    }
+
+    .ka-highlight:nth-child(1),
+    .ka-highlight:nth-child(2) {
+        border-bottom: 1px solid rgba(196, 161, 91, 0.65);
+
+        padding-bottom: 25px;
+    }
+
+    .ka-highlight:nth-child(3),
+    .ka-highlight:nth-child(4) {
+        padding-top: 25px;
+    }
+
+    .ka-program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ka-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ka-gallery-item:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 70%;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .ka-contact-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   17. MOBILE PHONES
 ========================================================= */
 
 @media (max-width: 550px) {
 
-    .footer-container {
+    #knifeaxe-page {
+        padding: 0 16px 45px;
+    }
+
+    /* HERO */
+
+    .ka-hero {
+        margin: 0 -16px 45px;
+
+        border-bottom-width: 5px;
+    }
+
+    .ka-hero-content {
+        padding: 50px 22px 30px;
+    }
+
+    .ka-hero-eyebrow {
+        font-size: 0.75rem;
+
+        letter-spacing: 2.5px;
+    }
+
+    .ka-hero h1 {
+        font-size: clamp(2.65rem, 11vw, 4rem);
+
+        letter-spacing: -1px;
+    }
+
+    .ka-hero-divider {
+        margin: 20px 0 14px;
+    }
+
+    .ka-hero-tagline {
+        font-size: 1.05rem;
+    }
+
+    .ka-hero-image {
+        min-height: 220px;
+
+        padding: 0 16px 18px;
+    }
+
+    /* INTRODUCTION */
+
+    .ka-introduction {
+        margin-bottom: 45px;
+    }
+
+    .ka-intro-content h2,
+    .ka-section-heading h2,
+    .ka-contact-coordinator h2 {
+        font-size: 2.15rem;
+    }
+
+    .ka-intro-content > p {
+        font-size: 1rem;
+
+        line-height: 1.75;
+    }
+
+    .ka-intro-image {
+        height: 245px;
+
+        border-width: 5px;
+    }
+
+    .ka-button {
+        width: 100%;
+
+        padding: 14px 15px;
+
+        font-size: 0.82rem;
+    }
+
+    /* HIGHLIGHTS */
+
+    .ka-highlights {
+        margin: 0 -5px 50px;
+
+        padding: 25px 8px;
+    }
+
+    .ka-highlight {
+        padding: 12px 8px;
+    }
+
+    .ka-highlight-icon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 2rem;
+
+        margin-bottom: 12px;
+    }
+
+    .ka-highlight h3 {
+        font-size: 0.82rem;
+
+        line-height: 1.4;
+    }
+
+    .ka-highlight p {
+        font-size: 0.82rem;
+
+        line-height: 1.5;
+    }
+
+    /* SECTION HEADINGS */
+
+    .ka-section-heading {
+        margin-bottom: 28px;
+    }
+
+    .ka-section-heading > p {
+        font-size: 0.95rem;
+    }
+
+    /* PROGRAM DETAILS */
+
+    .ka-program-section {
+        padding: 32px 15px;
+
+        margin-bottom: 50px;
+    }
+
+    .ka-program-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 35px 24px 30px;
+
+        gap: 14px;
     }
 
-    .footer-column h3 {
-        font-size: 16px;
-        margin-bottom: 18px;
+    .ka-program-card {
+        min-height: 145px;
+
+        padding: 20px 15px;
     }
 
-    .footer-item {
-        font-size: 14px;
+    .ka-weather-notice {
+        align-items: flex-start;
+
+        padding: 17px 15px;
+
         gap: 12px;
-        margin-bottom: 15px;
     }
 
-    .footer-column p,
-    .footer-column a {
-        font-size: 14px;
+    .ka-weather-notice p {
+        font-size: 0.9rem;
+
+        line-height: 1.6;
     }
 
-    .footer-column ul li {
-        margin-bottom: 10px;
+    /* CANCELLATIONS */
+
+    .ka-cancellations-section {
+        padding: 28px 15px 30px;
+
+        margin-bottom: 50px;
     }
 
-    .footer-bottom {
+    .ka-cancellations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ka-cancellation-card {
+        min-height: 75px;
+
+        padding: 15px;
+    }
+
+    /* RULES */
+
+    .ka-rules-section {
+        margin-bottom: 50px;
+    }
+
+    .ka-safety-intro {
+        align-items: flex-start;
+
         padding: 18px 15px;
-        font-size: 12px;
+
+        gap: 12px;
+    }
+
+    .ka-safety-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 1.3rem;
+    }
+
+    .ka-safety-intro p {
+        font-size: 0.9rem;
+    }
+
+    .ka-rules-card-heading {
+        padding: 18px 15px;
+
+        gap: 13px;
+    }
+
+    .ka-rules-number {
+        width: 40px;
+        height: 40px;
+
+        font-size: 1rem;
+    }
+
+    .ka-rules-card-heading h3 {
+        font-size: 1.2rem;
+    }
+
+    .ka-rules-list,
+    .ka-procedures-list {
+        padding: 20px 15px 20px 38px;
+    }
+
+    .ka-rules-list li,
+    .ka-procedures-list li {
+        padding: 12px 5px;
+
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+    .ka-rules-list ul {
+        padding-left: 17px;
+    }
+
+    /* GALLERY */
+
+    .ka-gallery-section {
+        padding: 35px 15px;
+
+        margin-bottom: 50px;
+    }
+
+    .ka-gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .ka-gallery-item,
+    .ka-gallery-item:last-child {
+        grid-column: auto;
+
+        max-width: 100%;
+
+        height: 235px;
+    }
+
+    /* CONTACT */
+
+    .ka-contact-section {
+        padding: 23px 15px;
+
+        gap: 25px;
+
+        margin-bottom: 50px;
+    }
+
+    .ka-contact-coordinator > p {
+        font-size: 0.95rem;
+    }
+
+    .ka-coordinator-box {
+        padding: 16px;
+    }
+
+    .ka-contact-form-container {
+        padding: 20px 15px;
+    }
+
+    .ka-contact-form-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .knifeaxe-form input:not([type="checkbox"]),
+    .knifeaxe-form textarea {
+        font-size: 16px;
+    }
+
+    .ka-submit {
+        width: 100%;
+    }
+
+    /* CLOSING BANNER */
+
+    .ka-closing-banner {
+        min-height: 300px;
+
+        margin: 0 -16px -45px;
+
+        padding: 45px 20px;
+
+        border-top-width: 5px;
+    }
+
+    .ka-closing-eyebrow {
+        font-size: 0.7rem;
+
+        letter-spacing: 2px;
+    }
+
+    .ka-closing-banner h2 {
+        font-size: 2.15rem;
+    }
+
+    .ka-closing-banner p {
+        font-size: 1rem;
+    }
+
+}
+
+/* =========================================================
+   18. EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .ka-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .ka-highlight h3 {
+        font-size: 0.75rem;
+    }
+
+    .ka-rules-card-heading h3 {
+        font-size: 1.05rem;
+    }
+
+    .ka-closing-banner h2 {
+        font-size: 1.85rem;
     }
 
 }
