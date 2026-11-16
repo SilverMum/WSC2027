@@ -1,3 +1,10 @@
+
+/* =========================================================
+   WINDSOR SPORTSMEN'S CLUB — CALENDAR PAGE
+   Forest Green / Cream / Antique Gold
+========================================================= */
+
+
 /* =========================================================
    1. GLOBAL RESET AND BASE STYLES
 ========================================================= */
@@ -24,8 +31,9 @@ body {
     background-color: transparent;
 }
 
+
 /* =========================================================
-   2. NAVIGATION — DESKTOP
+   2. NAVIGATION — ORIGINAL STYLING PRESERVED
 ========================================================= */
 
 header {
@@ -102,8 +110,9 @@ header {
     transform: translateY(-2px);
 }
 
+
 /* =========================================================
-   3. NAVIGATION DROPDOWN MENUS
+   3. NAVIGATION DROPDOWN MENUS — ORIGINAL
 ========================================================= */
 
 .dropdown {
@@ -186,6 +195,7 @@ header {
     color: #fff !important;
 }
 
+
 /* =========================================================
    4. CALENDAR PAGE BACKGROUND
 ========================================================= */
@@ -193,118 +203,424 @@ header {
 .calendar-bg {
     min-height: 100vh;
 
-    background-image: url("../images/calbg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background:
+        linear-gradient(
+            145deg,
+            #f7f3eb 0%,
+            #eee8dc 55%,
+            #e6dfd1 100%
+        );
+
     background-attachment: fixed;
 }
 
-.calendar-bg::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background: rgba(255, 255, 255, 0.20);
-
-    pointer-events: none;
-    z-index: -1;
-}
 
 /* =========================================================
-   5. CALENDAR PAGE LAYOUT
+   5. SPACE BELOW FIXED NAVIGATION
+========================================================= */
+
+.calendar-nav-spacer {
+    height: 180px;
+}
+
+
+/* =========================================================
+   6. MAIN PAGE CONTAINER
 ========================================================= */
 
 .calendar-page {
     width: 100%;
-    padding: 20px;
+    max-width: 1500px;
+
+    margin: 0 auto;
+    padding: 10px 45px 85px;
+}
+
+
+/* =========================================================
+   7. CALENDAR PAGE HEADING
+========================================================= */
+
+.calendar-heading {
+    margin: 0 auto 42px;
     text-align: center;
 }
 
-#wsc-calendar {
-    max-width: 900px;
-    margin: 0 auto 40px;
-    padding: 0;
+.calendar-eyebrow {
+    margin-bottom: 8px;
 
-    background: none;
-    border: none;
-    border-radius: 0;
+    color: #8c7040;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
 }
-
-/* =========================================================
-   6. CALENDAR TITLE
-========================================================= */
 
 .calendar-title {
-    display: inline-block;
-
-    margin: 70px auto 30px;
-    padding-bottom: 6px;
-
-    color: #000;
-    font-size: 2.6rem;
-    font-weight: bold;
-    line-height: 1.25;
-    text-align: center;
-
-    border-bottom: none;
+    color: #102719;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 2px;
 }
+
+.calendar-title span {
+    color: #a8874e;
+}
+
+.calendar-subtitle {
+    margin-top: 14px;
+
+    color: #62665e;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.heading-divider {
+    width: 85px;
+    height: 3px;
+
+    margin: 22px auto 0;
+
+    background: #b99a60;
+    border-radius: 5px;
+}
+
 
 /* =========================================================
-   7. GOOGLE CALENDAR CONTAINER
+   8. TWO-COLUMN CALENDAR LAYOUT
 ========================================================= */
 
-.calendar-container {
+.calendar-layout {
+    display: grid;
+
+    grid-template-columns: 270px minmax(0, 1fr);
+
+    align-items: start;
+    gap: 30px;
+
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
 }
 
-#wsc-calendar .calendar-container {
-    padding: 15px;
-    border-radius: 6px;
+
+/* =========================================================
+   9. ACTIVITY CALENDAR SIDEBAR
+========================================================= */
+
+.activity-sidebar {
+    padding: 28px 22px;
+
+    background: #102719;
+    border: 1px solid rgba(185, 154, 96, 0.65);
+    border-radius: 10px;
+
+    box-shadow: 0 10px 28px rgba(16, 39, 25, 0.13);
 }
 
-.calendar-wrapper {
+.sidebar-heading {
+    margin-bottom: 25px;
+}
+
+.sidebar-kicker {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #c4a15b;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sidebar-heading h2 {
+    color: #f7f0e4;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.85rem;
+    line-height: 1.2;
+}
+
+.sidebar-heading p {
+    margin-top: 12px;
+
+    color: #d0d0c5;
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   10. ACTIVITY CALENDAR BUTTONS
+========================================================= */
+
+.activity-calendar-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    min-height: 76px;
+
+    margin-bottom: 12px;
+    padding: 13px 12px;
+
+    color: #f7f0e4;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(196, 161, 91, 0.35);
+    border-radius: 7px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.calendar-container iframe {
+.activity-calendar-button:hover {
+    background: rgba(196, 161, 91, 0.15);
+    border-color: #c4a15b;
+    transform: translateX(4px);
+}
+
+.activity-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+
+    color: #102719;
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    background: #c4a15b;
+    border-radius: 50%;
+}
+
+.activity-button-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.activity-button-text strong {
+    color: #f7f0e4;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.activity-button-text small {
+    margin-top: 3px;
+
+    color: #c7c6b9;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+.activity-arrow {
+    color: #c4a15b;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   11. SIDEBAR NOTE
+========================================================= */
+
+.sidebar-note {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(196, 161, 91, 0.3);
+}
+
+.note-line {
+    flex: 0 0 3px;
+    background: #c4a15b;
+    border-radius: 3px;
+}
+
+.sidebar-note p {
+    color: #c7c6b9;
+    font-size: 0.76rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   12. MAIN GOOGLE CALENDAR PANEL
+========================================================= */
+
+.main-calendar-panel {
+    min-width: 0;
+    overflow: hidden;
+
+    background: #fffdf8;
+    border: 1px solid #d9cdb8;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(16, 39, 25, 0.10);
+}
+
+
+/* =========================================================
+   13. MAIN CALENDAR HEADER
+========================================================= */
+
+.main-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 25px 28px;
+
+    background: #102719;
+    border-bottom: 3px solid #c4a15b;
+}
+
+.calendar-panel-kicker {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #c4a15b;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.main-calendar-header h2 {
+    color: #f7f0e4;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    line-height: 1.3;
+}
+
+.main-calendar-header p {
+    margin-top: 5px;
+
+    color: #d0d0c5;
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   14. LIVE CALENDAR INDICATOR
+========================================================= */
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    padding: 8px 12px;
+
+    color: #e5d9c3;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    border: 1px solid rgba(196, 161, 91, 0.45);
+    border-radius: 30px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #79bb83;
+    border-radius: 50%;
+
+    box-shadow: 0 0 8px rgba(121, 187, 131, 0.7);
+}
+
+
+/* =========================================================
+   15. GOOGLE CALENDAR FRAME
+========================================================= */
+
+.calendar-frame-wrapper {
+    width: 100%;
+    padding: 12px;
+
+    background: #fffdf8;
+}
+
+.calendar-frame-wrapper iframe {
     display: block;
 
     width: 100%;
-    max-width: 100%;
     height: 600px;
 
     border: 0;
+    border-radius: 4px;
 }
 
+
 /* =========================================================
-   8. OPTIONAL CALENDAR HEADER IMAGE STYLES
+   16. CALENDAR PANEL FOOTER
 ========================================================= */
 
-.calendar-header-wrapper {
-    max-width: 900px;
-    margin: 0 auto 20px;
-    text-align: center;
+.calendar-panel-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 13px 20px;
+
+    color: #75684f;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    background: #f2eee5;
+    border-top: 1px solid #e0d6c4;
 }
 
-.calendar-header-img {
-    display: block;
-    height: auto;
-    margin: 0 auto 20px;
-}
-
-.calendar-header-wrapper img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
 
 /* =========================================================
-   9. TABLET NAVIGATION
+   17. TABLET LAYOUT
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .calendar-page {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .calendar-layout {
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .activity-sidebar {
+        padding: 23px 16px;
+    }
+
+    .main-calendar-header {
+        padding: 22px 20px;
+    }
+
+    .main-calendar-header h2 {
+        font-size: 1.45rem;
+    }
+}
+
+
+/* =========================================================
+   18. TABLET NAVIGATION — ORIGINAL
 ========================================================= */
 
 @media (max-width: 992px) {
@@ -328,13 +644,12 @@ header {
     }
 }
 
+
 /* =========================================================
-   10. MOBILE NAVIGATION AND CALENDAR
+   19. MOBILE NAVIGATION — ORIGINAL
 ========================================================= */
 
 @media (max-width: 768px) {
-
-    /* Navigation layout */
 
     .main-nav {
         flex-direction: column;
@@ -390,8 +705,6 @@ header {
         white-space: normal;
     }
 
-    /* Mobile dropdown menus */
-
     .dropdown:hover > .dropdown-menu,
     .dropdown-sub:hover > .submenu-right {
         display: none !important;
@@ -426,11 +739,6 @@ header {
         white-space: normal;
     }
 
-    /*
-       These rules support dropdowns controlled by scripts.js
-       when it adds the .open class.
-    */
-
     .dropdown.open > .dropdown-menu,
     .dropdown-sub.open > .submenu-right,
     .nav-links li.dropdown > .dropdown-menu.open {
@@ -449,116 +757,175 @@ header {
         max-width: min(75vw, 240px);
         margin-top: 0;
     }
+}
 
-    /* Calendar layout */
+
+/* =========================================================
+   20. CALENDAR MOBILE LAYOUT
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .calendar-nav-spacer {
+        height: 180px;
+    }
 
     .calendar-page {
-        padding: 12px;
+        padding: 12px 16px 55px;
+    }
+
+    .calendar-heading {
+        margin-bottom: 28px;
     }
 
     .calendar-title {
-        margin-top: 30px;
-        margin-bottom: 24px;
-
-        font-size: 2rem;
-        line-height: 1.25;
+        font-size: 2.3rem;
     }
 
-    #wsc-calendar {
-        width: 100% !important;
-        max-width: 100% !important;
+    .calendar-subtitle {
+        max-width: 420px;
+        margin: 12px auto 0;
 
-        margin-left: auto;
-        margin-right: auto;
-
-        padding-left: 6% !important;
-        padding-right: 6% !important;
-
-        border-left-width: 0;
-        border-right-width: 0;
+        font-size: 0.9rem;
     }
 
-    #wsc-calendar .calendar-container {
+    /* Stack sidebar above calendar */
+
+    .calendar-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .activity-sidebar {
+        padding: 23px 18px;
+    }
+
+    .sidebar-heading h2 {
+        font-size: 1.65rem;
+    }
+
+    /* Two buttons side by side */
+
+    .activity-calendar-button {
+        min-height: 76px;
+        margin-bottom: 10px;
+    }
+
+    .activity-calendar-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .sidebar-note {
+        margin-top: 18px;
+        padding-top: 15px;
+    }
+
+    .main-calendar-header {
+        flex-wrap: wrap;
+        padding: 20px 17px;
+    }
+
+    .main-calendar-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .live-indicator {
+        padding: 7px 10px;
+    }
+
+    .calendar-frame-wrapper {
+        padding: 6px;
+        overflow: hidden;
+    }
+
+    .calendar-frame-wrapper iframe {
         width: 100%;
-        max-width: 100%;
-
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    .calendar-container {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .calendar-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-
-        overflow-x: hidden !important;
-    }
-
-    .calendar-wrapper iframe,
-    .calendar-container iframe {
-        display: block;
-
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
         height: 600px;
-
-        border: 0;
     }
 
-    .calendar-header-img {
-        margin-top: 60px;
+    .calendar-panel-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        padding: 12px 10px;
+
+        font-size: 0.58rem;
+        text-align: center;
     }
 }
 
+
 /* =========================================================
-   11. SMALL MOBILE PHONES
+   21. SMALL MOBILE PHONES
 ========================================================= */
 
 @media (max-width: 480px) {
 
+    .calendar-nav-spacer {
+        height: 180px;
+    }
+
     .calendar-page {
-        padding: 8px;
+        padding: 8px 12px 45px;
+    }
+
+    .calendar-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 3px;
     }
 
     .calendar-title {
-        font-size: 1.8rem;
+        font-size: 1.95rem;
     }
 
-    .main-nav {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
+    .calendar-subtitle {
+        font-size: 0.84rem;
     }
 
-    .logo img {
-        height: 76px;
+    .activity-sidebar {
+        padding: 21px 14px;
     }
 
-    .nav-links {
-        gap: 4px;
+    .activity-calendar-button {
+        gap: 9px;
+        padding: 11px 9px;
     }
 
-    .nav-links > li {
-        flex-basis: calc(33.333% - 4px);
+    .activity-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.68rem;
     }
 
-    .nav-links > li > a {
-        padding: 4px 1px;
+    .activity-button-text strong {
+        font-size: 0.85rem;
+    }
+
+    .activity-button-text small {
+        font-size: 0.66rem;
+    }
+
+    .activity-arrow {
         font-size: 1rem;
+    }
+
+    .main-calendar-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .main-calendar-header p {
+        font-size: 0.78rem;
+    }
+
+    .calendar-frame-wrapper iframe {
+        height: 600px;
     }
 }
 
+
 /* =========================================================
-   12. FOOTER — MAIN STYLING
+   22. FOOTER — ORIGINAL STYLING PRESERVED
 ========================================================= */
 
 .footer {
@@ -607,8 +974,9 @@ header {
     border-bottom: 2px solid rgba(198, 165, 104, 0.55);
 }
 
+
 /* =========================================================
-   13. FOOTER CONTACT DETAILS
+   23. FOOTER CONTACT DETAILS — ORIGINAL
 ========================================================= */
 
 .footer-item {
@@ -636,8 +1004,9 @@ header {
     text-align: center;
 }
 
+
 /* =========================================================
-   14. FOOTER TEXT AND LINKS
+   24. FOOTER TEXT AND LINKS — ORIGINAL
 ========================================================= */
 
 .footer-column p {
@@ -676,8 +1045,9 @@ header {
     transform: translateX(4px);
 }
 
+
 /* =========================================================
-   15. FOOTER COPYRIGHT BAR
+   25. FOOTER COPYRIGHT BAR — ORIGINAL
 ========================================================= */
 
 .footer-bottom {
@@ -694,8 +1064,9 @@ header {
     text-align: center;
 }
 
+
 /* =========================================================
-   16. FOOTER — TABLETS
+   26. FOOTER — TABLETS — ORIGINAL
 ========================================================= */
 
 @media (max-width: 950px) {
@@ -708,8 +1079,9 @@ header {
     }
 }
 
+
 /* =========================================================
-   17. FOOTER — MOBILE PHONES
+   27. FOOTER — MOBILE PHONES — ORIGINAL
 ========================================================= */
 
 @media (max-width: 550px) {
