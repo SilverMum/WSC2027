@@ -1118,3 +1118,12 @@ header {
         font-size: 12px;
     }
 }
+
+/* ARCHERY SEASONAL NOTE */
+.seasonal-note {
+    margin: -5px 0 16px;
+    color: #c4a15b;
+    font-size: 0.76rem;
+    font-style: italic;
+    text-align: center;
+}
